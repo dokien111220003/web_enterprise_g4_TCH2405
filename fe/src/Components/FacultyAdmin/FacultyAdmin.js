@@ -3,7 +3,7 @@ import './FacultyAdmin.css';
 const FacultyAdmin = () => {
   return (
     <div className="page-content-header">
-        <h1>Faculty Management Page</h1>
+        <h1>Faculty Management</h1>
     </div>
   );
 }
