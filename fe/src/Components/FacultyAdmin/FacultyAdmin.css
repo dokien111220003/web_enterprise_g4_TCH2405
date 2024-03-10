@@ -1,0 +1,82 @@
+.faculty-admin {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .add-button-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .add-button {
+    width: 150px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+  }
+
+  .delete-button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .delete-button:hover {
+    opacity: 0.8;
+  }
+  .stt{
+    text-align: center;
+    width: 50px;
+  }
+  .stt_td{
+    text-align: center;
+  }
+  
+  table {
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff; 
+    margin-top: 20px; 
+    margin:auto;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  .act{
+    width: 15%;
+    white-space: nowrap;
+  }
+  th {
+    background-color: #f2f2f2;
+    position: relative;
+  }
+  
+  button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer; 
+    border: none; 
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button:hover {
+    opacity: 0.7;
+  }
+  

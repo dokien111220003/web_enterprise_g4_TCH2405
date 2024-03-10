@@ -21,6 +21,7 @@ import NavBar from "./Components/NavBar/NavBar"
 import MainPageAdmin from './Components/MainPageAdmin/MainPageAdmin';
 import Login from './Components/Login/Login';
 import FacultyAdmin from './Components/FacultyAdmin/FacultyAdmin';
+import AddNewFalcuty from './Components/FacultyAdmin/Add';
 import AccAdmin from './Components/AccAdmin/AccAdmin';
 import BlogAdmin from './Components/BlogAdmin/BlogAdmin';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -37,6 +38,10 @@ const App = () => {
             <Routes>
               <Route path='/facultyadmin' element={<FacultyAdmin/>}/>
             </Routes>
+            <Routes>
+              <Route path='/add_faculty' element={<AddNewFalcuty/>}/>
+            </Routes>
+
             <Routes>
               <Route path='/accadmin' element={<AccAdmin/>}/>
             </Routes>
