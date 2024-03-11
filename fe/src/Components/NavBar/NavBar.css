@@ -8,6 +8,11 @@
     color: #3F72AF;
 }
 
+.nav-links li a.active {
+    color: #000000;
+}
+
+
 li {
     list-style: none;
 }

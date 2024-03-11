@@ -1,9 +1,9 @@
 .sidebar {
-    width: 250px;
+    width: 300px;
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #f5f5f5;
+    background-color: #DBE2EF;
     padding-top: 0px;
     margin-top: 10vh;
     height: 100%;
@@ -13,11 +13,12 @@
   .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 23px;
     color: black;
     display: block;
+    margin-top: 20px;
   }
   
   .sidebar a:hover {
-    background-color: #ddd;
+    background-color: #67709a9d;
   }

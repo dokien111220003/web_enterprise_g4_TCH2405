@@ -19,6 +19,9 @@ const AddNewFalcuty = () => {
             <div className="input">
                 <input type="text" placeholder="Name" required/>
             </div>
+            <div className="input">
+                <input type="text" placeholder="Description" required/>
+            </div>
         </div>
         <div className="submit-container">
             <button onClick={goBack} className="submit-add">Add</button>
