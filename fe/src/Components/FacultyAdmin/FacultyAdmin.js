@@ -8,8 +8,8 @@ const FacultyAdmin = () => {
     navigate("/add_faculty");
   };
   const [faculties, setFaculties] = useState([
-    { id: 1, name: 'Computer Science' },
-    { id: 2, name: 'Mathematics' },
+    { id: 1, name: 'Computer Science' ,des: 'Computer science is the study of computers and computational systems.'},
+    { id: 2, name: 'Mathematics', des: 'Mathematics is the science and study of quality, structure, space, and change. Mathematicians seek out patterns, formulate new conjectures, and establish truth by rigorous deduction from appropriately chosen axioms and definitions.'},
   ]);
   const deleteFaculty = (id) => {
     setFaculties(faculties.filter(faculty => faculty.id !== id));
@@ -34,8 +34,9 @@ const FacultyAdmin = () => {
       <table>
         <thead>
           <tr>
-            <th className='stt'>STT</th>
+            <th className='stt'>#</th>
             <th>Name</th>
+            <th>Description</th>
             <th className="action-column">
               <div className="add-button-container">
                 <button onClick={goToAddPage} className="add-button">Add Faculty</button>
@@ -48,10 +49,10 @@ const FacultyAdmin = () => {
             <tr key={faculty.id}>
               <td className='stt_td'>{index + 1}</td>
               <td>{faculty.name}</td>
+              <td className="description-column">{faculty.des}</td>
               <td className='act'>
                 <button onClick={() => editFaculty(faculty.id)}>Edit</button>
                 <button onClick={() => deleteFaculty(faculty.id)} className="delete-button">Delete</button>
-
               </td>
             </tr>
           ))}

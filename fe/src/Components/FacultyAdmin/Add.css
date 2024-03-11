@@ -6,8 +6,7 @@
     margin: auto;
     margin-top: 70px;
     width: 600px;
-    background-color: rgb(80, 238, 149);
-    backdrop-filter: blur(100px);
+    background-color: #F9F7F7;
     padding-bottom: 30px;
     border-radius: 25px;
 }
@@ -34,7 +33,7 @@
     margin: auto;
     width: 480px;
     height: 80px;
-    background: #fff;
+    background: #DBE2EF;
     border-radius: 6px;
 }
 
@@ -56,6 +55,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
+
 input[type="text"]{
     padding-left: 20px;
 }   
@@ -67,25 +67,14 @@ input[type="text"]{
     white-space: nowrap;
 }
 
-.main-page {
-    display: flex;
-    margin-top: -10px;
-    margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-    color: #797979;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.submit {
+.submit-add {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 240px;
+    width: 150px;
     height: 59px;
     color: #fff;
-    background: #487bda;
+    background: #3F72AF;
     border: none;
     border-radius: 20px;
     font-size: 19px;
@@ -98,4 +87,15 @@ input[type="text"]{
 .submit-container :hover {
     box-shadow: 0 0 0 4px #fff,
     0 0 0 6px #1b5dd8;
+}
+
+.faculty-link {
+    display: flex;
+    margin-top: -50px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    color: #3F72AF;
+    font-size: 20px;
+    text-decoration: none;
 }

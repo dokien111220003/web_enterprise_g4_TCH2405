@@ -21,7 +21,10 @@ const AddNewFalcuty = () => {
             </div>
         </div>
         <div className="submit-container">
-            <button onClick={goBack} className="submit">ADD NEW FALCUTY</button>
+            <button onClick={goBack} className="submit-add">Add</button>
+        </div>
+        <div className="faculty-link">
+            <a href="facultyadmin">Back</a>
         </div>
     </div>
   );
