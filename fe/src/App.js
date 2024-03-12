@@ -24,7 +24,9 @@ import FacultyAdmin from './Components/FacultyAdmin/FacultyAdmin';
 import AddNewFalcuty from './Components/FacultyAdmin/Add';
 import EditFalcuty from './Components/FacultyAdmin/Edit';
 import AccAdmin from './Components/AccAdmin/AccAdmin';
-import BlogAdmin from './Components/BlogAdmin/BlogAdmin';
+import TopicAdmin from './Components/TopicAdmin/TopicAdmin';
+import EditTopicAdmin from './Components/TopicAdmin/EditTopic';
+import AddNewTopic from './Components/TopicAdmin/AddTopic';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Register from './Components/Register/Register';
 
@@ -49,7 +51,13 @@ const App = () => {
               <Route path='/accadmin' element={<AccAdmin/>}/>
             </Routes>
             <Routes>
-              <Route path='/blogadmin' element={<BlogAdmin/>}/>
+              <Route path='/topicadmin' element={<TopicAdmin/>}/>
+            </Routes>
+            <Routes>
+              <Route path='/edit_topic/:id' element={<EditTopicAdmin/>}/>
+            </Routes>
+            <Routes>
+              <Route path='/add_topic' element={<AddNewTopic/>}/>
             </Routes>
             <Routes>
               <Route path='/login' element={<Login/>} />

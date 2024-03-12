@@ -9,7 +9,6 @@ const AccAdmin = () => {
         <a href="#student">Student</a>
         <a href="#marketing-coordinator">Marketing Coordinator</a>
         <a href="#marketing-manager">Marketing Manager</a>
-        <a href="#add" className="add-button">Add</a> 
       </div>
     </div>
   );

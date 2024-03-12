@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './Add.css';
+import './Edit.css';
 
 const EditFalcuty = () => {
     let navigate = useNavigate();

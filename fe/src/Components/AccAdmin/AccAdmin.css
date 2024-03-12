@@ -5,7 +5,7 @@
     top: 0;
     background-color: #DBE2EF;
     padding-top: 0px;
-    margin-top: 10vh;
+    margin-top: 14vh;
     height: 100%;
     overflow-y: auto;
   }
@@ -21,12 +21,4 @@
   
   .sidebar a:hover {
     background-color: #67709a9d;
-  }
-  .add-button {
-    display: block;
-    padding: 10px;
-    text-align: center;
-    background-color: #4CAF50; 
-    color: white;
-    margin-top: 10px;
   }
