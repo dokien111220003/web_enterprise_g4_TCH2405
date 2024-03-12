@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './Login.css';
+import './Register.css';
 import mail_icon from '../Assets/mail.png';
 import password_icon from '../Assets/padlock.png';
 
-const Login = () => {
+const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowPasswordToggle = () => {
@@ -12,9 +11,9 @@ const Login = () => {
   };
 
   return (
-    <div className='login-container'>
+    <div className='register-container'>
         <div className="header">
-            <div className="text-sign-in">Sign In</div>
+            <div className="text">Register</div>
         </div>
         <div className="inputs">
             <div className="input-field">
@@ -25,6 +24,10 @@ const Login = () => {
                 <img src={password_icon} alt="" className="icon" />
                 <input type={showPassword ? "text" : "password"} placeholder="Password"/>
             </div>
+            <div className="input-field">
+                <img src={password_icon} alt="" className="icon" />
+                <input type={showPassword ? "text" : "password"} placeholder="Re-enter Password"/>
+            </div>
         </div>
         <div className="show-password">
             <label><input type="checkbox" onChange={handleShowPasswordToggle}/>
@@ -32,13 +35,13 @@ const Login = () => {
             </label>
         </div>
         <div className="submit-container">
-            <button className="submit">SIGN IN</button>
+            <button className="submit">REGISTER</button>
         </div>
-        <div className="register-link">
-            <p>Don't have an account? <a href="register">Register here!</a></p>
+        <div className="login-link">
+            <p>Already have an account? <a href="login">Login here!</a></p>
         </div>
     </div>
   )
 }
 
-export default Login;
+export default Register;

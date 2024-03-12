@@ -5,7 +5,7 @@
     height: 20px;
 }
 
-.login-container {
+.register-container {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -25,7 +25,7 @@
     margin-top: 30px;
 }
 
-.text-sign-in {
+.text {
     color: #3F72AF;
     font-size: 48px;
     font-weight: 700;
@@ -72,11 +72,11 @@
     transition: all 0.3s ease;
 }
 
-.register-link p {
+.login-link p {
     color: #000000;
 }
 
-.register-link {
+.login-link {
     display: flex;
     margin-top: -50px;
     margin-bottom: 20px;
@@ -130,6 +130,3 @@
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
 }
-
-
-

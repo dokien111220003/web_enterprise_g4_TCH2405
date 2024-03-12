@@ -21,9 +21,11 @@ import NavBar from "./Components/NavBar/NavBar"
 import MainPageAdmin from './Components/MainPageAdmin/MainPageAdmin';
 import Login from './Components/Login/Login';
 import FacultyAdmin from './Components/FacultyAdmin/FacultyAdmin';
+import AddNewFalcuty from './Components/FacultyAdmin/Add';
 import AccAdmin from './Components/AccAdmin/AccAdmin';
 import BlogAdmin from './Components/BlogAdmin/BlogAdmin';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Register from './Components/Register/Register';
 
 const App = () => {
     return (
@@ -37,6 +39,10 @@ const App = () => {
               <Route path='/facultyadmin' element={<FacultyAdmin/>}/>
             </Routes>
             <Routes>
+              <Route path='/add_faculty' element={<AddNewFalcuty/>}/>
+            </Routes>
+
+            <Routes>
               <Route path='/accadmin' element={<AccAdmin/>}/>
             </Routes>
             <Routes>
@@ -44,6 +50,9 @@ const App = () => {
             </Routes>
             <Routes>
               <Route path='/login' element={<Login/>} />
+            </Routes>
+            <Routes>
+              <Route path='/register' element={<Register/>} />
             </Routes>
         </Router>
       </>
