@@ -22,6 +22,7 @@ import MainPageAdmin from './Components/MainPageAdmin/MainPageAdmin';
 import Login from './Components/Login/Login';
 import FacultyAdmin from './Components/FacultyAdmin/FacultyAdmin';
 import AddNewFalcuty from './Components/FacultyAdmin/Add';
+import EditFalcuty from './Components/FacultyAdmin/Edit';
 import AccAdmin from './Components/AccAdmin/AccAdmin';
 import BlogAdmin from './Components/BlogAdmin/BlogAdmin';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -41,7 +42,9 @@ const App = () => {
             <Routes>
               <Route path='/add_faculty' element={<AddNewFalcuty/>}/>
             </Routes>
-
+            <Routes>
+              <Route path='/edit_faculty/:id' element={<EditFalcuty/>}/>
+            </Routes>
             <Routes>
               <Route path='/accadmin' element={<AccAdmin/>}/>
             </Routes>

@@ -15,15 +15,7 @@ const FacultyAdmin = () => {
     setFaculties(faculties.filter(faculty => faculty.id !== id));
   };
   const editFaculty = (id) => {
-    const newName = prompt("Enter new faculty name:");
-    if (newName) {
-      setFaculties(faculties.map(faculty => {
-        if (faculty.id === id) {
-          return { ...faculty, name: newName };
-        }
-        return faculty;
-      }));
-    }
+    navigate(`/edit_faculty/${id}`);
   };
 
   return (
