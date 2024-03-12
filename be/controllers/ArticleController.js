@@ -4,7 +4,7 @@ const createArticle = async (req,res) =>{
     try {
         const { name, image, faculty, status, description } = req.body
         
-        if (!name || !image || !faculty || !status ){
+        if (!name || !image || !faculty ){
             return res.status(200).json({
                 status: 'ERR',
                 message: 'The input is required'
