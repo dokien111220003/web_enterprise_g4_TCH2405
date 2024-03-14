@@ -29,6 +29,7 @@ import EditTopicAdmin from './Components/TopicAdmin/EditTopic';
 import AddNewTopic from './Components/TopicAdmin/AddTopic';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Register from './Components/Register/Register';
+import Slider from './Components/Slider/Slider';
 
 const App = () => {
     return (
@@ -64,6 +65,9 @@ const App = () => {
             </Routes>
             <Routes>
               <Route path='/register' element={<Register/>} />
+            </Routes>
+            <Routes>
+              <Route path='/slider' element={<Slider/>} />
             </Routes>
         </Router>
       </>
