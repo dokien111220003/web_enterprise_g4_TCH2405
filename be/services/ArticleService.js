@@ -31,7 +31,6 @@ const createArticle =(newArticle) => {
 
 const updateArticle = (id, data) => {
     return new Promise(async(resolve, reject)=> {
-        // const { name, image, faculty, status, description } = newArticle
         try {
             const checkArticle = await Article.findOne({
                 _id:id
