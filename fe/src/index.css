@@ -6,11 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  background: #3F72AF;
-  /* background: url('./Components/Assets/background.jpg') no-repeat;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden; */
 }
 
 

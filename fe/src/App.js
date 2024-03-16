@@ -14,10 +14,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './Components/Register/Register';
 import Slider from './Components/Slider/Slider';
 import StudentPage from './Components/StudentPage/StudentPage';
+import FooterAdmin from './Components/Footer/AdminFooter';
 
 const App = () => {
     return (
       <Router>
+        <div>
         <Routes>
           <Route path='/' element={<><NavBar /><MainPageAdmin /></>} />
           <Route path='/facultyadmin' element={<><NavBar /><FacultyAdmin /></>} />
@@ -33,6 +35,8 @@ const App = () => {
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
           <Route path='/student_page' element={<><NavBarStudent /><StudentPage /></>} />
         </Routes>
+        </div>
+        <FooterAdmin/>
       </Router>
     );
 }

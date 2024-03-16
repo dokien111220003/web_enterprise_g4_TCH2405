@@ -3,13 +3,16 @@ import './AccAdmin.css';
 
 const AccAdmin = () => {
   return (
-    <div className="acc-admin">
-      <div className="sidebar">
-        <a href="#guest">Guest</a>
-        <a href="#student">Student</a>
-        <a href="#marketing-coordinator">Marketing Coordinator</a>
-        <a href="#marketing-manager">Marketing Manager</a>
+    <div className="sidebar">
+      <div className="sidebar-header">
+        <h2>Account</h2>
       </div>
+      <ul className="sidebar-menu">
+        <li><a href="/accadmin">Marketing Manager</a></li>
+        <li><a href="/accadmin">Marketing Coordinator</a></li>
+        <li><a href="/accadmin">Student</a></li>
+        <li><a href="/accadmin">Guest</a></li>
+      </ul>
     </div>
   );
 }

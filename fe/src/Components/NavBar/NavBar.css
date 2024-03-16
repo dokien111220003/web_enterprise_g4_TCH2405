@@ -8,28 +8,41 @@
     color: #3F72AF;
 }
 
+.line {
+    height: 30px;
+    width: 100%;
+    background: #3F72AF;
+}
+
+.second-line {
+    height: 2px;
+    background: #1459ad60;
+    width: 100%;
+}
+
 .nav-links li a.active {
     color: #000000;
 }
-
 
 li {
     list-style: none;
 }
 
 .navbar {
-    height: 14vh;
+    height: 180px;
     line-height: 14vh;
     box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
     background: #F9F7F7;
 }
 
-.logo {
-    font-size: 50px;
-    text-decoration: none;
+.logo img{
+    margin-top: 30px;
+    width: 200px;
+    height: auto;
 }
 
 .nav-links {
+    margin-top: 25px;
     display: flex;
     justify-content: flex-end;
     width: 75%;
@@ -61,8 +74,8 @@ li {
 }
 
 .page-content-header h1 {
-    color: #F9F7F7;
     font-size: 80px;
+    color: #3F72AF;
 }
 
 button {
