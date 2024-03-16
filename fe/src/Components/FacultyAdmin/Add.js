@@ -2,13 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Add.css';
 
-const AddNewFalcuty = () => {
+const AddNewFaculty = () => {
     let navigate = useNavigate();
     const goBack = () => {
     navigate("/facultyadmin");
   };
   return (
-<div className='add-container'>
+    <div className='add-faculty-container'>
         <div className="header">
             <div className="text">Add New Falcuty</div>
         </div>
@@ -30,4 +30,4 @@ const AddNewFalcuty = () => {
   );
 }
 
-export default AddNewFalcuty;
+export default AddNewFaculty;

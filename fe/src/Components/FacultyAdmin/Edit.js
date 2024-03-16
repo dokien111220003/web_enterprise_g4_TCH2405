@@ -8,7 +8,7 @@ const EditFalcuty = () => {
     navigate("/facultyadmin");
   };
   return (
-<div className='add-container'>
+    <div className='edit-faculty-container'>
         <div className="header">
             <div className="text">Edit Falcuty</div>
         </div>

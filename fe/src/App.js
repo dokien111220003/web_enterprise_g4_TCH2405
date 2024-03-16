@@ -4,7 +4,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import MainPageAdmin from './Components/MainPageAdmin/MainPageAdmin';
 import Login from './Components/Login/Login';
 import FacultyAdmin from './Components/FacultyAdmin/FacultyAdmin';
-import AddNewFalcuty from './Components/FacultyAdmin/Add';
+import AddNewFaculty from './Components/FacultyAdmin/Add';
 import EditFalcuty from './Components/FacultyAdmin/Edit';
 import AccAdmin from './Components/AccAdmin/AccAdmin';
 import TopicAdmin from './Components/TopicAdmin/TopicAdmin';
@@ -23,7 +23,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<><NavBar /><MainPageAdmin /></>} />
           <Route path='/facultyadmin' element={<><NavBar /><FacultyAdmin /></>} />
-          <Route path='/add_faculty' element={<><NavBar /><AddNewFalcuty /></>} />
+          <Route path='/add_faculty' element={<><NavBar /><AddNewFaculty /></>} />
           <Route path='/edit_faculty/:id' element={<><NavBar /><EditFalcuty /></>} />
           <Route path='/accadmin' element={<><NavBar /><AccAdmin /></>} />
           <Route path='/topicadmin' element={<><NavBar /><TopicAdmin /></>} />
