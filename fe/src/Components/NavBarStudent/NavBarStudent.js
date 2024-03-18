@@ -5,7 +5,7 @@ import './NavBarStudent.css';
 import search_icon from '../Assets/search.png';
 import logo from '../Assets/logo.png';
 import profileIcon from '../Assets/user.png';
-import Footer from '../Footer/AdminFooter';
+import Footer from '../Footer/StudentFooter';
 
 const NavBarStudent = ({ children }) => {
     return (

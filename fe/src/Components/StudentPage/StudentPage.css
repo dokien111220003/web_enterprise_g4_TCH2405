@@ -11,26 +11,26 @@
 
 .blog {
   display: flex;
-  flex-direction: column; /* Sắp xếp nội dung của blog theo hướng dọc */
-  align-items: center; /* Căn giữa nội dung theo trục ngang */
-  border: 1px solid #ccc; /* Tạo viền cho mỗi blog */
+  flex-direction: column; 
+  align-items: center; 
+  border: 1px solid #ccc; 
   padding: 20px;
-  border-radius: 8px; /* Làm mềm các góc */
+  border-radius: 8px;
   height: 300px;
 }
 
 .blog-image {
-  width: 100%; /* Chiều rộng của hình ảnh */
-  max-width: 600px; /* Giới hạn chiều rộng tối đa của hình ảnh */
-  height: auto; /* Tự động điều chỉnh chiều cao để giữ nguyên tỷ lệ */
-  margin-bottom: 20px; /* Khoảng cách giữa hình ảnh và thông tin blog */
+  width: 100%; 
+  max-width: 600px; 
+  height: auto; 
+  margin-bottom: 20px; 
 }
 
 .blog-info h2 {
-  margin: 0 0 10px 0; /* Khoảng cách giữa tiêu đề và nội dung */
+  margin: 0 0 10px 0;
 }
 
 .blog-info p {
   text-align: center;
-  margin: 0; /* Loại bỏ khoảng cách mặc định */
+  margin: 0; 
 }
