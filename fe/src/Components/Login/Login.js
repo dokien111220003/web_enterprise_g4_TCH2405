@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Login.css';
 import mail_icon from '../Assets/mail.png';
 import password_icon from '../Assets/padlock.png';

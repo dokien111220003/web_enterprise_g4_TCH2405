@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.icon {
-    width: 20px;
-    height: 20px;
-}
-
-.register-container {
+.add-container {
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 70px;
     width: 600px;
-    background: #F9F7F7;
+    background-color: #F9F7F7;
     padding-bottom: 30px;
     border-radius: 25px;
 }
@@ -26,21 +21,13 @@
 }
 
 .text {
-    color: #3F72AF;
+    color: #000000;
     font-size: 48px;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
-    
 }
 
-.inputs {
-    margin-top: 55px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.input-field {
+.input {
     display: flex;
     align-items: center;
     margin: auto;
@@ -50,48 +37,41 @@
     border-radius: 6px;
 }
 
-.input-field img {
-    margin: 0px 30px;
+.inputs {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
-
-.input-field input {
+.input input {
     height: 50px;
     width: 400px;
+    background: transparent;
     border: none;
     outline: none;
+    color: #4f4f4f;
     font-size: 25px;
-    background: inherit;
     padding-right: 30px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
 
+input[type="text"]{
+    padding-left: 20px;
+}   
+
 .submit-container {
     display: flex;
     margin: 60px auto;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-.login-link p {
-    color: #000000;
-}
-
-.login-link {
-    display: flex;
-    margin-top: -50px;
-    margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-    color: #3F72AF;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.submit {
+.submit-add {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
+    width: 150px;
     height: 59px;
     color: #fff;
     background: #3F72AF;
@@ -109,24 +89,13 @@
     0 0 0 6px #1b5dd8;
 }
 
-.show-password {
-    padding-left: 62px;
-    margin-top: 27px;
-    font-size: 19px;
-    text-decoration: none;
-    font: inherit;
-}
-
-.show-password span {
+.faculty-link {
+    display: flex;
+    margin-top: -50px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
     color: #3F72AF;
-}
-
-.show-password input[type="checkbox"]{
-    transform: scale(1.3);
-}
-
-.show-password label span {
-    padding-left: 15px;
     font-size: 20px;
-    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
 }

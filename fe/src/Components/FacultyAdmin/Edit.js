@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Add.css';
+import { useNavigate, Link } from 'react-router-dom';
+import './Edit.css';
 
-const AddNewFalcuty = () => {
+const EditFalcuty = () => {
     let navigate = useNavigate();
     const goBack = () => {
     navigate("/facultyadmin");
@@ -10,7 +10,7 @@ const AddNewFalcuty = () => {
   return (
 <div className='add-container'>
         <div className="header">
-            <div className="text">Add New Falcuty</div>
+            <div className="text">Edit Falcuty</div>
         </div>
         <div className="inputs">
             <div className="input">
@@ -21,13 +21,13 @@ const AddNewFalcuty = () => {
             </div>
         </div>
         <div className="submit-container">
-            <button onClick={goBack} className="submit-add">Add</button>
+            <button onClick={goBack} className="submit-add">Update</button>
         </div>
         <div className="faculty-link">
-            <a href="facultyadmin">Back</a>
+            <Link to="/facultyadmin">Back</Link>
         </div>
     </div>
   );
 }
 
-export default AddNewFalcuty;
+export default EditFalcuty;

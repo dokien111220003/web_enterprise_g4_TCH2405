@@ -1,10 +1,11 @@
 const User = require("../models/UserModel")
 const bcrypt = require("bcrypt")
 const { genneralAccessToken, genneralRefreshToken } = require("./JwtService")
+const Faculty = require("../models/FacultyModel")
 
 const createUser = (newUser) => {
     return new Promise(async (resolve, reject) => {
-        const { name, email, password, confirmPassword, phone } = newUser
+        const { name, email, password, confirmPassword, faculty, phone } = newUser
         try {
             const checkUser = await User.findOne({
                 email: email
@@ -14,14 +15,15 @@ const createUser = (newUser) => {
                     status: 'ERR',
                     message: 'The email is already exist'
                 })
-            }be/services/UserService.js
+            }
             const hash = bcrypt.hashSync(password, 10)
             const createdUser = await User.create({ 
                 // tung dong sinh key bang name
                 name,
                 email,
                 password: hash,
-                phone
+                phone,
+                faculty
             })
             if (createdUser) {
                 // neu co crate user thi moi tra ve
@@ -61,12 +63,12 @@ const loginUser = (userLogin) => {
             }
             const access_token = await genneralAccessToken({
                 id: checkUser.id,
-                isAdmin: checkUser.isAdmin
+                role: checkUser.role
             })
 
             const refresh_token = await genneralRefreshToken({
                 id: checkUser.id,
-                isAdmin: checkUser.isAdmin
+                role: checkUser.role
             })
             // SD khi accTK hết hạn => cấp lại 1 asTK mới
 
@@ -85,27 +87,51 @@ const loginUser = (userLogin) => {
 const updateUser = (id, data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const checkUser = await User.findOne({
-                _id: id
-            })
-            if (checkUser === null) {
+            const checkUser = await User.findById(id);
+            if (!checkUser) {
                 resolve({
                     status: 'ERR',
-                    message: 'The user is not defined'
-                })
+                    message: 'User not found'
+                });
+                return;
             }
 
-            const updatedUser = await User.findByIdAndUpdate(id, data, { new: true })
+            // Check if faculty id is provided in the data
+            const facultyId = data.faculty;
+            if (!facultyId) {
+                resolve({
+                    status: 'ERR',
+                    message: 'Faculty id is required'
+                });
+                return;
+            }
+
+            // You may need to import the Faculty model if it's not already imported
+            // const Faculty = require('../models/Faculty');
+
+            const checkFaculty = await Faculty.findById(facultyId);
+            if (!checkFaculty) {
+                resolve({
+                    status: 'ERR',
+                    message: 'Faculty not found'
+                });
+                return;
+            }
+
+            // Update user's faculty
+            checkUser.faculty = facultyId;
+            await checkUser.save();
+
             resolve({
                 status: 'OK',
-                message: 'SUCCESS',
-                data: updatedUser
-            })
-        } catch (e) {
-            reject(e)
+                message: 'User faculty updated successfully',
+                data: checkUser
+            });
+        } catch (error) {
+            reject(error);
         }
-    })
-}
+    });
+};
 
 const deleteUser = (id) => {
     return new Promise(async (resolve, reject) => {

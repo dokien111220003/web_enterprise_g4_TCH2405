@@ -12,9 +12,9 @@ const createFaculty = async (req, res) => {
         const response = await FacultyService.createFaculty(req.body)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -31,9 +31,9 @@ const updateFaculty = async (req, res) => {
         const response = await FacultyService.updateFaculty(facultyId, data)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -49,9 +49,9 @@ const deleteFaculty = async (req, res) => {
         const response = await FacultyService.deleteFaculty(facultyId)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -67,9 +67,9 @@ const deleteMany = async (req, res) => {
         const response = await FacultyService.deleteManyFaculty(ids)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 

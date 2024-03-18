@@ -3,8 +3,7 @@ const ArticleService = require('../services/ArticleService')
 const createArticle = async (req,res) =>{
     try {
         const { name, image, status, description } = req.body
-        
-        if (!name || !image ){
+        if (!name || !image || !faculty ){
             return res.status(200).json({
                 status: 'ERR',
                 message: 'The input is required'
@@ -13,9 +12,9 @@ const createArticle = async (req,res) =>{
         const response = await ArticleService.createArticle(req.body)
         return res.status(200).json(response)
     }catch(e){
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -32,9 +31,9 @@ const updateArticle = async (req,res) => {
         const response = await ArticleService.updateArticle(articleId, data)
         return res.status(200),json(response)
     }catch(e){
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -50,9 +49,9 @@ const getDetailsArticle = async (req, res) => {
         const response = await ArticleService.getDetailsArticle(articleId)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -68,9 +67,9 @@ const deleteArticle = async (req, res) => {
         const response = await ArticleService.deleteArticle(articleId)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -86,9 +85,9 @@ const deleteMany = async (req, res) => {
         const response = await ArticleService.deleteManyArticle(ids)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -98,9 +97,9 @@ const getAllArticle = async (req, res) => {
         const response = await ArticleService.getAllArticle(Number(limit) || null, Number(page) || 0, sort, filter)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 

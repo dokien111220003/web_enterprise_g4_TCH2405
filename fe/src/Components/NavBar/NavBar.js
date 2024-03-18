@@ -10,7 +10,7 @@ const NavBar = () => {
                 <ul className="nav-links">
                     <li><NavLink exact to='/facultyadmin' activeClassName="active">Faculty</NavLink></li>
                     <li><NavLink exact to='/accadmin' activeClassName="active">Account</NavLink></li>
-                    <li><NavLink exact to='/blogadmin' activeClassName="active">Blog</NavLink></li>
+                    <li><NavLink exact to='/topicadmin' activeClassName="active">Blog</NavLink></li>
                     <li><NavLink exact to='/login' activeClassName="active">Login</NavLink></li>
                 </ul>
             </div>

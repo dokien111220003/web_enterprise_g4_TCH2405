@@ -13,6 +13,11 @@ body {
   overflow: hidden; */
 }
 
+
+html {
+  zoom: 65%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

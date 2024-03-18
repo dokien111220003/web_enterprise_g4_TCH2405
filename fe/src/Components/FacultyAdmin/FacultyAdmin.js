@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './FacultyAdmin.css';
+import search_icon from '../Assets/search.png';
 
 const FacultyAdmin = () => {
   let navigate = useNavigate();
@@ -15,15 +16,7 @@ const FacultyAdmin = () => {
     setFaculties(faculties.filter(faculty => faculty.id !== id));
   };
   const editFaculty = (id) => {
-    const newName = prompt("Enter new faculty name:");
-    if (newName) {
-      setFaculties(faculties.map(faculty => {
-        if (faculty.id === id) {
-          return { ...faculty, name: newName };
-        }
-        return faculty;
-      }));
-    }
+    navigate(`/edit_faculty/${id}`);
   };
 
   return (
@@ -31,6 +24,14 @@ const FacultyAdmin = () => {
       <div className="page-content-header">
         <h1>Faculty Management Page</h1>
       </div>
+      
+      <div className='search-container'>
+        <div className="search-input">
+          <img src={search_icon} alt="" className="icon-search" />
+          <input type="search" placeholder="Search"/>
+        </div>
+      </div>
+
       <table>
         <thead>
           <tr>
@@ -50,7 +51,7 @@ const FacultyAdmin = () => {
               <td className='stt_td'>{index + 1}</td>
               <td>{faculty.name}</td>
               <td className="description-column">{faculty.des}</td>
-              <td className='act'>
+              <td className='action-faculty'>
                 <button onClick={() => editFaculty(faculty.id)}>Edit</button>
                 <button onClick={() => deleteFaculty(faculty.id)} className="delete-button">Delete</button>
               </td>

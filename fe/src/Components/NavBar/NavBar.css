@@ -18,8 +18,8 @@ li {
 }
 
 .navbar {
-    height: 10vh;
-    line-height: 10vh;
+    height: 14vh;
+    line-height: 14vh;
     box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
     background: #F9F7F7;
 }
@@ -57,10 +57,10 @@ li {
 .page-content-header {
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 70px;
 }
 
 .page-content-header h1 {
- 
     color: #F9F7F7;
     font-size: 80px;
 }

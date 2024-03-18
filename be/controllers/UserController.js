@@ -3,7 +3,7 @@ const JwtService = require('../services/JwtService')
 
 const createUser = async (req, res) => {
     try {
-        const { name, email, password, confirmPassword, phone } = req.body
+        const { name, email, password, confirmPassword, faculty, phone } = req.body
         const reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
         const isCheckEmail = reg.test(email)
         if (!email || !password || !confirmPassword) {
@@ -25,8 +25,8 @@ const createUser = async (req, res) => {
         const response = await UserService.createUser(req.body)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
+        return res.status(500).json({
+            message: e.message || 'Internal server error'
         })
     }
 }
@@ -65,22 +65,23 @@ const loginUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
     try {
-        const userId = req.params.id
-        const data = req.body
+        const userId = req.params.id;
+        const data = req.body;
         if (!userId) {
-            return res.status(200).json({
+            return res.status(400).json({
                 status: 'ERR',
-                message: 'The userId is required'
-            })
+                message: 'User ID is required'
+            });
         }
-        const response = await UserService.updateUser(userId, data)
-        return res.status(200).json(response)
-    } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+
+        const response = await UserService.updateUser(userId, data);
+        return res.status(200).json(response);
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
-}
+};
 
 const deleteUser = async (req, res) => {
     try {
