@@ -9,7 +9,8 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 120px;
+    margin-bottom: 120px;
     width: 600px;
     background: #F9F7F7;
     padding-bottom: 30px;

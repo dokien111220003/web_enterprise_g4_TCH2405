@@ -9,7 +9,17 @@ const MainPageAdmin = () => {
   const images = [slider1, slider2, slider3];
 
   return (
-      <Slider images={images} />
+      <div>
+        <Slider images={images} />
+        <div className="container-line">
+          <div className="line"></div>
+        </div>
+        <div className="boxes">
+          <div className="box">Box 1</div>
+          <div className="box">Box 2</div>
+          <div className="box">Box 3</div>
+        </div>
+      </div>
   );
 }
 
