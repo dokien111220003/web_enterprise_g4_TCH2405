@@ -1,35 +1,36 @@
-.student-page {
-  font-family: Arial, sans-serif;
-}
-
 .blogs {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 90%;
+  align-self: center;
 }
 
 .blog {
-  display: flex; /* Sử dụng flexbox */
-  border: 1px solid #ddd;
-  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column; /* Sắp xếp nội dung của blog theo hướng dọc */
+  align-items: center; /* Căn giữa nội dung theo trục ngang */
+  border: 1px solid #ccc; /* Tạo viền cho mỗi blog */
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease-in-out;
+  border-radius: 8px; /* Làm mềm các góc */
+  height: 300px;
 }
 
 .blog-image {
-  width: 100px; /* Hoặc kích thước khác tùy ý */
-  height: auto;
-  border-radius: 5px; /* Bo tròn góc của ảnh */
-  margin-right: 20px; /* Khoảng cách giữa ảnh và nội dung */
+  width: 100%; /* Chiều rộng của hình ảnh */
+  max-width: 600px; /* Giới hạn chiều rộng tối đa của hình ảnh */
+  height: auto; /* Tự động điều chỉnh chiều cao để giữ nguyên tỷ lệ */
+  margin-bottom: 20px; /* Khoảng cách giữa hình ảnh và thông tin blog */
 }
 
-.blog-info h2, .blog-info p {
-  margin: 0;
+.blog-info h2 {
+  margin: 0 0 10px 0; /* Khoảng cách giữa tiêu đề và nội dung */
 }
 
-.blog:hover {
-  transform: scale(1.05);
+.blog-info p {
+  text-align: center;
+  margin: 0; /* Loại bỏ khoảng cách mặc định */
 }

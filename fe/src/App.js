@@ -32,7 +32,11 @@ const App = () => {
           <Route path='/register' element={<><NavBar /><Register /><FooterAdmin/></>} />
           <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
-          <Route path='/student_page' element={<><NavBarStudent /><StudentPage /><FooterAdmin/></>} />
+          <Route path='/student_page' element={
+            <NavBarStudent>
+              <StudentPage />
+            </NavBarStudent>
+          } />
         </Routes>
       </Router>
     );

@@ -1,15 +1,17 @@
+// NavBarStudent.js
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBarStudent.css';
 import search_icon from '../Assets/search.png';
 import logo from '../Assets/logo.png';
 import profileIcon from '../Assets/user.png';
+import Footer from '../Footer/AdminFooter';
 
-const NavBarStudent = () => {
+const NavBarStudent = ({ children }) => {
     return (
-        <div>
-            <nav className="navbar">
-                <div className="container">
+        <>
+            <nav className="navbar-student">
+                <div className="container-student">
                     <h3><NavLink exact to="/" className="logo"><img src={logo} alt="Logo"/></NavLink></h3>
                     <div className='search-container'>
                         <div className="search-input">
@@ -22,12 +24,20 @@ const NavBarStudent = () => {
                     </ul>
                 </div>
             </nav>
-            <div className="sidebar">
-                <NavLink to="/blog" className="sidebar-item">Blog</NavLink>
-                <NavLink to="/faculty" className="sidebar-item">Faculty</NavLink>
+            <div className="main-container">
+                <div className="sidebar-student">
+                    <ul className="sidebar-student-menu">
+                        <li><a href="/student_page">Blog</a></li>
+                        <li><a href="/student_page">Faculty</a></li>
+                    </ul>
+                </div>
+                <div className="content-student">
+                    {children}
+                </div>
             </div>
-        </div>
-    )
+            <Footer/>
+        </>
+    );
 }
 
 export default NavBarStudent;

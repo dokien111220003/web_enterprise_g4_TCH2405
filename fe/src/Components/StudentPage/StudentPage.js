@@ -1,5 +1,5 @@
 import React from 'react';
-import './StudentPage.css'; // Bạn cần tạo tệp CSS này để áp dụng các style
+import './StudentPage.css';
 
 
 const StudentPage = () => {
@@ -10,21 +10,21 @@ const StudentPage = () => {
       title: 'Blog Post 1', 
       content: 'This is the content of blog post 1', 
       public: true,
-      image: '../Assets/slider1.jpg', // Đường dẫn ảnh cho blog post 1
+      image: '../Assets/slider1.jpg', 
     },
     { 
       id: 2, 
       title: 'Blog Post 2', 
       content: 'This is the content of blog post 2', 
       public: true,
-      image: '../Assets/slider2.jpg', // Đường dẫn ảnh cho blog post 2
+      image: '../Assets/slider2.jpg', 
     },
-    // Thêm các blog khác theo cùng cấu trúc
+    
   ];
   
 
   return (
-<div className="student-page">
+<div className="content-student">
   <div className="blogs">
     {blogs.filter(blog => blog.public).map((blog) => (
       <div key={blog.id} className="blog">
