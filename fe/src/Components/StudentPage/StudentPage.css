@@ -1,32 +1,35 @@
 .student-page {
-    font-family: Arial, sans-serif;
-  }
-  
-  .blogs {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Thiết lập các cột với chiều rộng tối thiểu là 250px và tự động điều chỉnh chiều rộng theo lượng cột */
-    gap: 20px; /* Khoảng cách giữa các ô */
-  }
-  
-  .blog {
-    border: 1px solid #ddd;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f0f0f0; /* Màu nền cho mỗi blog */
-    padding: 20px; /* Padding cho mỗi blog */
-    border-radius: 10px; /* Bo tròn góc */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Bóng đổ cho mỗi blog */
-    transition: transform 0.3s ease-in-out; /* Hiệu ứng chuyển đổi khi hover */
-  }
-  .blog:hover {
-    transform: scale(1.05); /* Phóng to blog khi hover */
-  }
-  
-  .blog h2 {
-    color: #333;
-  }
-  .blog p{
-    color: #333;
-  }
-  
+  font-family: Arial, sans-serif;
+}
+
+.blogs {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.blog {
+  display: flex; /* Sử dụng flexbox */
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.blog-image {
+  width: 100px; /* Hoặc kích thước khác tùy ý */
+  height: auto;
+  border-radius: 5px; /* Bo tròn góc của ảnh */
+  margin-right: 20px; /* Khoảng cách giữa ảnh và nội dung */
+}
+
+.blog-info h2, .blog-info p {
+  margin: 0;
+}
+
+.blog:hover {
+  transform: scale(1.05);
+}

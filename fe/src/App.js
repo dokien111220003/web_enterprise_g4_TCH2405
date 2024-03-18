@@ -19,24 +19,21 @@ import FooterAdmin from './Components/Footer/AdminFooter';
 const App = () => {
     return (
       <Router>
-        <div>
         <Routes>
-          <Route path='/' element={<><NavBar /><MainPageAdmin /></>} />
-          <Route path='/facultyadmin' element={<><NavBar /><FacultyAdmin /></>} />
-          <Route path='/add_faculty' element={<><NavBar /><AddNewFaculty /></>} />
-          <Route path='/edit_faculty/:id' element={<><NavBar /><EditFalcuty /></>} />
-          <Route path='/accadmin' element={<><NavBar /><AccAdmin /></>} />
-          <Route path='/topicadmin' element={<><NavBar /><TopicAdmin /></>} />
-          <Route path='/add_topic' element={<><NavBar /><AddNewTopic /></>} />
-          <Route path='/edit_topic/:id' element={<><NavBar /><EditTopicAdmin /></>} />
-          <Route path='/login' element={<><NavBar /><Login /></>} />
-          <Route path='/register' element={<><NavBar /><Register /></>} />
-          <Route path='/slider' element={<><NavBar /><Slider /></>} />
+          <Route path='/' element={<><NavBar /><MainPageAdmin /><FooterAdmin/></>} />
+          <Route path='/facultyadmin' element={<><NavBar /><FacultyAdmin /><FooterAdmin/></>} />
+          <Route path='/add_faculty' element={<><NavBar /><AddNewFaculty /><FooterAdmin/></>} />
+          <Route path='/edit_faculty/:id' element={<><NavBar /><EditFalcuty /><FooterAdmin/></>} />
+          <Route path='/accadmin' element={<><NavBar /><AccAdmin /><FooterAdmin/></>} />
+          <Route path='/topicadmin' element={<><NavBar /><TopicAdmin /><FooterAdmin/></>} />
+          <Route path='/add_topic' element={<><NavBar /><AddNewTopic /><FooterAdmin/></>} />
+          <Route path='/edit_topic/:id' element={<><NavBar /><EditTopicAdmin /><FooterAdmin/></>} />
+          <Route path='/login' element={<><NavBar /><Login /><FooterAdmin/></>} />
+          <Route path='/register' element={<><NavBar /><Register /><FooterAdmin/></>} />
+          <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
-          <Route path='/student_page' element={<><NavBarStudent /><StudentPage /></>} />
+          <Route path='/student_page' element={<><NavBarStudent /><StudentPage /><FooterAdmin/></>} />
         </Routes>
-        </div>
-        <FooterAdmin/>
       </Router>
     );
 }
