@@ -15,6 +15,7 @@ import Register from './Components/Register/Register';
 import Slider from './Components/Slider/Slider';
 import StudentPage from './Components/StudentPage/StudentPage';
 import FooterAdmin from './Components/Footer/AdminFooter';
+import ChangePassword from './Components/Profile/ChangePassword';
 
 const App = () => {
     return (
@@ -37,6 +38,7 @@ const App = () => {
               <StudentPage />
             </NavBarStudent>
           } />
+          <Route path='/change_password' element={<NavBarStudent><ChangePassword/></NavBarStudent>} />
         </Routes>
       </Router>
     );
