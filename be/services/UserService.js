@@ -106,9 +106,6 @@ const updateUser = (id, data) => {
                 return;
             }
 
-            // You may need to import the Faculty model if it's not already imported
-            // const Faculty = require('../models/Faculty');
-
             const checkFaculty = await Faculty.findById(facultyId);
             if (!checkFaculty) {
                 resolve({

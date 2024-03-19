@@ -13,6 +13,7 @@ const createArticle =(newArticle) => {
                     message: 'the name of article is already'
                 })
             }
+
             const createArticle = await Article.create({
                 name, image, faculty, status, description
             })
