@@ -12,7 +12,7 @@ const Footer= () => {
                     <div className="sb_footer-links-div">
                         <h4>For Faculty</h4> 
                         <a href="/facultyadmin">
-                            <p>Display</p>
+                            <p>Display All</p>
                         </a>
                         <a href="/add_faculty">
                             <p>Add new</p>

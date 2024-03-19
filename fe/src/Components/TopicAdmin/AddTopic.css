@@ -62,7 +62,7 @@ input[type="text"] {
 .input select {
     height: 50px;
     width: 480px;
-    background: url('../Assets/down.png') no-repeat right 32px center;
+    background: url('../Assets/down.png') no-repeat right 34px center;
     background-size: 20px;
     border: none;
     outline: none;
