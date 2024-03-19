@@ -51,7 +51,7 @@
     transform: translateY(-50%);
     margin: auto;
     text-align: center;
-    
+    margin-top: 50px;
   }
   
   .add-button {
@@ -103,13 +103,24 @@
     text-align: left;
   }
   .action-faculty {
-    width: 200px;
+    width: 280px;
     align-items: center;
   }
   
   th {
     background-color: #f2f2f2;
     position: relative;
+  }
+
+  .action-faculty button {
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
   }
   
   button {
@@ -118,7 +129,6 @@
     cursor: pointer; 
     border: none; 
     border-radius: 5px;
-    background-color: #3F72AF;
     color: white;
   }
   

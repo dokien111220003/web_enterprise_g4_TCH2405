@@ -1,4 +1,4 @@
-// NavBarStudent.js
+
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBarStudent.css';
@@ -6,6 +6,7 @@ import search_icon from '../Assets/search.png';
 import logo from '../Assets/logo.png';
 import profileIcon from '../Assets/user.png';
 import Footer from '../Footer/StudentFooter';
+import SideBarStudent from '../SideBar/SideBarStudent';
 
 const NavBarStudent = ({ children }) => {
     return (
@@ -25,12 +26,6 @@ const NavBarStudent = ({ children }) => {
                 </div>
             </nav>
             <div className="main-container">
-                <div className="sidebar-student">
-                    <ul className="sidebar-student-menu">
-                        <li><a href="/student_page">Blog</a></li>
-                        <li><a href="/student_page">Faculty</a></li>
-                    </ul>
-                </div>
                 <div className="content-student">
                     {children}
                 </div>
