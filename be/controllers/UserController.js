@@ -57,8 +57,8 @@ const loginUser = async (req, res) => {
         })
         return res.status(200).json({...newReponse, refresh_token})
     } catch (e) {
-        return res.status(404).json({
-            message: e
+        return res.status(500).json({
+            message: e.message || 'Internal server error'
         })
     }
 }
@@ -95,8 +95,8 @@ const deleteUser = async (req, res) => {
         const response = await UserService.deleteUser(userId)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
+        return res.status(500).json({
+            message: e.message || 'Internal server error'
         })
     }
 }
@@ -113,8 +113,8 @@ const deleteMany = async (req, res) => {
         const response = await UserService.deleteManyUser(ids)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
+        return res.status(500).json({
+            message: e.message || 'Internal server error'
         })
     }
 }
@@ -125,8 +125,8 @@ const getAllUser = async (req, res) => {
         const response = await UserService.getAllUser()
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
+        return res.status(500).json({
+            message: e.message || 'Internal server error'
         })
     }
 }
@@ -143,8 +143,8 @@ const getDetailsUser = async (req, res) => {
         const response = await UserService.getDetailsUser(userId)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
+        return res.status(500).json({
+            message: e.message || 'Internal server error'
         })
     }
 }
@@ -161,8 +161,8 @@ const refreshToken = async (req, res) => {
         const response = await JwtService.refreshTokenJwtService(token)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
+        return res.status(500).json({
+            message: e.message || 'Internal server error'
         })
     }
 }
@@ -176,8 +176,8 @@ const logoutUser = async (req, res) => {
             message: 'Logout successfully'
         })
     } catch (e) {
-        return res.status(404).json({
-            message: e
+        return res.status(500).json({
+            message: e.message || 'Internal server error'
         })
     }
 }
