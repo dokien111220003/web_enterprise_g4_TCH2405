@@ -11,7 +11,7 @@ const NavBar = () => {
                 <div className="second-line"></div>
             </div>
             <div className="container">   
-                <h3><NavLink exact to="/" className="logo"><img src={logo}></img></NavLink></h3>
+                <h3><NavLink exact to="/student_page" className="logo"><img src={logo}></img></NavLink></h3>
                 <ul className="nav-links">
                     <li><NavLink exact to='/facultyadmin' activeClassName="active">Faculty</NavLink></li>
                     <li><NavLink exact to='/accadmin' activeClassName="active">Account</NavLink></li>

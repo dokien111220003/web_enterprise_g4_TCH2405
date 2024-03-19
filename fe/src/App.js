@@ -14,14 +14,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './Components/Register/Register';
 import Slider from './Components/Slider/Slider';
 import StudentPage from './Components/StudentPage/StudentPage';
-import Personal from './Components/Profile/Account';
 import FooterAdmin from './Components/Footer/AdminFooter';
+import ChangePassword from './Components/Profile/ChangePassword';
+import Profile from './Components/Profile/Account';
+//import SideBarStudent from './Components/SideBar/SideBarStudent';
 
 const App = () => {
     return (
       <Router>
         <Routes>
           <Route path='/' element={<><NavBar /><MainPageAdmin /><FooterAdmin/></>} />
+          <Route path='/adminpage' element={<><NavBar /><MainPageAdmin /><FooterAdmin/></>} />
           <Route path='/facultyadmin' element={<><NavBar /><FacultyAdmin /><FooterAdmin/></>} />
           <Route path='/add_faculty' element={<><NavBar /><AddNewFaculty /><FooterAdmin/></>} />
           <Route path='/edit_faculty/:id' element={<><NavBar /><EditFalcuty /><FooterAdmin/></>} />
@@ -33,8 +36,10 @@ const App = () => {
           <Route path='/register' element={<><NavBar /><Register /><FooterAdmin/></>} />
           <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
-          <Route path='/student_page' element={<NavBarStudent><StudentPage /></NavBarStudent>} />
-          <Route path='/personal' element={<NavBarStudent><Personal/></NavBarStudent>} />
+          <Route path='/student_page' element={<NavBarStudent><StudentPage /></NavBarStudent>
+          } />
+          <Route path='/change_password' element={<NavBarStudent><ChangePassword/></NavBarStudent>} />
+          <Route path='/personal' element={<NavBarStudent><Profile/></NavBarStudent>} />
         </Routes>
       </Router>
     );

@@ -1,18 +1,19 @@
+// SidebarStudent.js
+
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './SideBarStudent.css';
 
-const SidebarStudent = () => {
+const SideBarStudent = () => {
     return (
         <div className="sidebar-student">
-            <div className='sidebar-student-header'>
-                <h2>Related</h2>
-            </div>
             <ul className="sidebar-student-menu">
-                <li><a href="/student_page">- Blog</a></li>
-                <li><a href="/student_page">- Faculty</a></li>
+                <li><NavLink exact to="/student_page">Blog</NavLink></li>
+                <li><NavLink exact to="/student_page">Faculty</NavLink></li>
+                {/* Add more sidebar items here */}
             </ul>
         </div>
     );
 }
 
-export default SidebarStudent;
+export default SideBarStudent;

@@ -1,12 +1,16 @@
 .blogs {
   margin-top: 100px;
-  margin-left: 100px;
-  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
-  width: 90%;
-  align-self: center;
+  margin-bottom: 100px;
+}
+
+.blog-row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
 }
 
 .blog {
@@ -16,18 +20,19 @@
   border: 1px solid #ccc; 
   padding: 20px;
   border-radius: 8px;
-  height: 300px;
+  height: 750px;
+  width: auto;
 }
 
 .blog-image {
-  width: 100%; 
-  max-width: 600px; 
+  width: 700px; 
   height: auto; 
-  margin-bottom: 20px; 
+  object-fit: cover;
 }
 
 .blog-info h2 {
   margin: 0 0 10px 0;
+  text-align: center;
 }
 
 .blog-info p {

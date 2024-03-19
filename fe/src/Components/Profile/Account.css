@@ -1,8 +1,9 @@
-/* Account.css */
 
 .account-container {
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;

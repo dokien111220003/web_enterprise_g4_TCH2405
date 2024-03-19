@@ -10,15 +10,21 @@ const StudentFooter= () => {
             <div className='sb_footer-student section_padding'>
                 <div className="sb_footer-student-links">
                     <div className="sb_footer-student-links-div">
-                        <h4>For Faculty</h4>
+                        <h4>For faculty</h4>
                         <a href="/hoho">
-                            <p>Display</p>
+                            <p>View Blog</p>
                         </a>
                     </div>
                     <div className="sb_footer-student-links-div">
-                        <h4>For Blog</h4>
+                        <h4>For blog</h4>
                         <a href="/hoho">
-                            <p>Display</p>
+                            <p>Post</p>
+                        </a>
+                    </div>
+                    <div className="sb_footer-student-links-div">
+                        <h4>About our school</h4>
+                        <a href="/hoho">
+                            <p>History</p>
                         </a>
                     </div>
                     <div className="sb_footer-student-links-div">
