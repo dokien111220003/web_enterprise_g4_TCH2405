@@ -20,6 +20,7 @@ import Profile from './Components/Profile/Account';
 import Submission from './Components/StudentSubmit/StudentSubmit'
 import MC from './Components/MarketingCoordinator/MarketCoord'
 import Review from './Components/MarketingCoordinator/McReview'
+import Post from './Components/StudentPage/PostArticle'
 //import SideBarStudent from './Components/SideBar/SideBarStudent';
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
           <Route path='/student_submit' element={<NavBarStudent><Submission/></NavBarStudent>} />
           <Route path='/mc_page' element={<NavBarStudent><MC/></NavBarStudent>} />
           <Route path='/mc_review' element={<NavBarStudent><Review/></NavBarStudent>} />
+          <Route path='/post' element={<NavBarStudent><Post/></NavBarStudent>} />
         </Routes>
       </Router>
     );
