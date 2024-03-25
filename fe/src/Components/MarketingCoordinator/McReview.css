@@ -1,0 +1,49 @@
+.mc-review {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .mc-review h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .mc-review textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 20px;
+  }
+  
+  .mc-review label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .mc-review input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .mc-review button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mc-review button:hover {
+    background-color: #0056b3;
+  }
+  

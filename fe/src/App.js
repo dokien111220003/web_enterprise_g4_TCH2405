@@ -17,7 +17,9 @@ import StudentPage from './Components/StudentPage/StudentPage';
 import FooterAdmin from './Components/Footer/AdminFooter';
 import ChangePassword from './Components/Profile/ChangePassword';
 import Profile from './Components/Profile/Account';
-import PostArticle from './Components/StudentPage/PostArticle';
+import Submission from './Components/StudentSubmit/StudentSubmit'
+import MC from './Components/MarketingCoordinator/MarketCoord'
+import Review from './Components/MarketingCoordinator/McReview'
 //import SideBarStudent from './Components/SideBar/SideBarStudent';
 
 const App = () => {
@@ -37,10 +39,12 @@ const App = () => {
           <Route path='/register' element={<><NavBar /><Register /><FooterAdmin/></>} />
           <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
-          <Route path='/student_page' element={<NavBarStudent><StudentPage /></NavBarStudent>
-          } />
+          <Route path='/student_page' element={<NavBarStudent><StudentPage /></NavBarStudent>} />
           <Route path='/change_password' element={<NavBarStudent><ChangePassword/></NavBarStudent>} />
           <Route path='/personal' element={<NavBarStudent><Profile/></NavBarStudent>} />
+          <Route path='/student_submit' element={<NavBarStudent><Submission/></NavBarStudent>} />
+          <Route path='/mc_page' element={<NavBarStudent><MC/></NavBarStudent>} />
+          <Route path='/mc_review' element={<NavBarStudent><Review/></NavBarStudent>} />
         </Routes>
       </Router>
     );

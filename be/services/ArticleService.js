@@ -1,5 +1,6 @@
 const Article = require("../models/ArticleModel")
-
+const Faculty = require("../models/FacultyModel")
+const mongoose = require('mongoose');
 const createArticle =(newArticle) => {
     return new Promise(async(resolve, reject)=> {
         const { name, image, faculty, status, description } = newArticle
@@ -32,28 +33,66 @@ const createArticle =(newArticle) => {
 
 const updateArticle = (id, data) => {
     return new Promise(async(resolve, reject)=> {
-        // const { name, image, faculty, status, description } = newArticle
         try {
-            const checkArticle = await Article.findOne({
-                _id:id
-            })
-            if (checkArticle === null){
+            const checkArticle = await Article.findById(id);
+            if (!checkArticle) {
                 resolve({
-                    status:'OK',
-                    message: 'the article is not defined'
-                })
+                    status: 'ERR',
+                    message: 'Article not found'
+                });
+                return;
             }
-            const updateArticle = await Article.findByIdAndUpdate(id, data, {new: true})
+
+            // Check if faculty info is provided in the data
+            let facultyId = data.faculty;
+            if (!facultyId) {
+                resolve({
+                    status: 'ERR',
+                    message: 'Faculty ID or name is required'
+                });
+                return;
+            }
+
+            // Check if facultyId is an ObjectId
+            if (mongoose.Types.ObjectId.isValid(facultyId)) {
+                // If facultyId is a valid ObjectId, directly assign it to facultyId
+                // No need to search by name
+                const checkFaculty = await Faculty.findById(facultyId);
+                if (!checkFaculty) {
+                    resolve({
+                        status: 'ERR',
+                        message: 'Faculty not found'
+                    });
+                    return;
+                }
+            } else {
+                // If facultyId is not a valid ObjectId, assume it's the name of the faculty
+                const checkFaculty = await Faculty.findOne({ name: facultyId });
+                if (!checkFaculty) {
+                    resolve({
+                        status: 'ERR',
+                        message: 'Faculty not found'
+                    });
+                    return;
+                }
+                facultyId = checkFaculty._id; // Assign the ObjectId of the found faculty
+            }
+
+            // Update article's faculty
+            data.faculty = facultyId;
+
+            const updatedArticle = await Article.findByIdAndUpdate(id, data, {new: true});
             resolve({
                 status:'OK',
                 message:'SUCCESS',
-                data: updateArticle
-            })
-        } catch (e){
-            reject(e)
+                data: updatedArticle
+            });
+        } catch (error) {
+            reject(error);
         }
-    })
-}
+    });
+};
+
 
 const deleteArticle = (id) => {
     return new Promise(async (resolve, reject) => {
@@ -97,24 +136,21 @@ const getDetailsArticle = (id) => {
         try {
             const article = await Article.findOne({
                 _id: id
-            })
-            if (article === null) {
-                resolve({
-                    status: 'ERR',
-                    message: 'The article is not defined'
-                })
+            });
+            if (!article) {
+                return reject(new Error('The article does not exist')); // Reject with an error
             }
 
-            resolve({
+            resolve({ // Resolve with the article data
                 status: 'OK',
-                message: 'SUCESS',
+                message: 'SUCCESS',
                 data: article
-            })
+            });
         } catch (e) {
-            reject(e)
+            reject(e); // Reject with the error received from MongoDB
         }
-    })
-}
+    });
+};
 
 const getAllArticle = (limit, page, sort, filter) => {
     return new Promise(async (resolve, reject) => {
