@@ -58,7 +58,7 @@ const TopicAdmin = () => {
               <td>{topic.timeend}</td>
               <td>{topic.status}</td>
               <td className='act'>
-                <button onClick={() => editTopic(topic.id)}>Edit</button>
+                <button onClick={() => editTopic(topic.id)} className="edit-button">Edit</button>
                 <button onClick={() => deleteTopic(topic.id)} className="delete-button">Delete</button>
               </td>
             </tr>

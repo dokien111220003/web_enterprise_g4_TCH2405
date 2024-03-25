@@ -17,6 +17,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
     "react-slider": "^2.0.6",
+    "recharts": "^2.12.3",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },

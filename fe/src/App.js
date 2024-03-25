@@ -21,6 +21,8 @@ import Submission from './Components/StudentSubmit/StudentSubmit'
 import MC from './Components/MarketingCoordinator/MarketCoord'
 import Review from './Components/MarketingCoordinator/McReview'
 import Post from './Components/StudentPage/PostArticle'
+import MM from './Components/MarketingManager/MainPage'
+import MMNav from './Components/MarketingManager/MMMNavBar'
 
 const App = () => {
     return (
@@ -38,6 +40,8 @@ const App = () => {
           <Route path='/login' element={<><NavBar /><Login /><FooterAdmin/></>} />
           <Route path='/register' element={<><NavBar /><Register /><FooterAdmin/></>} />
           <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
+          {/* Cho trang cua Marketing Manager */}
+          <Route path='/marketing_manager' element={<><MMNav /><MM /><FooterAdmin/></>} />
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
           <Route path='/student_page' element={<NavBarStudent><StudentPage /></NavBarStudent>} />
           <Route path='/change_password' element={<NavBarStudent><ChangePassword/></NavBarStudent>} />

@@ -52,7 +52,7 @@
                 <td>{faculty.name}</td>
                 <td className="description-column">{faculty.des}</td>
                 <td className='action-faculty'>
-                  <button onClick={() => editFaculty(faculty.id)}>Edit</button>
+                  <button onClick={() => editFaculty(faculty.id)} className="edit-button">Edit</button>
                   <button onClick={() => deleteFaculty(faculty.id)} className="delete-button">Delete</button>
                 </td>
               </tr>
