@@ -17,6 +17,7 @@ import StudentPage from './Components/StudentPage/StudentPage';
 import FooterAdmin from './Components/Footer/AdminFooter';
 import ChangePassword from './Components/Profile/ChangePassword';
 import Profile from './Components/Profile/Account';
+import PostArticle from './Components/StudentPage/PostArticle';
 //import SideBarStudent from './Components/SideBar/SideBarStudent';
 
 const App = () => {

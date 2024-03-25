@@ -119,6 +119,27 @@ select {
     width: 100%;
 }
 
+.input-acc-faculty label {
+    display: flex;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.input-acc-faculty {
+    width: 1000px;
+}
+
+.input-acc-faculty input,
+select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #00000035;
+    color: #000000;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 100%;
+}
+
 .checkbox-gender {
     display: flex;
     gap: 15px;
