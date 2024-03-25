@@ -1,136 +1,47 @@
-.as-container-closure, .as-container-final {
-    margin: 60px auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 1500px;
+/* StudentSubmit.css */
+
+.as-section {
+  background-color: #dcd5d5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  width: 1200px;
+  min-height: 300px;
 }
 
-.as-header h2, .as-header h3 {
-    text-align: center;
+.as-header h2 {
+  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 24px;
 }
 
-.as-dates p, .as-coordinator-comment p {
-    margin: 10px 0;
+.as-section h4 {
+  color: #555;
+  margin: 10px 0;
+  font-size: 20px;
 }
 
-.as-upload {
-    margin: 20px 0;
-    text-align: center;
+.as-section p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 20px;
 }
 
-.as-custom-file-upload {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #37f05c;
-    color: white;
-    border-radius: 20px;
-    border: none;
+.submit-article {
+  background-color: #0056b3;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
 }
 
-input[type="file"] {
-    display: none;
+.submit-article:hover {
+  background-color: #004494;
 }
-
-.as-submit-btn {
-    display: flex;
-    justify-content: center;
-}
-
-.as-submit-btn button {
-    display: block;
-    width: 50%;
-    padding: 10px;
-    background-color: #0084ff;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: auto;
-}
-
-.as-submit-btn button:hover {
-    background-color: #0056b3;
-}
-
-.as-coordinator-comment {
-    background-color: #eef2f7;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 20px 0;
-}
-.as-file-upload-and-comment {
-    display: flex;
-    flex-direction: column;
-}
-.modal {
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0, 0, 0); 
-    background-color: rgba(0, 0, 0, 0.4); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 8px;
-  }
-  
-  .modal-content h2 {
-    text-align: center;
-  }
-  
-  .modal-content p {
-    margin-top: 15px;
-  }
-  
-  .modal-content label {
-    display: block;
-    margin-top: 20px;
-  }
-  
-  .modal-content button.sm{
-    display: block;
-    margin: 20px auto 0 auto;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .modal-content button.sm:hover {
-    background-color: #45a049;
-  }
-  .modal-content button.close{
-    display: block;
-    margin: 20px auto 0 auto;
-    padding: 10px 20px;
-    background-color: #cc1616;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .modal-content button.close:hover {
-    background-color: #7e0303;
-  }
-  
