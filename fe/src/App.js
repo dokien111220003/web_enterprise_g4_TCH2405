@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarStudent from './Components/NavBarStudent/NavBarStudent';
 import NavBar from "./Components/NavBar/NavBar";
+import MMMNavBar from './Components/MarketingManager/MMMNavBar'
 import MainPageAdmin from './Components/MainPageAdmin/MainPageAdmin';
 import Login from './Components/Login/Login';
 import FacultyAdmin from './Components/FacultyAdmin/FacultyAdmin';
@@ -20,6 +21,8 @@ import Profile from './Components/Profile/Account';
 import Submission from './Components/StudentSubmit/StudentSubmit'
 import MC from './Components/MarketingCoordinator/MarketCoord'
 import Review from './Components/MarketingCoordinator/McReview'
+import StudentSubmit from './Components/StudentPage/PostArticle'
+import MMMainPage from './Components/MarketingManager/MainPage'
 //import SideBarStudent from './Components/SideBar/SideBarStudent';
 
 const App = () => {
@@ -38,6 +41,7 @@ const App = () => {
           <Route path='/login' element={<><NavBar /><Login /><FooterAdmin/></>} />
           <Route path='/register' element={<><NavBar /><Register /><FooterAdmin/></>} />
           <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
+          <Route path='/marketing_manager' element={<><MMMNavBar /><MMMainPage /><FooterAdmin/></>} />
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
           <Route path='/student_page' element={<NavBarStudent><StudentPage /></NavBarStudent>} />
           <Route path='/change_password' element={<NavBarStudent><ChangePassword/></NavBarStudent>} />
@@ -45,6 +49,7 @@ const App = () => {
           <Route path='/student_submit' element={<NavBarStudent><Submission/></NavBarStudent>} />
           <Route path='/mc_page' element={<NavBarStudent><MC/></NavBarStudent>} />
           <Route path='/mc_review' element={<NavBarStudent><Review/></NavBarStudent>} />
+          <Route path='/postarticle' element={<NavBarStudent><StudentSubmit/></NavBarStudent>} />
         </Routes>
       </Router>
     );

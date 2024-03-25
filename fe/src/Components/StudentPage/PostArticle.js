@@ -107,17 +107,17 @@ function PostArticle() {
       </div>
 
       {modal && (
-        <div className="modal">
+        <div className="modalcon">
           <div onClick={toggleModal} className="overlay"></div>
           <div
-            className="modal-content"
+            className="modalcon-content"
             style={{ overflowY: "auto", maxHeight: "1000px" }}
           >
-            <div className="modal-content-header">
+            <div className="modalcon-content-header">
               <h1>Terms and Conditions</h1>
             </div>
             <div className="line-post-article"></div>
-            <div className="modal-content-terms">
+            <div className="modalcon-content-terms">
               <p>
                 Please carefully read the following terms and conditions before
                 using our service. By using this website and related services,

@@ -142,11 +142,11 @@
     background: rgba(49, 49, 49, 0.8);
 }
 
-body.active-modal {
+body.active-modalcon {
     overflow-y: hidden;
 }
 
-.modal-content {
+.modalcon-content {
     margin-top: 110px;
     position: fixed;
     top: 40%;
@@ -160,7 +160,7 @@ body.active-modal {
     text-align: justify;
 }
 
-.modal-content h1 {
+.modalcon-content h1 {
     display: flex;
     font-size: 50px;
     align-items: center;
@@ -168,15 +168,15 @@ body.active-modal {
     margin-bottom: 18px;
 }
 
-.modal-content-header {
+.modalcon-content-header {
     margin-top: 10px;
 }
 
-.modal-content h2 {
+.modalcon-content h2 {
     font-size: 30px;
 }
 
-.modal-content p {
+.modalcon-content p {
     font-size: 25px;
     color: black;
 }
@@ -188,7 +188,7 @@ body.active-modal {
     margin-bottom: 20px;
 }
 
-.modal-content-terms {
+.modalcon-content-terms {
     padding: 20px 30px;
 }
 
