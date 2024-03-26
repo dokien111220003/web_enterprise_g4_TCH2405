@@ -23,6 +23,8 @@ import Review from './Components/MarketingCoordinator/McReview'
 import Post from './Components/StudentPage/PostArticle'
 import MM from './Components/MarketingManager/MainPage'
 import MMNav from './Components/MarketingManager/MMMNavBar'
+import ViewContri from './Components/MarketingManager/ViewContri'
+import ViewDetails from './Components/MarketingManager/ViewDetails'
 
 const App = () => {
     return (
@@ -42,6 +44,8 @@ const App = () => {
           <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
           {/* Cho trang cua Marketing Manager */}
           <Route path='/marketing_manager' element={<><MMNav /><MM /><FooterAdmin/></>} />
+          <Route path='/marketing_manager/contribution' element={<><MMNav /><ViewContri /><FooterAdmin/></>} />
+          <Route path='/marketing_manager/contribution/details/:id' element={<><MMNav /><ViewDetails /><FooterAdmin/></>} />
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
           <Route path='/student_page' element={<NavBarStudent><StudentPage /></NavBarStudent>} />
           <Route path='/change_password' element={<NavBarStudent><ChangePassword/></NavBarStudent>} />

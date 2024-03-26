@@ -13,9 +13,8 @@ const NavBar = () => {
             <div className="container">   
                 <h3><NavLink exact to="/student_page" className="logo" alt="logo"><img src={logo}></img></NavLink></h3>
                 <ul className="nav-links">
-                    <li><NavLink exact to='/facultyadmin' activeClassName="active">Faculty</NavLink></li>
-                    <li><NavLink exact to='/accadmin' activeClassName="active">Account</NavLink></li>
-                    <li><NavLink exact to='/topicadmin' activeClassName="active">Blog</NavLink></li>
+                    <li><NavLink exact to='/marketing_manager' activeClassName="active">Dashboard</NavLink></li>
+                    <li><NavLink exact to='/marketing_manager/contribution' activeClassName="active">Contribution</NavLink></li>
                     <li><NavLink exact to='/login' activeClassName="active">Logout</NavLink></li>
                 </ul>
             </div>
