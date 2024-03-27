@@ -1,0 +1,120 @@
+.MM-contri-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 35px;
+}
+
+.MM-table-content {
+    width: 2000px;
+    font-size: 25px;
+    margin-bottom: 150px;
+}
+
+.MM-table-content th {
+    max-width: 200px;
+    color: #010101;
+}
+
+.MM-table-content td {
+    max-width: 200px;
+    color: #010101;
+}
+
+.MM-table-content a {
+    text-decoration: underline;
+}
+
+.pagination-contri-mm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 27px;
+    margin-bottom: 100px;
+}
+
+.pagination-contri-mm .page-link {
+    border: 1px solid #ced4da;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.pagination-contri-mm .page-item.active .page-link {
+    background-color: #3F72AF;
+    border-color: #3F72AF;
+    color: #ffffff;
+}
+
+.pagination-contri-mm .visually-hidden {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.MM-contri-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+}
+
+.MM-contri-filter-fal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 270px;
+    margin-bottom: 50px;
+    background: #DBE2EF;
+}
+
+.MM-contri-filter-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    margin-bottom: 50px;
+    background: #DBE2EF;
+}
+
+.search-container-mm {
+    width: 480px;
+    margin-bottom: 50px;
+}
+
+.search-input-mm {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height: 50px;
+    background: #DBE2EF;
+    border-radius: 200px;
+}
+
+.search-input-mm input {
+    height: 50px;
+    width: 400px;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    background: inherit;
+    padding-right: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.icon-search {
+    width: 15px;
+    height: 15px;
+    margin: 0 20px;
+}

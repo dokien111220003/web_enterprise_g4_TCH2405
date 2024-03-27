@@ -1,0 +1,232 @@
+.content-student {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-selected-file {
+    align-items: flex-end;
+    display: flex;
+}
+
+.post-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    height: 800px;
+    box-sizing: border-box;
+}
+
+.form-post-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #1475cf;
+    height: 200px;
+    width: 1000px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.post-input-field {
+    display: none;
+}
+
+.file-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #e9f0ff;
+}
+
+.uploaded-row {
+    display: flex;
+    margin-bottom: 44px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: #e9f0ff;
+    width: 1000px;
+}
+
+.delete-row {
+    padding-left: 100px;
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: #e9f0ff;
+    width: 70px;
+    cursor: pointer;
+}
+
+.post-art-header {
+    margin-bottom: 15px;
+    border-radius: 5px;
+    width: 270px;
+}
+
+.post-art-header h3 {
+    color: black;
+}
+
+.upload-content {
+    display: flex;
+    align-items: center;
+}
+
+.post-delete-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 1000px;
+}
+
+.next-content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 1000px;
+}
+
+.post-upload-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 1000px;
+}
+
+.upload-row {
+    padding-left: 100px;
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: #0F4C75;
+    width: 110px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.upload-selected-file {
+    align-items: flex-end;
+    display: flex;
+}
+
+.btn-modal-upload {
+    background-color: transparent;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(49, 49, 49, 0.8);
+}
+
+body.active-modalcon {
+    overflow-y: hidden;
+}
+
+.modalcon-content {
+    margin-top: 110px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 10px;
+    width: 1200px;
+    text-align: justify;
+}
+
+.modalcon-content h1 {
+    display: flex;
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.modalcon-content-header {
+    margin-top: 10px;
+}
+
+.modalcon-content h2 {
+    font-size: 30px;
+}
+
+.modalcon-content p {
+    font-size: 25px;
+    color: black;
+}
+
+.line-post-article {
+    height: 1px;
+    width: 100%;
+    background: #3F72AF;
+    margin-bottom: 20px;
+}
+
+.modalcon-content-terms {
+    padding: 20px 30px;
+}
+
+.checkbox-terms {
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.checkbox-terms input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #3f71afae;
+    padding: 10px;
+    transform: scale(1.5);
+}
+
+.checkbox-terms {
+    display: flex;
+    margin-left: 4px;
+    gap: 15px;
+    font-size: 27px;
+}
+
+.btn-agree-decline {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-cancel {
+    background-color: #f1f1f1;
+    color: #3F72AF;
+    font-weight: bold;
+}
+
+.btn-upload {
+    background-color: #3F72AF;
+    color: #f1f1f1;
+    font-weight: bold;
+    width: 150px;
+}

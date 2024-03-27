@@ -24,7 +24,7 @@ const Account = () => {
                         <label>Phone:</label>
                         <input type="number" value="0123456789" readOnly />
                     </div>
-                    <div className="input-acc">
+                    <div className="input-acc-faculty">
                         <label>Faculty:</label>
                         <input type="text" value="Marketing" readOnly />
                     </div>

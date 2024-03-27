@@ -1,0 +1,58 @@
+.MM-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.MM-header h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 18px;
+}
+
+.MM-header p {
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.box-analyze {
+    width: 670px;
+    height: 450px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.box-analyze p {
+    margin-top: 20px;
+    margin-bottom: -15px;
+    font-size: 25px;
+    color: #010101;
+    font-weight: bold;
+}
+
+.box-analyze b {
+    margin-top: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #010101;
+}
+
+.boxes-analyze {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.test-chart text {
+    font-size: 25px;
+}

@@ -73,7 +73,7 @@
     position: relative;
   }
   
-  button {
+  .edit-button {
     margin: 5px;
     padding: 5px 10px;
     cursor: pointer; 
