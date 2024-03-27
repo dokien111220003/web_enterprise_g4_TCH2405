@@ -28,11 +28,10 @@ const updateArticle = async (req, res) => {
                 message: 'The articleId is required'
             });
         }
-<<<<<<< HEAD
         const response = await ArticleService.updateArticle(articleId, data)
         return res.status(200),json(response)
     }catch(e){
-=======
+
 
         const response = await ArticleService.updateArticle(articleId, data);
         console.log('Response:', response); // Add this line for debugging
@@ -42,12 +41,12 @@ const updateArticle = async (req, res) => {
         } else {
             return res.status(400).json(response);
         }
-    } catch (error) {
-        console.error('Error:', error); // Add this line for debugging
->>>>>>> 71597f991527ab01b3f4b3ea720f093625c4b818
-        return res.status(500).json({
-            message: error.message || 'Internal server error'
-        });
+    // }catch(error) {
+    //     console.error('Error:', error); // Add this line for debugging
+    //     return res.status(500).json({
+    //         message: error.message || 'Internal server error'
+    //     });
+    // }
     }
 };
 
@@ -73,15 +72,9 @@ const getDetailsArticle = async (req, res) => {
             return res.status(404).json(response);
         }
     } catch (e) {
-<<<<<<< HEAD
+        console.error(e);
         return res.status(500).json({
             message: error.message || 'Internal server error'
-=======
-        // Handle other errors, such as database connection issues
-        console.error(e); // Log the error for debugging
-        return res.status(500).json({
-            message: 'Internal server error'
->>>>>>> 71597f991527ab01b3f4b3ea720f093625c4b818
         });
     }
 };
