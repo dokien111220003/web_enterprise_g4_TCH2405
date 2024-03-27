@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.body-admin-sidebar {
+    background-color: #5b6677;
+}
+
+.sidebar-admin-container {
+    width: 100%;
+    height: 1300px;
+    background-color: #5b6677;
+    position: fixed;
+}
+
+.admin-sidebar {
+    width: 350px;
+    height: 1300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 30px;
+}
+
+.admin-sidebar .sidebar-head {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.admin-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.admin-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.admin-details .admin-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #757575;
+    text-transform: uppercase;
+}
+
+.admin-menu .title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-top: 1px solid #DDDDDD;
+}
+
+.admin-details .admin-name {
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: -18px;
+}
+
+.admin-menu a {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.admin-menu ul {
+    margin-left: -27px;
+}
+
+.admin-nav-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.admin-nav-text {
+    font-size: 20px;
+    color: #000;
+}
+
+.admin-nav-icon img {
+    width: 100%;
+}
+
+.admin-menu ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.admin-menu ul li a {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #757575;
+    text-decoration: none;
+    padding: 12px 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.admin-menu ul li a:hover,
+.admin-menu ul li.active a {
+    color: #000;
+    background-color: #f6f6f6;
+}
+
+.admin-nav-arrow {
+    width: 25px;
+    height: 25px;
+    transition: all 0.3s;
+}
+
+.admin-menu ul li .admin-nav-text {
+    flex: 1;
+}
+
+.admin-nav-arrow {
+    font-size: 14px;
+}
+
+.admin-menu .admin-sub-menu {
+    display: none;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    border-left: 1px solid #000;
+}
+
+.admin-sub-menu .admin-nav-text {
+    font-size: 18px;
+}
+
+.admin-navbar-footer .admin-setting .admin-setting-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #757575;
+    text-transform: uppercase;
+    position: fixed;
+    width: 300px;
+    border-top: 1px solid #DDDDDD;
+}
+
+.admin-navbar-footer {
+    position: fixed;
+    margin-top: 900px;
+}

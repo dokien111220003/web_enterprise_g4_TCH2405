@@ -25,6 +25,7 @@ import MM from './Components/MarketingManager/MainPage'
 import MMNav from './Components/MarketingManager/MMMNavBar'
 import ViewContri from './Components/MarketingManager/ViewContri'
 import ViewDetails from './Components/MarketingManager/ViewDetails'
+import SideBarAdmin from './Components/SideBar/SideBarAdmin';
 
 const App = () => {
     return (
@@ -42,6 +43,7 @@ const App = () => {
           <Route path='/login' element={<><NavBar /><Login /><FooterAdmin/></>} />
           <Route path='/register' element={<><NavBar /><Register /><FooterAdmin/></>} />
           <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
+          <Route path='/sidebar' element={<SideBarAdmin />} />
           {/* Cho trang cua Marketing Manager */}
           <Route path='/marketing_manager' element={<><MMNav /><MM /><FooterAdmin/></>} />
           <Route path='/marketing_manager/contribution' element={<><MMNav /><ViewContri /><FooterAdmin/></>} />
