@@ -2,6 +2,7 @@ const User = require("../models/UserModel")
 const bcrypt = require("bcrypt")
 const { genneralAccessToken, genneralRefreshToken } = require("./JwtService")
 const Faculty = require("../models/FacultyModel")
+const nodemailer = require('nodemailer')
 
 const createUser = (newUser) => {
     return new Promise(async (resolve, reject) => {
@@ -206,7 +207,25 @@ const getDetailsUser = (id) => {
         }
     })
 }
+async function sendEmailToAllStudents(courseName) {
+    let transporter = nodemailer.createTransport({
+    });
+    const students = await User.find({ role: 'student' });
 
+    students.forEach(async (student) => {
+        await transporter.sendMail({
+            from: '"Admin" <admin_email@example.com>',
+            to: student.email,
+            subject: `Khóa học mới: ${courseName}`,
+        });
+    });
+}
+async function createCourseAndNotify(name) {
+    const course = new Course({ name });
+    await course.save(); 
+
+    await sendEmailToAllStudents(name); 
+}
 module.exports = {
     createUser,
     loginUser,
@@ -214,5 +233,7 @@ module.exports = {
     deleteUser,
     getAllUser,
     getDetailsUser,
-    deleteManyUser
+    deleteManyUser,
+    sendEmailToAllStudents,
+    createCourseAndNotify
 }

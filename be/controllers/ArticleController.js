@@ -2,8 +2,7 @@ const ArticleService = require('../services/ArticleService')
 
 const createArticle = async (req,res) =>{
     try {
-        const { name, image, faculty, status, description } = req.body
-        
+        const { name, image, status, description } = req.body
         if (!name || !image || !faculty ){
             return res.status(200).json({
                 status: 'ERR',
@@ -13,9 +12,9 @@ const createArticle = async (req,res) =>{
         const response = await ArticleService.createArticle(req.body)
         return res.status(200).json(response)
     }catch(e){
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -29,6 +28,10 @@ const updateArticle = async (req, res) => {
                 message: 'The articleId is required'
             });
         }
+        const response = await ArticleService.updateArticle(articleId, data)
+        return res.status(200),json(response)
+    }catch(e){
+
 
         const response = await ArticleService.updateArticle(articleId, data);
         console.log('Response:', response); // Add this line for debugging
@@ -38,11 +41,12 @@ const updateArticle = async (req, res) => {
         } else {
             return res.status(400).json(response);
         }
-    } catch (error) {
-        console.error('Error:', error); // Add this line for debugging
-        return res.status(500).json({
-            message: error.message || 'Internal server error'
-        });
+    // }catch(error) {
+    //     console.error('Error:', error); // Add this line for debugging
+    //     return res.status(500).json({
+    //         message: error.message || 'Internal server error'
+    //     });
+    // }
     }
 };
 
@@ -68,10 +72,9 @@ const getDetailsArticle = async (req, res) => {
             return res.status(404).json(response);
         }
     } catch (e) {
-        // Handle other errors, such as database connection issues
-        console.error(e); // Log the error for debugging
+        console.error(e);
         return res.status(500).json({
-            message: 'Internal server error'
+            message: error.message || 'Internal server error'
         });
     }
 };
@@ -88,9 +91,9 @@ const deleteArticle = async (req, res) => {
         const response = await ArticleService.deleteArticle(articleId)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -106,9 +109,9 @@ const deleteMany = async (req, res) => {
         const response = await ArticleService.deleteManyArticle(ids)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 
@@ -118,9 +121,9 @@ const getAllArticle = async (req, res) => {
         const response = await ArticleService.getAllArticle(Number(limit) || null, Number(page) || 0, sort, filter)
         return res.status(200).json(response)
     } catch (e) {
-        return res.status(404).json({
-            message: e
-        })
+        return res.status(500).json({
+            message: error.message || 'Internal server error'
+        });
     }
 }
 

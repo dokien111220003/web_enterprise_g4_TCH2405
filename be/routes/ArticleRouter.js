@@ -9,4 +9,4 @@ router.delete('/delete/:id', ArticleController.deleteArticle)
 router.get('/get-all', ArticleController.getAllArticle)
 router.post('/delete-many', ArticleController.deleteMany)
 
-module. exports = router
+module.exports = router

@@ -181,6 +181,20 @@ const logoutUser = async (req, res) => {
         })
     }
 }
+
+exports.createCourse = async (req, res) => {
+    try {
+        const { name } = req.body; // Giả sử tên khóa học được gửi lên trong body của request
+        
+        // Gọi hàm đã tạo trước đó để tạo khóa học và gửi email thông báo
+        await createCourseAndNotify(name);
+        
+        res.status(201).send({ message: `Khóa học mới '${name}' đã được tạo và thông báo đã được gửi.` });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ message: 'Có lỗi xảy ra khi tạo khóa học mới.' });
+    }
+};
 module.exports = {
     createUser,
     loginUser,
