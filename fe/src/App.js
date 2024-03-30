@@ -31,7 +31,7 @@ const App = () => {
     return (
       <Router>
         <Routes>
-          <Route path='/' element={<><NavBar /><MainPageAdmin /><FooterAdmin/></>} />
+          <Route path='/' element={<><SideBarAdmin /><MainPageAdmin /></>} />
           <Route path='/adminpage' element={<><NavBar /><MainPageAdmin /><FooterAdmin/></>} />
           <Route path='/facultyadmin' element={<><NavBar /><FacultyAdmin /><FooterAdmin/></>} />
           <Route path='/add_faculty' element={<><NavBar /><AddNewFaculty /><FooterAdmin/></>} />

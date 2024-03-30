@@ -5,6 +5,7 @@ import dashboardicon from '../Assets/home.png';
 import usericon from '../Assets/user-icon.png';
 import facultyicon from '../Assets/faculty.png';
 import arrowdown from '../Assets/arrow.png';
+import logouticon from '../Assets/signout.png';
 
 const SideBarAdmin = () => {
 
@@ -25,95 +26,95 @@ const SideBarAdmin = () => {
 
     return (
         <div>
-            <body className="body-admin-sidebar">
-                <div className="sidebar-admin-container">
-                    <div className="admin-sidebar">
-                        <div className="sidebar-head">
-                            <div className="admin-img">
-                                <img src={user_img} alt="" className="user_img"></img>
-                            </div>
-                            <div className="admin-details">
-                                <p className="admin-title">The Unforgotten</p>
-                                <p className="admin-name">Mr. Yone</p>
-                            </div>
+            <div className="sidebar-admin-container">
+                <div className="admin-sidebar">
+                    <div className="sidebar-head">
+                        <div className="admin-img">
+                            <img src={user_img} alt="" className="user_img"></img>
                         </div>
-                        <div className="admin-nav">
-                            <div className="admin-menu">
-                                <p className="title">Main</p>
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <img src={dashboardicon} alt="" className="admin-nav-icon"></img>
-                                            <span className="admin-nav-text">Dashboard</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src={facultyicon} alt="" className="admin-nav-icon"></img>
-                                            <span className="admin-nav-text">Faculty</span>
-                                            <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleFacultyMenu} style={{ transform: `rotate(${facultyArrowRotation}deg)` }}></img>
-                                        </a>
-
-                                        <ul className="admin-sub-menu" style={{ display: isFacultyOpen ? 'block' : 'none' }}>
-                                            <li>
-                                                <a href="#">
-                                                    <span className="admin-nav-text">Business</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span className="admin-nav-text">Computer Science</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src={usericon} alt="" className="admin-nav-icon"></img>
-                                            <span className="admin-nav-text">Account</span>
-                                            <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>
-                                        </a>
-
-                                        <ul className="admin-sub-menu" style={{ display: isAccountOpen ? 'block' : 'none' }}>
-                                            <li>
-                                                <a href="#">
-                                                    <span className="admin-nav-text">Student</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span className="admin-nav-text">Guest</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span className="admin-nav-text">Marketing Coordinator</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span className="admin-nav-text">Marketing Manager</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src={dashboardicon} alt="" className="admin-nav-icon"></img>
-                                            <span className="admin-nav-text">Topic</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div className="admin-details">
+                            <p className="admin-title">The Unforgotten</p>
+                            <p className="admin-name">Mr. Yone</p>
                         </div>
-                        <div className="admin-navbar-footer">
-                            <div className="admin-setting">
-                                <p className="admin-setting-title">Others</p>
-                            </div>
+                    </div>
+                    <div className="admin-nav">
+                        <div className="admin-menu">
+                            <p className="title">Main</p>
+                            <ul>
+                                <li>
+                                    <a href="/marketing_manager">
+                                        <img src={dashboardicon} alt="" className="admin-nav-icon"></img>
+                                        <span className="admin-nav-text">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src={facultyicon} alt="" className="admin-nav-icon"></img>
+                                        <span className="admin-nav-text">Faculty</span>
+                                        <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleFacultyMenu} style={{ transform: `rotate(${facultyArrowRotation}deg)` }}></img>
+                                    </a>
+
+                                    <ul className="admin-sub-menu" style={{ display: isFacultyOpen ? 'block' : 'none' }}>
+                                        <li>
+                                            <a href="#">
+                                                <span className="admin-nav-text">Business</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span className="admin-nav-text">Computer Science</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src={usericon} alt="" className="admin-nav-icon"></img>
+                                        <span className="admin-nav-text">Account</span>
+                                        <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>
+                                    </a>
+
+                                    <ul className="admin-sub-menu" style={{ display: isAccountOpen ? 'block' : 'none' }}>
+                                        <li>
+                                            <a href="#">
+                                                <span className="admin-nav-text">Student</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span className="admin-nav-text">Guest</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span className="admin-nav-text">Marketing Coordinator</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span className="admin-nav-text">Marketing Manager</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="admin-navbar-footer">
+                        <div className="admin-setting">
+                            <p className="admin-setting-title">Others</p>
+                            <ul>
+                                <li className="admin-logout">
+                                    <a className="logout-icon" href="#">
+                                        <img src={logouticon} alt="" className="admin-nav-icon"></img>
+                                        <span className="admin-nav-footer-text">Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </body>
+            </div>
         </div>
     );
 }
