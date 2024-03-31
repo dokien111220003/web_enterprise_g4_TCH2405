@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBarStudent.css';
@@ -7,21 +6,32 @@ import logo from '../Assets/logo.png';
 import profileIcon from '../Assets/user.png';
 import Footer from '../Footer/StudentFooter';
 import SideBarStudent from '../SideBar/SideBarStudent';
+import arrowdown from '../Assets/arrow.png';
 
 const NavBarStudent = ({ children }) => {
     return (
         <>
             <nav className="navbar-student">
-                <div className="container-student">
-                    <h3><NavLink exact to="/" className="logo"><img src={logo} alt="Logo"/></NavLink></h3>
-                    <div className='search-container'>
-                        <div className="search-input">
-                            <img src={search_icon} alt="Search Icon" className="icon-search" />
-                            <input type="search" placeholder="Search"/>
+                <div className="header-student">
+                    <h3><NavLink exact to="/student_page" className="logo"><img src={logo} alt="Logo" /></NavLink></h3>
+                </div>
+                <div className="line-nav-student">
+                </div>
+                <div className="nav-content-student">
+                    <ul className="nav-student-links">
+                        <li><NavLink exact to='/' activeClassName="active">News</NavLink></li>
+                        <li><NavLink exact to='/' activeClassName="active">About us</NavLink></li>
+                        <li><NavLink exact to='/' activeClassName="active">Faculty</NavLink>
+                            <img src={arrowdown} alt="" className="student-nav-arrow"></img>
+                        </li>
+                        <li><NavLink exact to='/' activeClassName="active">Submission</NavLink></li>
+                        <li><NavLink exact to='/' activeClassName="active">Account</NavLink></li>
+                        <div className='search-container-student'>
+                            <div className="search-input-student">
+                                <img src={search_icon} alt="" className="icon-search-student" />
+                                <input type="search" placeholder="Search" />
+                            </div>
                         </div>
-                    </div>
-                    <ul className="nav-links">
-                        <li><NavLink exact to="/personal"><img src={profileIcon} alt="Profile" className="icon-profile"/></NavLink></li>
                     </ul>
                 </div>
             </nav>
@@ -30,7 +40,7 @@ const NavBarStudent = ({ children }) => {
                     {children}
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 }

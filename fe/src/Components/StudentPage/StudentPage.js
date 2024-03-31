@@ -1,61 +1,122 @@
 import React from 'react';
+import MySlider from '../Slider/Slider';
+import { NavLink } from 'react-router-dom';
 import './StudentPage.css';
-import BlogImg1 from '../Assets/blogimg1.jpg'
+import slider1 from '../Assets/slider1.jpg';
+import slider2 from '../Assets/slider2.jpg';
+import slider3 from '../Assets/slider3.jpg';
+import img1 from '../Assets/slider1.jpg';
+import img2 from '../Assets/slider2.jpg';
+import img3 from '../Assets/slider3.jpg';
 
 const StudentPage = () => {
-  // Dummy blog data
-  const blogs = [
-    { 
-      id: 1, 
-      title: 'Blog Post 1', 
-      content: 'This is the content of blog post 1', 
-      public: true,
-      image: BlogImg1
-    },
-    { 
-      id: 2, 
-      title: 'Blog Post 2', 
-      content: 'This is the content of blog post 2', 
-      public: true,
-      image: BlogImg1
-    },
-    { 
-      id: 3, 
-      title: 'Blog Post 3', 
-      content: 'This is the content of blog post 3', 
-      public: true,
-      image: BlogImg1
-    },
-    { 
-      id: 4, 
-      title: 'Blog Post 4', 
-      content: 'This is the content of blog post 4', 
-      public: true,
-      image: BlogImg1
-    },
+
+  const images = [
+    slider1,
+    slider2,
+    slider3,
   ];
 
-  // Split blogs into chunks of 2 for grid layout
-  const chunkedBlogs = Array.from({ length: Math.ceil(blogs.length / 2) }, (_, index) =>
-    blogs.slice(index * 2, index * 2 + 2)
-  );
-  
   return (
-    <div className="content-student">
-      <div className="blogs">
-        {chunkedBlogs.map((chunk, index) => (
-          <div key={index} className="blog-row">
-            {chunk.map((blog) => (
-              <div key={blog.id} className="blog">
-                <img src={blog.image} alt={blog.title} className="blog-image" />
-                <div className="blog-info">
-                  <h2>{blog.title}</h2>
-                  <p>{blog.content}</p>
+    <div className="studentpage-container">
+      <div className="studentpage-left-container">
+        <div className="slider-student-container">
+          <div className="slider-student">
+            <MySlider images={images} />
+          </div>
+          <div className="slider-context">
+            <h1>Where students can freely share their voices.</h1>
+            <li><NavLink exact to='/' activeClassName="active">More about us</NavLink></li>
+          </div>
+        </div>
+        <div className="left-content">
+          <div className="left-content-header">
+            <h1>Business Faculty</h1>
+          </div>
+          <div className="left-content-context">
+            <div className="context-box-faculty">
+              <div className="anotherbox">
+                <div className="box-content-img-faculty">
+                  <img src={img3}></img>
+                </div>
+                <div className="box-content-title-faculty">
+                  <h1>The Impact of Social Media on Youth Mental Health</h1>
+                </div>
+                <div className="content-author-faculty">
+                  <h3>By Paul Atreides</h3>
                 </div>
               </div>
-            ))}
+              <div className="anotherbox">
+                <div className="box-content-img-faculty">
+                  <img src={img3}></img>
+                </div>
+                <div className="box-content-title-faculty">
+                  <h1>The Role of Education in Promoting Gender Equality</h1>
+                </div>
+                <div className="content-author-faculty">
+                  <h3>By Paul Atreides</h3>
+                </div>
+              </div>
+              <div className="anotherbox">
+                <div className="box-content-img-faculty">
+                  <img src={img3}></img>
+                </div>
+                <div className="box-content-title-faculty">
+                  <h1>Analyzing the Effects of Urbanization on Wildlife Habitats</h1>
+                </div>
+                <div className="content-author-faculty">
+                  <h3>By Paul Atreides</h3>
+                </div>
+              </div>
+            </div>
           </div>
-        ))}
+        </div>
+      </div>
+      <div className="studentpage-right-container">
+        <div className="studentpage-right-container-header">
+          <h1>Latest Public</h1>
+        </div>
+        <div className="studentpage-right-container-context">
+          <div className="box-content-student">
+            <div className="box-content">
+              <div className="box-content-title">
+                <h1>The Impact of Social Media on Youth Mental Health</h1>
+              </div>
+              <div className="box-content-img">
+                <img src={img3}></img>
+              </div>
+            </div>
+            <div className="content-author">
+              <h3>By Paul Atreides</h3>
+            </div>
+          </div>
+          <div className="box-content-student">
+            <div className="box-content">
+              <div className="box-content-title">
+                <h1>The Students Left Behind by Remote Learning</h1>
+              </div>
+              <div className="box-content-img">
+                <img src={img1}></img>
+              </div>
+            </div>
+            <div className="content-author">
+              <h3>By Paul Atreides</h3>
+            </div>
+          </div>
+          <div className="box-content-student">
+            <div className="box-content">
+              <div className="box-content-title">
+                <h1>The Influence of Cultural Diversity on Workplace Dynamics</h1>
+              </div>
+              <div className="box-content-img">
+                <img src={img2}></img>
+              </div>
+            </div>
+            <div className="content-author">
+              <h3>By Paul Atreides</h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
