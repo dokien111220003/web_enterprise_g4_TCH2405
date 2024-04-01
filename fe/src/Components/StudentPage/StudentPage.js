@@ -32,6 +32,93 @@ const StudentPage = () => {
         <div className="left-content">
           <div className="left-content-header">
             <h1>Business Faculty</h1>
+            <li><NavLink exact to='/' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
+          </div>
+          <div className="left-content-context">
+            <div className="context-box-faculty">
+              <div className="anotherbox">
+                <div className="box-content-img-faculty">
+                  <img src={img3}></img>
+                </div>
+                <div className="box-content-title-faculty">
+                  <h1>The Impact of Social Media on Youth Mental Health</h1>
+                </div>
+                <div className="content-author-faculty">
+                  <h3>By Paul Atreides</h3>
+                </div>
+              </div>
+              <div className="anotherbox">
+                <div className="box-content-img-faculty">
+                  <img src={img3}></img>
+                </div>
+                <div className="box-content-title-faculty">
+                  <h1>The Role of Education in Promoting Gender Equality</h1>
+                </div>
+                <div className="content-author-faculty">
+                  <h3>By Paul Atreides</h3>
+                </div>
+              </div>
+              <div className="anotherbox">
+                <div className="box-content-img-faculty">
+                  <img src={img3}></img>
+                </div>
+                <div className="box-content-title-faculty">
+                  <h1>Analyzing the Effects of Urbanization on Wildlife</h1>
+                </div>
+                <div className="content-author-faculty">
+                  <h3>By Paul Atreides</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="left-content">
+          <div className="left-content-header">
+            <h1>Business Faculty</h1>
+            <li><NavLink exact to='/' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
+          </div>
+          <div className="left-content-context">
+            <div className="context-box-faculty">
+              <div className="anotherbox">
+                <div className="box-content-img-faculty">
+                  <img src={img3}></img>
+                </div>
+                <div className="box-content-title-faculty">
+                  <h1>The Impact of Social Media on Youth Mental Health</h1>
+                </div>
+                <div className="content-author-faculty">
+                  <h3>By Paul Atreides</h3>
+                </div>
+              </div>
+              <div className="anotherbox">
+                <div className="box-content-img-faculty">
+                  <img src={img3}></img>
+                </div>
+                <div className="box-content-title-faculty">
+                  <h1>The Role of Education in Promoting Gender Equality</h1>
+                </div>
+                <div className="content-author-faculty">
+                  <h3>By Paul Atreides</h3>
+                </div>
+              </div>
+              <div className="anotherbox">
+                <div className="box-content-img-faculty">
+                  <img src={img3}></img>
+                </div>
+                <div className="box-content-title-faculty">
+                  <h1>Analyzing the Effects of Urbanization on Wildlife Habitats</h1>
+                </div>
+                <div className="content-author-faculty">
+                  <h3>By Paul Atreides</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="left-content">
+          <div className="left-content-header">
+            <h1>Business Faculty</h1>
+            <li><NavLink exact to='/' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
           </div>
           <div className="left-content-context">
             <div className="context-box-faculty">
@@ -115,6 +202,15 @@ const StudentPage = () => {
             <div className="content-author">
               <h3>By Paul Atreides</h3>
             </div>
+          </div>
+        </div>
+        <div className="studentpage-right-container-context-ads">
+          <div className="right-container-ads">
+            <a href="/trang-moi">
+              <div className="box-content-img-ads">
+                <img src={img2} alt="Ảnh quảng cáo" />
+              </div>
+            </a>
           </div>
         </div>
       </div>

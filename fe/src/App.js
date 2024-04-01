@@ -27,6 +27,7 @@ import SideBarAdmin from './Components/SideBar/SideBarAdmin';
 import StudentPage from './Components/StudentPage/StudentPage';
 import Submission from './Components/StudentSubmit/StudentSubmit'
 import Post from './Components/StudentPage/PostArticle'
+import About from './Components/StudentPage/Aboutus'
 // MC
 import MC from './Components/MarketingCoordinator/MarketCoord'
 import MC2 from './Components/MarketingCoordinator/MarketCoord2'
@@ -65,6 +66,7 @@ const App = () => {
           <Route path='/marketing_manager/contribution/details/:id' element={<><MMNav /><ViewDetails /><FooterAdmin/></>} />
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
           <Route path='/student_page' element={<NavBarStudent><StudentPage /></NavBarStudent>} />
+          <Route path='/about' element={<NavBarStudent><About /></NavBarStudent>} />
           <Route path='/student_submit' element={<NavBarStudent><Submission/></NavBarStudent>} />
           <Route path='/post' element={<NavBarStudent><Post/></NavBarStudent>} />
           {/* Cho trang Marketing Coordinator sử dụng NavBar riêng */}
