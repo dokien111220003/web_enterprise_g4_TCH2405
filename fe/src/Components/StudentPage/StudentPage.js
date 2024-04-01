@@ -164,49 +164,55 @@ const StudentPage = () => {
           <h1>Latest Public</h1>
         </div>
         <div className="studentpage-right-container-context">
-          <div className="box-content-student">
-            <div className="box-content">
-              <div className="box-content-title">
-                <h1>The Impact of Social Media on Youth Mental Health</h1>
+          <a href="/student_page">
+            <div className="box-content-student">
+              <div className="box-content">
+                <div className="box-content-title">
+                  <h1>The Influence of Cultural Diversity on Workplace Dynamics</h1>
+                </div>
+                <div className="box-content-img">
+                  <img src={img2}></img>
+                </div>
               </div>
-              <div className="box-content-img">
-                <img src={img3}></img>
-              </div>
-            </div>
-            <div className="content-author">
-              <h3>By Paul Atreides</h3>
-            </div>
-          </div>
-          <div className="box-content-student">
-            <div className="box-content">
-              <div className="box-content-title">
-                <h1>The Students Left Behind by Remote Learning</h1>
-              </div>
-              <div className="box-content-img">
-                <img src={img1}></img>
+              <div className="content-author">
+                <h3>By Paul Atreides</h3>
               </div>
             </div>
-            <div className="content-author">
-              <h3>By Paul Atreides</h3>
-            </div>
-          </div>
-          <div className="box-content-student">
-            <div className="box-content">
-              <div className="box-content-title">
-                <h1>The Influence of Cultural Diversity on Workplace Dynamics</h1>
+          </a>
+          <a href="/student_page">
+            <div className="box-content-student">
+              <div className="box-content">
+                <div className="box-content-title">
+                  <h1>The Influence of Cultural Diversity on Workplace Dynamics</h1>
+                </div>
+                <div className="box-content-img">
+                  <img src={img2}></img>
+                </div>
               </div>
-              <div className="box-content-img">
-                <img src={img2}></img>
+              <div className="content-author">
+                <h3>By Paul Atreides</h3>
               </div>
             </div>
-            <div className="content-author">
-              <h3>By Paul Atreides</h3>
+          </a>
+          <a href="/student_page">
+            <div className="box-content-student">
+              <div className="box-content">
+                <div className="box-content-title">
+                  <h1>The Influence of Cultural Diversity on Workplace Dynamics</h1>
+                </div>
+                <div className="box-content-img">
+                  <img src={img2}></img>
+                </div>
+              </div>
+              <div className="content-author">
+                <h3>By Paul Atreides</h3>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         <div className="studentpage-right-container-context-ads">
           <div className="right-container-ads">
-            <a href="/trang-moi">
+            <a href="/term">
               <div className="box-content-img-ads">
                 <img src={img2} alt="Ảnh quảng cáo" />
               </div>

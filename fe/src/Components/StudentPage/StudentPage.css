@@ -179,17 +179,27 @@
 
 .studentpage-right-container-context {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
 
 .box-content-student {
   width: 600px;
-  height: 400px;
+  height: 200px;
   margin: 24px;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.box-content-student:hover {
+  width: 600px;
+  height: 210px;
+  background-color: #dcdcdc;
+}
+
+.studentpage-right-container-context a {
   border-bottom: 1px solid #DDDDDD;
 }
 

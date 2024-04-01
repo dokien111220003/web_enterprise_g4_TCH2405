@@ -1,6 +1,7 @@
 import React from 'react';
 import './Aboutus.css';
-import about from '../Assets/about.jpg';
+import student from '../Assets/about.jpg';
+import approach from '../Assets/about2.jpg';
 
 const Aboutus = () => {
     return (
@@ -21,13 +22,16 @@ const Aboutus = () => {
                         <h1>Our student</h1>
                         <p>Our students are at the heart of everything we do. They are the vibrant community of voices, ideas, and perspectives that make our platform thrive. Through their writing, our students share their unique stories, insights, and experiences, enriching our platform with diversity and creativity.</p>
                     </div>
-                    <img src={about}></img>
+                    <img src={student}></img>
                 </div>
                 <div className="box-about">
-                    <img src={about}></img>
+                    <img src={approach}></img>
                     <div className="blue-box">
-                        <h1>Our student</h1>
-                        <p>Our students are at the heart of everything we do. They are the vibrant community of voices, ideas, and perspectives that make our platform thrive. Through their writing, our students share their unique stories, insights, and experiences, enriching our platform with diversity and creativity.</p>
+                        <h1>Our Approach</h1>
+                        <p>
+                            At our platform, we take a student-centered approach to learning and engagement. Our goal is to provide a dynamic and inclusive space where students can explore, learn, and grow.
+                            We believe in the power of experiential learning and hands-on experiences. Through interactive activities, projects, and discussions, we encourage students to actively participate in their own education and development.
+                        </p>
                     </div>
                 </div>
             </div>

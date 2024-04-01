@@ -1,0 +1,43 @@
+.term-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.term-header {
+    width: 70%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    border-bottom: 2px solid #DDDDDD;
+}
+
+.term-header h1 {
+    text-transform: uppercase;
+    font-weight: 1000;
+    color: #17171F;
+    letter-spacing: 1mm;
+    word-spacing: 2mm;
+}
+
+.term-content {
+    padding-top: 32px;
+    width: 60%;
+    height: auto;
+    padding-bottom: 32px;
+}
+
+.term-content h2 {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.term-content p {
+    font-size: 24px;
+    color: #1d1d24;
+}
