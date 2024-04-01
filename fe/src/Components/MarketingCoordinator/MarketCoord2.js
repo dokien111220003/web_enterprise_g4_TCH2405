@@ -2,9 +2,8 @@ import React from 'react';
 import { Container, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './MarketCoord.css';
 
-const MarketCoord = () => {
+const MarketCoord2 = () => {
   const submissions = [
     { id: 1, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
     { id: 2, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
@@ -38,7 +37,7 @@ const MarketCoord = () => {
                   <td>{submission.name}</td>
                   <td>{submission.email}</td>
                   <td><a href={submission.contributionLink} download={submission.contributionName}>{submission.contributionName}</a></td>
-                  <td><Link to={`/mc_feedback/${submission.id}`} className="view-detail-link">Feedback</Link></td>
+                  <td><Link to={`/mc_review/${submission.id}`} className="view-detail-link">Feedback</Link></td>
                 </tr>
               ))}
             </tbody>
@@ -59,4 +58,4 @@ const MarketCoord = () => {
   );
 };
 
-export default MarketCoord;
+export default MarketCoord2;

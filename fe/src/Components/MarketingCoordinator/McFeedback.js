@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './McReview.css';
 
-const McReview = () => {
+const McFeedback = () => {
   const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [country, setCountry] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
@@ -26,18 +24,6 @@ const McReview = () => {
                 placeholder="Enter comment here"
               ></textarea>
             </div>
-            <div className="input-group">
-              <label className="input-group-text" htmlFor="countrySelect">State for publication</label>
-              <select
-                className="form-select"
-                id="countrySelect"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-              >
-                <option value="Non-Public" selected>Non-public</option>
-                <option value="Public">Public</option>
-              </select>
-            </div>
           </form>
         ) : (
           <div className="alert alert-success" role="alert">
@@ -53,4 +39,4 @@ const McReview = () => {
   );
 };
 
-export default McReview;
+export default McFeedback;
