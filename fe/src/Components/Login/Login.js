@@ -1,14 +1,53 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Login.css';
 import mail_icon from '../Assets/mail.png';
 import password_icon from '../Assets/padlock.png';
+import InputForm from '../InputForm/InputForm'
+import { useMutation } from '@tanstack/react-query';
+import * as UserService from '../../services/UserService';
+import { useLocation, useNavigate } from 'react-router-dom'
+import * as message from '../Message/Message'
+import { Navigate } from 'react-router-dom';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate()
 
   const handleShowPasswordToggle = () => {
     setShowPassword(!showPassword);
   };
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('');
+
+  const mutation = useMutation({
+    mutationFn: data => UserService.loginUser(data)
+  })
+
+  const { data, isLoading, isSuccess } = mutation
+
+  useEffect(() => {
+    if(isSuccess) {
+        navigate('/')
+        console.log('data', data)
+    }
+  }, [isSuccess])
+
+  console.log('mutation', mutation)
+
+  const handleOnchangeEmail = (value) => {
+    setEmail(value)
+  }
+
+  const handleOnchangePassword = (value) => {
+    setPassword(value)
+  }
+
+  const handleSignIn = () => {
+    mutation.mutate({
+      email,
+      password
+    })
+  }
 
   return (
     <div className='login-container'>
@@ -18,11 +57,17 @@ const Login = () => {
         <div className="inputs">
             <div className="input-field">
                 <img src={mail_icon} alt="" className="icon" />
-                <input type="email" placeholder="Email"/>
+                <InputForm style={{ marginBottom: '10px' }} placeholder="abc@gmail.com"
+                value={email} onChange={handleOnchangeEmail} />
             </div>
             <div className="input-field">
                 <img src={password_icon} alt="" className="icon" />
-                <input type={showPassword ? "text" : "password"} placeholder="Password"/>
+                <InputForm
+                placeholder="password"
+                value={password}
+                type={showPassword ? "text" : "password"}
+                onChange={handleOnchangePassword}
+            />
             </div>
         </div>
         <div className="show-password">
@@ -31,7 +76,7 @@ const Login = () => {
             </label>
         </div>
         <div className="submit-container">
-            <button className="submit">SIGN IN</button>
+            <button onClick={handleSignIn} className="submit">SIGN IN</button>
         </div>
         <div className="register-link">
             <p>Don't have an account? <a href="register">Register here!</a></p>

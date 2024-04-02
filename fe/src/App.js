@@ -1,7 +1,10 @@
+
+import React, { useEffect } from 'react';
+
 // Library
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Navbar
+
 import NavBarStudent from './Components/NavBarStudent/NavBarStudent';
 import NavBar from "./Components/NavBar/NavBar";
 import NavBarMC from "./Components/NavBar/NavBarMC";
@@ -43,8 +46,23 @@ import MM from './Components/MarketingManager/MainPage'
 import MMNav from './Components/MarketingManager/MMMNavBar'
 import ViewContri from './Components/MarketingManager/ViewContri'
 import ViewDetails from './Components/MarketingManager/ViewDetails'
+import axios from 'axios'
+import { useQueries, useQuery } from '@tanstack/react-query';
 
-const App = () => {
+function App () {
+
+  // useEffect(() => {
+  //   fetchApi()
+  // }, [])
+  // console.log('process.env.REACT_APP_API_URL', process.env.REACT_APP_API_URL)
+  // const fetchApi = async () => {
+  //   const res = await axios.get(`${process.env.REACT_APP_API_URL}/article/get-all`)
+  //   return res.data
+  // }
+
+  // const query = useQuery({ queryKey: ['todos'], queryFn: fetchApi})
+  // console.log('query', query)
+
     return (
       <Router>
         <Routes>
