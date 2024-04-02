@@ -49,19 +49,49 @@ import ViewDetails from './Components/MarketingManager/ViewDetails'
 import axios from 'axios'
 import { useQueries, useQuery } from '@tanstack/react-query';
 
+import { useDispatch, useSelector } from 'react-redux'
+import { isJsonString } from './utilis';
+import jwt_decode from "jwt-decode";
+import * as UserService from '../src/services/UserService';
+import { updateUser } from '../src/redux/slides/userSlide'
+
 function App () {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const { storageData, decoded } = handleDecoded()
+    if (decoded?.id) {
+      handleGetDetailsUser(decoded?.id, storageData)
+    }
+    console.log('storageData', storageData)
+  }, [])
 
-  // useEffect(() => {
-  //   fetchApi()
-  // }, [])
-  // console.log('process.env.REACT_APP_API_URL', process.env.REACT_APP_API_URL)
-  // const fetchApi = async () => {
-  //   const res = await axios.get(`${process.env.REACT_APP_API_URL}/article/get-all`)
-  //   return res.data
-  // }
+  const handleGetDetailsUser = async (id, token) => {
+    const res = await UserService.getDetailsUser(id, token)
+    dispatch(updateUser({...res?.data, access_token: token}))
+  }
 
-  // const query = useQuery({ queryKey: ['todos'], queryFn: fetchApi})
-  // console.log('query', query)
+  const handleDecoded = () => {
+    let storageData = localStorage.getItem('access_token')
+    let decoded = {}
+    if (storageData && isJsonString(storageData)) {
+      storageData = JSON.parse(storageData)
+      decoded = jwt_decode(storageData)
+    }
+    return { decoded, storageData }
+  }
+
+  UserService.axiosJWT.interceptors.request.use(async (config) => {
+    // Do something before request is sent
+    const currentTime = new Date()
+    const { decoded } = handleDecoded()
+    if (decoded?.exp < currentTime.getTime() / 1000) {      
+        const data = await UserService.refreshToken()
+        config.headers['token'] = `Bearer ${data?.access_token}`     
+    }
+    return config;
+  }, (err) => {
+    return Promise.reject(err)
+  })
 
     return (
       <Router>

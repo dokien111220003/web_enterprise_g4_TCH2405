@@ -5,13 +5,18 @@ import password_icon from '../Assets/padlock.png';
 import InputForm from '../InputForm/InputForm'
 import { useMutation } from '@tanstack/react-query';
 import * as UserService from '../../services/UserService';
+import { updateUser } from '../../redux/slides/userSlide'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import jwt_decode from "jwt-decode";
 import * as message from '../Message/Message'
 import { Navigate } from 'react-router-dom';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const location = useLocation()
 
   const handleShowPasswordToggle = () => {
     setShowPassword(!showPassword);
@@ -26,11 +31,27 @@ const Login = () => {
   const { data, isLoading, isSuccess } = mutation
 
   useEffect(() => {
-    if(isSuccess) {
-        navigate('/')
-        console.log('data', data)
+    if (isSuccess) {
+    navigate('/student_page')
+      localStorage.setItem('access_token', JSON.stringify(data?.access_token))
+      if (data?.access_token) {
+        const decoded = jwt_decode(data?.access_token)
+        console.log('decode', decoded)
+        if (decoded?.id) {
+          handleGetDetailsUser(decoded?.id, data?.access_token )
+        }
+      }
     }
   }, [isSuccess])
+
+const handleGetDetailsUser = async (id, token) => {
+    const res = await UserService.getDetailsUser(id, token)
+    dispatch(updateUser({...res?.data, access_token: token}))
+    // const storage = localStorage.getItem('refresh_token')
+    // const refreshToken = JSON.parse(storage)
+    // const res = await UserService.getDetailsUser(id, token)
+    // dispatch(updateUser({ ...res?.data, access_token: token,refreshToken }))
+  }
 
   console.log('mutation', mutation)
 
@@ -48,6 +69,8 @@ const Login = () => {
       password
     })
   }
+
+  
 
   return (
     <div className='login-container'>
