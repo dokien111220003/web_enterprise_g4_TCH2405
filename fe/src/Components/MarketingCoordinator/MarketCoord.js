@@ -1,118 +1,61 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Container, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './MarketCoord.css';
 
 const MarketCoord = () => {
-  const [studentsSubmissions, setStudentsSubmissions] = useState([
-    {
-      id: 1,
-      fullName: 'Alice Johnson',
-      email: 'abcd@gmail.com',
-      closureDateSubmission: {
-        files: ['draft_v1.docx', 'outline.png'],
-        commented: true,
-      },
-      finalDateSubmission: {
-        files: ['final_report.docx', 'charts.jpg'],
-        commented: false,
-      },
-    },
-    {
-      id: 2,
-      fullName: 'John Doe',
-      email: 'abcde@gmail.com',
-      closureDateSubmission: {
-        files: ['initial_thoughts.docx'],
-        commented: false,
-      },
-      finalDateSubmission: {
-        files: ['complete_analysis.docx', 'survey_results.png'],
-        commented: true,
-      },
-    },
-  ]);
-
-  const handleCheckboxChange = (studentId, type) => {
-    const updatedSubmissions = studentsSubmissions.map(submission => {
-      if (submission.id === studentId) {
-        if (type === 'closureDateCommented') {
-          submission.closureDateSubmission.commented = !submission.closureDateSubmission.commented;
-        } else if (type === 'finalDateCommented') {
-          submission.finalDateSubmission.commented = !submission.finalDateSubmission.commented;
-        }
-      }
-      return submission;
-    });
-    setStudentsSubmissions(updatedSubmissions);
-  };
-
-  const updateSubmissions = () => {
-    // Normally, you would send the updated state to your backend here.
-    console.log('Updated submissions:', studentsSubmissions);
-    alert('Submissions updated successfully!');
-  };
-
-  const renderFiles = (files) => files.map((file, index) => <li key={index}>{file}</li>);
-
+  const submissions = [
+    { id: 1, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
+    { id: 2, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
+    { id: 3, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
+    { id: 4, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
+    { id: 5, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
+  ];
   return (
-    <div className="mc-page">
-      <h1>Marketing Coordinator Dashboard</h1>
-      <div className="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Full Name</th>
-              <th>Email</th>
-              <th>Closure Date Submission</th>
-              <th>Activity</th>
-              <th>Final Date Submission</th>
-              <th>Activity</th>
-            </tr>
-          </thead>
-          <tbody>
-            {studentsSubmissions.map((student, index) => (
-              <tr key={student.id}>
-                <td>{index + 1}</td>
-                <td>{student.fullName}</td>
-                <td>{student.email}</td>
-                <td>
-                  <ul>{renderFiles(student.closureDateSubmission.files)}</ul>
-                </td>
-                <td>
-                  <div class="form-check form-switch">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id={`closureDateSwitch${student.id}`}
-                      checked={student.closureDateSubmission.commented}
-                      onChange={() => handleCheckboxChange(student.id, 'closureDateCommented')}
-                      />
-                    <label class="form-check-label" for={`closureDateSwitch${student.id}`}>Reviewed</label>
-                  </div>
-                </td>
-                <td>
-                  <ul>{renderFiles(student.finalDateSubmission.files)}</ul>
-                </td>
-                <td>
-                  <div class="form-check form-switch">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    id={`finalDateSwitch${student.id}`}
-                    checked={student.finalDateSubmission.commented}
-                    onChange={() => handleCheckboxChange(student.id, 'finalDateCommented')}
-                  />
-                  <label class="form-check-label" for={`finalDateSwitch${student.id}`}>Reviewed</label>
-                  </div>
-                </td>
+    <Container fluid="xxl">
+      <div className="table-responsive">
+        <div className="table-wrapper">
+          <div className="table-title">
+            <div className="row">
+              <div className="col-sm-6">
+                <h2>Manage First Hand Submission</h2>
+              </div>
+            </div>
+          </div>
+          <Table striped hover>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contribution</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        <button onClick={updateSubmissions} className="update-button">Update</button>
+            </thead>
+            <tbody>
+              {submissions.map(submission => (
+                <tr key={submission.id}>
+                  <td>{submission.name}</td>
+                  <td>{submission.email}</td>
+                  <td><a href={submission.contributionLink} download={submission.contributionName}>{submission.contributionName}</a></td>
+                  <td><Link to={`/mc_feedback/${submission.id}`} className="view-detail-link">Feedback</Link></td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+          <div class="clearfix">
+            <div class="hint-text">Showing <b>5</b> out of <b>15</b> Submissions</div>
+            <ul class="pagination">
+              <li class="page-item disabled"><a href="#">Previous</a></li>
+              <li class="page-item active"><a href="#" class="page-link">1</a></li>
+              <li class="page-item"><a href="#" class="page-link">2</a></li>
+              <li class="page-item"><a href="#" class="page-link">3</a></li>
+              <li class="page-item"><a href="#" class="page-link">Next</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

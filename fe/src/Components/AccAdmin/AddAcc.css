@@ -1,0 +1,13 @@
+.AD-contri-filter-fal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 270px;
+    background: #DBE2EF;
+    margin-left: 270px;
+}
+.inputs {
+    display: flex;
+    justify-content: space-between; /* Cách đều các items */
+    gap: 20px; /* Khoảng cách giữa các items */
+}

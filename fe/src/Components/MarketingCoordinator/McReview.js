@@ -4,12 +4,10 @@ import './McReview.css';
 
 const McReview = () => {
   const [feedback, setFeedback] = useState('');
-  const [isPublic, setIsPublic] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
+  const [country, setCountry] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logic để xử lý feedback ở đây, ví dụ gửi feedback tới server
     setSubmitted(true);
   };
 
@@ -23,21 +21,22 @@ const McReview = () => {
               <textarea
                 className="mc-review-form-control"
                 id="feedbackTextArea"
-                rows="4"
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
                 placeholder="Enter comment here"
               ></textarea>
             </div>
-            <div className="form-check form-switch">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="publicCheckbox"
-                checked={isPublic}
-                onChange={() => setIsPublic(!isPublic)}
-              />
-              <label className="form-check-label" htmlFor="publicCheckbox">Choose to public</label>
+            <div className="input-group">
+              <label className="input-group-text" htmlFor="countrySelect">State for publication</label>
+              <select
+                className="form-select"
+                id="countrySelect"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+              >
+                <option value="Non-Public" selected>Non-public</option>
+                <option value="Public">Public</option>
+              </select>
             </div>
           </form>
         ) : (
@@ -45,10 +44,10 @@ const McReview = () => {
             Comment feedback successfully!
           </div>
         )}
-                    <div className="text-center">
-              <button className="btn btn-primary-mc">Back</button>
-              <button type="submit" className="btn btn-primary" required>Send Feedback</button>
-            </div>
+        <div className="text-center">
+          <button className="btn btn-primary-mc">Back</button>
+          <button type="submit" className="btn btn-primary" required>Send Feedback</button>
+        </div>
       </div>
     </div>
   );

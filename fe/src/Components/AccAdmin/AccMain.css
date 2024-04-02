@@ -1,0 +1,5 @@
+.admin-body {
+    display: flex;
+    flex-direction: row; /* Bố trí theo hàng ngang */
+    align-items: start; /* Căn các items ở đầu */
+  }
