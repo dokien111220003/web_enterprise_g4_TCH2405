@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-.edit-container {
+.add-topic-container {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 70px auto;
     margin-top: 70px;
     width: 600px;
-    background-color: #F9F7F7;
+    background-color: #a8c1e0;
     padding-bottom: 30px;
     border-radius: 25px;
 }
@@ -21,7 +19,7 @@
 }
 
 .text {
-    color: #000000;
+    color: #ffffff;
     font-size: 48px;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
@@ -43,31 +41,67 @@
     flex-direction: column;
     gap: 25px;
 }
+
 .input input {
     height: 50px;
-    width: 400px;
+    width: 480px;
     background: transparent;
     border: none;
     outline: none;
-    color: #4f4f4f;
+    color: #000000;
     font-size: 25px;
     padding-right: 30px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
 
-input[type="text"]{
+input[type="text"] {
     padding-left: 20px;
-}   
+}
 
-.edit-container {
+.input select {
+    height: 50px;
+    width: 480px;
+    background: url('../Assets/down.png') no-repeat right 34px center;
+    background-size: 20px;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 25px;
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    appearance: none;   
+    cursor: pointer;
+}
+
+
+.input input[type="datetime-local"] {
+    height: 50px;
+    width: 480px;
+    background: #DBE2EF;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-right: -100px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.input input[type="datetime-local"]::-webkit-datetime-edit {
+    padding-right: 0;
+}
+
+.submit-container {
     display: flex;
     margin: 60px auto;
     transition: all 0.3s ease;
     white-space: nowrap;
 }
 
-.submit-edit {
+.submit-add {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,9 +118,8 @@ input[type="text"]{
     letter-spacing: 2px;
 }
 
-.edit-container :hover {
-    box-shadow: 0 0 0 4px #fff,
-    0 0 0 6px #1b5dd8;
+.submit-container :hover {
+    box-shadow: 0 0 0 4px #fff, 0 0 0 6px #1b5dd8;
 }
 
 .faculty-link {

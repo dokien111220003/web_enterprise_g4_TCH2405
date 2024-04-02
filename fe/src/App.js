@@ -14,9 +14,9 @@ import EditFalcuty from './Components/FacultyAdmin/Edit';
 import AccMain from './Components/AccAdmin/AccMain';
 import AddAcc from './Components/AccAdmin/AddAcc';
 import EditAcc from './Components/AccAdmin/EditAcc';
-import TopicAdmin from './Components/TopicAdmin/TopicAdmin';
-import EditTopicAdmin from './Components/TopicAdmin/EditTopic';
-import AddNewTopic from './Components/TopicAdmin/AddTopic';
+import Course from './Components/Course/Course';
+import EditCourse from './Components/Course/Edit';
+import AddCourse from './Components/Course/Add';
 // Account ( phần chung lun )
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
@@ -57,12 +57,12 @@ const App = () => {
           <Route path='/accadmin' element={<><NavBar /><AccMain /><FooterAdmin/></>} />
           <Route path='/add_user' element={<><NavBar /><AddAcc /><FooterAdmin/></>} />
           <Route path='/edit_user/:id' element={<><NavBar /><EditAcc /><FooterAdmin/></>} />
-          <Route path='/topicadmin' element={<><NavBar /><TopicAdmin /><FooterAdmin/></>} />
-          <Route path='/add_topic' element={<><NavBar /><AddNewTopic /><FooterAdmin/></>} />
-          <Route path='/edit_topic/:id' element={<><NavBar /><EditTopicAdmin /><FooterAdmin/></>} />
+          <Route path='/course' element={<><NavBar /><Course /><FooterAdmin/></>} />
+          <Route path='/add_course' element={<><NavBar /><AddCourse /><FooterAdmin/></>} />
+          <Route path='/edit_course/:id' element={<><NavBar /><EditCourse /><FooterAdmin/></>} />
           {/* Cho trang cua Phần Chung*/}
-          <Route path='/login' element={<><NavBar /><Login /><FooterAdmin/></>} />
-          <Route path='/register' element={<><NavBar /><Register /><FooterAdmin/></>} />
+          <Route path='/login' element={<><Login /><FooterAdmin/></>} />
+          <Route path='/register' element={<><Register /><FooterAdmin/></>} />
           <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
           <Route path='/sidebar' element={<SideBarAdmin />} />
           <Route path='/personal' element={<NavBarStudent><Profile/></NavBarStudent>} />

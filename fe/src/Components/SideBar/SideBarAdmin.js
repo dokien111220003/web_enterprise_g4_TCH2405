@@ -48,7 +48,7 @@ const SideBarAdmin = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/facultyadmin">
+                                    <a href="#">
                                         <img src={facultyicon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Faculty</span>
                                         <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleFacultyMenu} style={{ transform: `rotate(${facultyArrowRotation}deg)` }}></img>
@@ -57,18 +57,18 @@ const SideBarAdmin = () => {
                                     <ul className="admin-sub-menu" style={{ display: isFacultyOpen ? 'block' : 'none' }}>
                                         <li>
                                             <a href="/facultyadmin">
-                                                <span className="admin-nav-text">Business</span>
+                                                <span className="admin-nav-text">View All</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <span className="admin-nav-text">Computer Science</span>
+                                            <a href="/add_faculty">
+                                                <span className="admin-nav-text">Add New</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="/accadmin">
+                                    <a href="#">
                                         <img src={usericon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Account</span>
                                         <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>
@@ -76,22 +76,22 @@ const SideBarAdmin = () => {
 
                                     <ul className="admin-sub-menu" style={{ display: isAccountOpen ? 'block' : 'none' }}>
                                         <li>
-                                            <a href="#">
+                                            <a href="/accadmin">
                                                 <span className="admin-nav-text">Student</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="/accadmin">
                                                 <span className="admin-nav-text">Guest</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="/accadmin">
                                                 <span className="admin-nav-text">Marketing Coordinator</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="/accadmin">
                                                 <span className="admin-nav-text">Marketing Manager</span>
                                             </a>
                                         </li>
@@ -105,7 +105,7 @@ const SideBarAdmin = () => {
                             <p className="admin-setting-title">Others</p>
                             <ul>
                                 <li className="admin-logout">
-                                    <a className="logout-icon" href="#">
+                                    <a className="logout-icon" href="/login">
                                         <img src={logouticon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-footer-text">Logout</span>
                                     </a>
