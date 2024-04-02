@@ -42,13 +42,13 @@ const SideBarAdmin = () => {
                             <p className="title">Main</p>
                             <ul>
                                 <li>
-                                    <a href="/marketing_manager">
+                                    <a href="/adminpage1">
                                         <img src={dashboardicon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Dashboard</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/facultyadmin">
                                         <img src={facultyicon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Faculty</span>
                                         <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleFacultyMenu} style={{ transform: `rotate(${facultyArrowRotation}deg)` }}></img>
@@ -56,7 +56,7 @@ const SideBarAdmin = () => {
 
                                     <ul className="admin-sub-menu" style={{ display: isFacultyOpen ? 'block' : 'none' }}>
                                         <li>
-                                            <a href="#">
+                                            <a href="/facultyadmin">
                                                 <span className="admin-nav-text">Business</span>
                                             </a>
                                         </li>
@@ -68,7 +68,7 @@ const SideBarAdmin = () => {
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/accadmin">
                                         <img src={usericon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Account</span>
                                         <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>

@@ -1,37 +1,36 @@
-.sidebar-student {
+.sidebar {
     width: 300px;
     background-color: #f0f0f0;
     padding: 20px;
     height: 1000px;
 }
 
-.sidebar-student-header {
+.sidebar-header {
     margin-top: 30px;
     margin-bottom: 40px;
 }
 
-.sidebar-student-header h2{
+.sidebar-header h2{
     font-size: 30px;
     color: black;
 }
 
-.sidebar-student-menu {
+.sidebar-menu {
     list-style: none;
     padding: 0;
 }
 
-.sidebar-student-menu li {
+.sidebar-menu li {
     margin-bottom: 10px;
-    text-align: left;
     padding-bottom: 30px;
 }
 
-.sidebar-student-menu li a {
+.sidebar-menu li a {
     text-decoration: none;
     color: #333;
     font-size: 20px;
 }
 
-.sidebar-student-menu li a:hover {
+.sidebar-menu li a:hover {
   color: #666;
 }

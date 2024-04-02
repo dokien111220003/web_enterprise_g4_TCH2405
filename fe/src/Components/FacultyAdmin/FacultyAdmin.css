@@ -55,6 +55,8 @@
   }
   
   .add-button {
+    white-space: nowrap;
+    width: 100%;
     cursor: pointer;
     padding: 5px 10px;
     border: none;
@@ -105,6 +107,7 @@
   .action-faculty {
     width: 280px;
     align-items: center;
+    margin: auto;
   }
   
   th {
@@ -114,6 +117,7 @@
 
   .action-faculty button {
     cursor: pointer;
+    margin-right: 15px;
     width: 100px;
     height: 40px;
     border: none;
@@ -137,6 +141,26 @@
   }
   
 .description-column {
-  width: 1000px;
+  max-width: 700px;
   text-align: justify;
+}
+.timestart-column {
+  width: 220px;
+  text-align: justify;
+}
+.timeend-column {
+  text-align: justify;
+  width: 220px;
+}
+th.action-column, td.action-faculty {
+  width: 120px; /* hoặc một giá trị phù hợp với thiết kế của bạn */
+  white-space: nowrap; /* Đảm bảo nội dung không xuống hàng */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+/* Điều chỉnh kích thước và khoảng cách của các nút */
+.edit-button, .delete-button {
+  padding: 5px 10px; /* Giảm kích thước padding nếu cần */
+  margin: 0 2px; /* Khoảng cách giữa các nút */
+  font-size: 0.875rem; /* Điều chỉnh kích thước font nếu cần */
 }

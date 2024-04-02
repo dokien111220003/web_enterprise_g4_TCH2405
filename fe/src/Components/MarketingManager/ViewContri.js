@@ -53,9 +53,9 @@ const ViewContri = () => {
                     <option value="MachineLearning">Machine Learning</option>
                 </select>
                 <select className="MM-contri-filter-time">
-                    <option value="">Time</option>
-                    <option value="">Recently</option>
-                    <option value="">Previously</option>
+                    <option value="">Course</option>
+                    <option value="">2021-2024</option>
+                    <option value="">2020-2023</option>
                 </select>
             </div>
 

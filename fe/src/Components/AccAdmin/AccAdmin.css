@@ -1,36 +1,94 @@
-.sidebar {
-    width: 300px;
-    background-color: #f0f0f0;
-    padding: 20px;
-    height: 1000px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.sidebar-header {
-    margin-top: 30px;
-    margin-bottom: 40px;
+.account-admin {
+  margin-bottom: 500px;
+  margin-left: 260px;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
 }
+.search-container-admin {
+    margin-left: 80px;
+    width: 480px;
+    margin-bottom: 50px;
+  }
+  .stt{
+    text-align: center;
+    width: 50px;
+  }
+  .stt_td{
+    text-align: center;
+  }
+  
+  table {
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff; 
+    margin-top: 20px; 
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  .action-user{
+    width: 280px;
+    align-items: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    position: relative;
+  }
+  button {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer; 
+    border: none; 
+    border-radius: 5px;
+    color: white;
+  }
+  button:hover {
+    opacity: 0.7;
+  }
+  .action-faculty button {
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+  }
 
-.sidebar-header h2{
-    font-size: 30px;
-    color: black;
-}
-
-.sidebar-menu {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar-menu li {
-    margin-bottom: 10px;
-    padding-bottom: 30px;
-}
-
-.sidebar-menu li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 20px;
-}
-
-.sidebar-menu li a:hover {
-  color: #666;
-}
+  .delete-button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #E84545;
+    color: white;
+  }
+  
+  .delete-button:hover {
+    opacity: 0.8;
+  }
+  th.action-column, td.action-user {
+    width: 160px; 
+    white-space: nowrap;
+    text-align: center; 
+  }
+  .edit-button, .delete-button {
+    padding: 5px 10px; 
+    margin: 0 2px; 
+    font-size: 0.875rem; 
+  }
