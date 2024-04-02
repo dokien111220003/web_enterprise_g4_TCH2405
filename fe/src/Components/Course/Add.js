@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './AddTopic.css';
+import './Add.css';
 
 const AddNewTopic = () => {
     let navigate = useNavigate();
@@ -9,12 +9,17 @@ const AddNewTopic = () => {
     };
 
     const [startTime, setStartTime] = useState('');
+    const [yearCourse, setYear] = useState('');
     const [endTime, setEndTime] = useState('');
     const [status, setStatus] = useState('');
     const [faculty, setFaculty] = useState('');
 
     const handleStartTimeChange = (event) => {
         setStartTime(event.target.value);
+    };
+
+    const handleYearCourseChange = (event) => {
+        setYear(event.target.value);
     };
 
     const handleEndTimeChange = (event) => {
@@ -32,11 +37,16 @@ const AddNewTopic = () => {
     return (
         <div className='add-topic-container'>
             <div className="header">
-                <div className="text">Add New Topic</div>
+                <div className="text">Add New Course</div>
             </div>
             <div className="inputs">
                 <div className="input">
-                    <input type="text" placeholder="Name" required />
+                    <select value={yearCourse} onChange={handleYearCourseChange} required>
+                        <option value="">Select Year</option>
+                        <option value="years">2019 - 2023</option>
+                        <option value="years">2020 - 2024</option>
+                        <option value="years">2021 - 2025</option>
+                    </select>
                 </div>
                 <div className="input">
                     <select value={faculty} onChange={handleFacultyChange} required>
@@ -64,7 +74,7 @@ const AddNewTopic = () => {
                 <button onClick={goBack} className="submit-add">Add</button>
             </div>
             <div className="faculty-link">
-                <a href="topicadmin">Back</a>
+                <a href="course">Back</a>
             </div>
         </div>
     );

@@ -8,17 +8,17 @@ const ViewContri = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     const contributions = [
-        { id: 1, faculty: "Computer Science", topic: "Machine Learning", closureDate: "18/1/2024", finalClosureDate: "30/1/2024", link: "/marketing_manager/contribution/details/:id" },
-        { id: 2, faculty: "Computer Science", topic: "Mathematics", closureDate: "24/3/2024", finalClosureDate: "30/3/2024", link: "/marketing_manager/contribution/details/:id" },
-        { id: 3, faculty: "Business", topic: "Business Management", closureDate: "24/3/2024", finalClosureDate: "30/3/2024", link: "/marketing_manager/contribution/details/:id" },
-        { id: 4, faculty: "Business", topic: "Marketing", closureDate: "25/4/2024", finalClosureDate: "30/4/2024", link: "/marketing_manager/contribution/details/:id" },
-        { id: 5, faculty: "Finance", topic: "Investments", closureDate: "15/5/2024", finalClosureDate: "25/5/2024", link: "/marketing_manager/contribution/details/:id" },
-        { id: 6, faculty: "Business", topic: "Supply Chain Management", closureDate: "10/6/2024", finalClosureDate: "20/6/2024", link: "/marketing_manager/contribution/details/:id" },
-        { id: 7, faculty: "Marketing", topic: "Consumer Behavior", closureDate: "5/7/2024", finalClosureDate: "15/7/2024", link: "/marketing_manager/contribution/details/:id" },
-        { id: 8, faculty: "Finance", topic: "Financial Analysis", closureDate: "20/8/2024", finalClosureDate: "30/8/2024", link: "/marketing_manager/contribution/details/:id" },
-        { id: 9, faculty: "Business", topic: "Organizational Behavior", closureDate: "10/9/2024", finalClosureDate: "20/9/2024", link: "/marketing_manager/contribution/details/:id" },
-        { id: 10, faculty: "Management", topic: "Leadership", closureDate: "15/10/2024", finalClosureDate: "25/10/2024", link: "/marketing_manager/contribution/details/:id" },
-        { id: 10, faculty: "Computer Science", topic: "Programming", closureDate: "15/10/2024", finalClosureDate: "25/10/2024", link: "/marketing_manager/contribution/details/:id" }
+        { id: 1, faculty: "Computer Science", year: "2017-2021", closureDate: "18/1/2024", finalClosureDate: "30/1/2024", link: "/marketing_manager_main/contribution/details/:id" },
+        { id: 2, faculty: "Computer Science", year: "2020-2024", closureDate: "24/3/2024", finalClosureDate: "30/3/2024", link: "/marketing_manager_main/contribution/details/:id" },
+        { id: 3, faculty: "Business", year: "2017-2021", closureDate: "24/3/2024", finalClosureDate: "30/3/2024", link: "/marketing_manager_main/contribution/details/:id" },
+        { id: 4, faculty: "Business", year: "2020-2024", closureDate: "25/4/2024", finalClosureDate: "30/4/2024", link: "/marketing_manager_main/contribution/details/:id" },
+        { id: 5, faculty: "Finance", year: "2017-2021", closureDate: "15/5/2024", finalClosureDate: "25/5/2024", link: "/marketing_manager_main/contribution/details/:id" },
+        { id: 6, faculty: "Business", year: "2024-2028", closureDate: "10/6/2024", finalClosureDate: "20/6/2024", link: "/marketing_manager_main/contribution/details/:id" },
+        { id: 7, faculty: "Marketing", year: "2017-2021", closureDate: "5/7/2024", finalClosureDate: "15/7/2024", link: "/marketing_manager_main/contribution/details/:id" },
+        { id: 8, faculty: "Finance", year: "2020-2024", closureDate: "20/8/2024", finalClosureDate: "30/8/2024", link: "/marketing_manager_main/contribution/details/:id" },
+        { id: 9, faculty: "Business", year: "Organizational Behavior", closureDate: "10/9/2024", finalClosureDate: "20/9/2024", link: "/marketing_manager_main/contribution/details/:id" },
+        { id: 10, faculty: "Management", year: "2020-2024", closureDate: "15/10/2024", finalClosureDate: "25/10/2024", link: "/marketing_manager_main/contribution/details/:id" },
+        { id: 10, faculty: "Computer Science", year: "2024-2028", closureDate: "15/10/2024", finalClosureDate: "25/10/2024", link: "/marketing_manager_main/contribution/details/:id" }
 
     ];
 
@@ -65,7 +65,7 @@ const ViewContri = () => {
                         <tr>
                             <th>#</th>
                             <th>Faculty</th>
-                            <th>Topic</th>
+                            <th>Course</th>
                             <th>Closure Date</th>
                             <th>Final Closure Date</th>
                             <th>View all</th>
@@ -76,7 +76,7 @@ const ViewContri = () => {
                             <tr key={index}>
                                 <td>{contribution.id}</td>
                                 <td>{contribution.faculty}</td>
-                                <td>{contribution.topic}</td>
+                                <td>{contribution.year}</td>
                                 <td>{contribution.closureDate}</td>
                                 <td>{contribution.finalClosureDate}</td>
                                 <td><a href={contribution.link}>Click Here</a></td>
