@@ -36,6 +36,7 @@ import StudentPage from './Components/StudentPage/StudentPage';
 import Submission from './Components/StudentSubmit/StudentSubmit'
 import Post from './Components/StudentPage/PostArticle'
 import About from './Components/StudentPage/Aboutus'
+import ViewAll from './Components/StudentPage/ViewAll'
 // MC
 import MC from './Components/MarketingCoordinator/MarketCoord'
 import MC2 from './Components/MarketingCoordinator/MarketCoord2'
@@ -48,6 +49,8 @@ import ViewContri from './Components/MarketingManager/ViewContri'
 import ViewDetails from './Components/MarketingManager/ViewDetails'
 import axios from 'axios'
 import { useQueries, useQuery } from '@tanstack/react-query';
+//Guest
+import NavBarGuest from './Components/NavBar/NavBarGuest'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { isJsonString } from './utilis';
@@ -128,6 +131,7 @@ function App () {
           <Route path='/about' element={<NavBarStudent><About /></NavBarStudent>} />
           <Route path='/student_submit' element={<NavBarStudent><Submission/></NavBarStudent>} />
           <Route path='/post' element={<NavBarStudent><Post/></NavBarStudent>} />
+          <Route path='/viewall' element={<NavBarStudent><ViewAll/></NavBarStudent>} />
           {/* Cho trang Marketing Coordinator sử dụng NavBar riêng */}
           <Route path='/mc_page' element={<NavBarMC><StudentPage/></NavBarMC>} />
           <Route path='/mc_page1' element={<NavBarMC><MC/></NavBarMC>} />
@@ -136,6 +140,8 @@ function App () {
           <Route path='/mc_review/:id' element={<NavBarMC><Review/></NavBarMC>} />
           <Route path='/aboutMC' element={<NavBarMC><About /></NavBarMC>} />
           <Route path='/termMC' element={<NavBarMC><Term /></NavBarMC>} />
+          {/* Cho trang Guest sử dụng NavBar riêng */}
+          <Route path='/guest' element={<NavBarGuest><StudentPage /></NavBarGuest>} />
         </Routes>
       </Router>
     );
