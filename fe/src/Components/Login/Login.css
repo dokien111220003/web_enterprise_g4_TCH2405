@@ -51,6 +51,10 @@
     border-radius: 6px;
 }
 
+.input-field input[type="password"] {
+    margin-left: 20px;
+}
+
 .input-field img {
     margin: 0px 30px;
 }
@@ -61,10 +65,18 @@
     border: none;
     outline: none;
     font-size: 25px;
-    background: inherit;
+    background: #3F72AF;
     padding-right: 30px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
+}
+
+.input-field input[type="text"]:focus {
+    background-color: #DBE2EF;
+}
+
+.input-field input[type="password"]:focus {
+    background-color: #DBE2EF;
 }
 
 .submit-container {

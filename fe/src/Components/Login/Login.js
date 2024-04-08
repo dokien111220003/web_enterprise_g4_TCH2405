@@ -70,8 +70,6 @@ const handleGetDetailsUser = async (id, token) => {
     })
   }
 
-  
-
   return (
     <div className='login-container'>
         <div className="header">
@@ -80,7 +78,7 @@ const handleGetDetailsUser = async (id, token) => {
         <div className="inputs">
             <div className="input-field">
                 <img src={mail_icon} alt="" className="icon" />
-                <InputForm style={{ marginBottom: '10px' }} placeholder="abc@gmail.com"
+                <InputForm style={{ marginBottom: '0px' }} placeholder="abc@gmail.com"
                 value={email} onChange={handleOnchangeEmail} />
             </div>
             <div className="input-field">
