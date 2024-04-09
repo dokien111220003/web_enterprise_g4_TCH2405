@@ -26,13 +26,13 @@ const StudentPage = () => {
           </div>
           <div className="slider-context">
             <h1>Where students can freely share their voices.</h1>
-            <li><NavLink exact to='/' activeClassName="active">More about us</NavLink></li>
+            <li><NavLink exact to='/about' activeClassName="active">More about us</NavLink></li>
           </div>
         </div>
         <div className="left-content">
           <div className="left-content-header">
             <h1>Business Faculty</h1>
-            <li><NavLink exact to='/' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
+            <li><NavLink exact to='/viewall' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
           </div>
           <div className="left-content-context">
             <div className="context-box-faculty">
@@ -75,7 +75,7 @@ const StudentPage = () => {
         <div className="left-content">
           <div className="left-content-header">
             <h1>Business Faculty</h1>
-            <li><NavLink exact to='/' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
+            <li><NavLink exact to='/viewall' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
           </div>
           <div className="left-content-context">
             <div className="context-box-faculty">
@@ -118,7 +118,7 @@ const StudentPage = () => {
         <div className="left-content">
           <div className="left-content-header">
             <h1>Business Faculty</h1>
-            <li><NavLink exact to='/' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
+            <li><NavLink exact to='/viewall' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
           </div>
           <div className="left-content-context">
             <div className="context-box-faculty">

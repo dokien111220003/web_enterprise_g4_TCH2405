@@ -30,83 +30,94 @@ const ViewAll = () => {
                     </div>
                 </div>
                 <div className="viewall-content-contri">
-                    <div className="viewall-box">
-                        <div className="viewall-box-img">
-                            <img src={img3}></img>
+                    <div className="hihijdo">
+                        <div className="viewall-box">
+                            <div className="viewall-box-img">
+                                <img src={img3}></img>
+                            </div>
+                            <div className="viewall-content-title">
+                                <h1>The Impact of Social Media on Youth Mental Health</h1>
+                            </div>
+                            <div className="viewall-content-author">
+                                <h3>By Paul Atreides</h3>
+                            </div>
                         </div>
-                        <div className="viewall-content-title">
-                            <h1>The Impact of Social Media on Youth Mental Health</h1>
+                        <div className="viewall-box">
+                            <div className="viewall-box-img">
+                                <img src={img3}></img>
+                            </div>
+                            <div className="viewall-content-title">
+                                <h1>The Impact of Social Media on Youth Mental Health</h1>
+                            </div>
+                            <div className="viewall-content-author">
+                                <h3>By Paul Atreides</h3>
+                            </div>
                         </div>
-                        <div className="viewall-content-author">
-                            <h3>By Paul Atreides</h3>
+                        <div className="viewall-box">
+                            <div className="viewall-box-img">
+                                <img src={img3}></img>
+                            </div>
+                            <div className="viewall-content-title">
+                                <h1>The Impact of Social Media on Youth Mental Health</h1>
+                            </div>
+                            <div className="viewall-content-author">
+                                <h3>By Paul Atreides</h3>
+                            </div>
+                        </div>
+                        <div className="viewall-box">
+                            <div className="viewall-box-img">
+                                <img src={img3}></img>
+                            </div>
+                            <div className="viewall-content-title">
+                                <h1>The Impact of Social Media on Youth Mental Health</h1>
+                            </div>
+                            <div className="viewall-content-author">
+                                <h3>By Paul Atreides</h3>
+                            </div>
+                        </div>
+                        <div className="viewall-box">
+                            <div className="viewall-box-img">
+                                <img src={img3}></img>
+                            </div>
+                            <div className="viewall-content-title">
+                                <h1>The Impact of Social Media on Youth Mental Health</h1>
+                            </div>
+                            <div className="viewall-content-author">
+                                <h3>By Paul Atreides</h3>
+                            </div>
+                        </div>
+                        <div className="viewall-box">
+                            <div className="viewall-box-img">
+                                <img src={img3}></img>
+                            </div>
+                            <div className="viewall-content-title">
+                                <h1>The Impact of Social Media on Youth Mental Health</h1>
+                            </div>
+                            <div className="viewall-content-author">
+                                <h3>By Paul Atreides</h3>
+                            </div>
+                        </div>
+                        <div className="viewall-box">
+                            <div className="viewall-box-img">
+                                <img src={img3}></img>
+                            </div>
+                            <div className="viewall-content-title">
+                                <h1>The Impact of Social Media on Youth Mental Health</h1>
+                            </div>
+                            <div className="viewall-content-author">
+                                <h3>By Paul Atreides</h3>
+                            </div>
                         </div>
                     </div>
-                    <div className="viewall-box">
-                        <div className="viewall-box-img">
-                            <img src={img3}></img>
-                        </div>
-                        <div className="viewall-content-title">
-                            <h1>The Impact of Social Media on Youth Mental Health</h1>
-                        </div>
-                        <div className="viewall-content-author">
-                            <h3>By Paul Atreides</h3>
-                        </div>
-                    </div>
-                    <div className="viewall-box">
-                        <div className="viewall-box-img">
-                            <img src={img3}></img>
-                        </div>
-                        <div className="viewall-content-title">
-                            <h1>The Impact of Social Media on Youth Mental Health</h1>
-                        </div>
-                        <div className="viewall-content-author">
-                            <h3>By Paul Atreides</h3>
-                        </div>
-                    </div>
-                    <div className="viewall-box">
-                        <div className="viewall-box-img">
-                            <img src={img3}></img>
-                        </div>
-                        <div className="viewall-content-title">
-                            <h1>The Impact of Social Media on Youth Mental Health</h1>
-                        </div>
-                        <div className="viewall-content-author">
-                            <h3>By Paul Atreides</h3>
-                        </div>
-                    </div>
-                    <div className="viewall-box">
-                        <div className="viewall-box-img">
-                            <img src={img3}></img>
-                        </div>
-                        <div className="viewall-content-title">
-                            <h1>The Impact of Social Media on Youth Mental Health</h1>
-                        </div>
-                        <div className="viewall-content-author">
-                            <h3>By Paul Atreides</h3>
-                        </div>
-                    </div>
-                    <div className="viewall-box">
-                        <div className="viewall-box-img">
-                            <img src={img3}></img>
-                        </div>
-                        <div className="viewall-content-title">
-                            <h1>The Impact of Social Media on Youth Mental Health</h1>
-                        </div>
-                        <div className="viewall-content-author">
-                            <h3>By Paul Atreides</h3>
-                        </div>
-                    </div>
-                    <div className="viewall-box">
-                        <div className="viewall-box-img">
-                            <img src={img3}></img>
-                        </div>
-                        <div className="viewall-content-title">
-                            <h1>The Impact of Social Media on Youth Mental Health</h1>
-                        </div>
-                        <div className="viewall-content-author">
-                            <h3>By Paul Atreides</h3>
-                        </div>
-                    </div>
+                    <nav aria-label="viewall-page-navigation">
+                        <ul class="viewall-pagination">
+                            <li class="viewall-page-item"><a class="viewall-page-link" href="#">Previous</a></li>
+                            <li class="viewall-page-item"><a class="viewall-page-link" href="#">1</a></li>
+                            <li class="viewall-page-item"><a class="viewall-page-link" href="#">2</a></li>
+                            <li class="viewall-page-item"><a class="viewall-page-link" href="#">3</a></li>
+                            <li class="viewall-page-item"><a class="viewall-page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
