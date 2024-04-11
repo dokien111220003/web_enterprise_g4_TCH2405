@@ -19,7 +19,7 @@
     margin-bottom: 170px;
     width: 600px;
     height: 600px;
-    background: #F9F7F7;
+    background: #b1c0d5;
     padding-bottom: 30px;
     border-radius: 25px;
 }
@@ -57,6 +57,14 @@
     height: 300px;
 }
 
+.account-img-submit {
+    background-color: #3F72AF;
+}
+
+.account-submit {
+    background-color: #3F72AF;
+}
+
 .account-submit-container {
     display: flex;
     justify-content: center;
@@ -71,7 +79,7 @@
     margin-bottom: 170px;
     width: 1400px;
     height: 700px;
-    background: #F9F7F7;
+    background: #b1c0d5;
     padding-bottom: 30px;
     border-radius: 25px;
     align-items: center;
