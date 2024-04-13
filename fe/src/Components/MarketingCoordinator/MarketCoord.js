@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './MarketCoord.css';
 
@@ -11,7 +12,23 @@ const MarketCoord = () => {
     { id: 3, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
     { id: 4, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
     { id: 5, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
+    { id: 6, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
+    { id: 7, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
+    { id: 8, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
+    { id: 9, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
+    { id: 10, name: 'Thomas Hardy', email: 'thomashardy@mail.com', contributionLink: '/path/to/thomas-hardy-contribution.zip', contributionName: 'ThomasHardyContribution.zip' },
   ];
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
+  const totalPages = Math.ceil(submissions.length / itemsPerPage);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const currentSubmission = submissions.slice(startIndex, endIndex);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);}
   return (
     <Container fluid="xxl">
       <div className="table-responsive">
@@ -26,6 +43,7 @@ const MarketCoord = () => {
           <Table striped hover>
             <thead>
               <tr>
+                <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Contribution</th>
@@ -33,8 +51,9 @@ const MarketCoord = () => {
               </tr>
             </thead>
             <tbody>
-              {submissions.map(submission => (
-                <tr key={submission.id}>
+            {currentSubmission.map((submission, index) => (
+                <tr key={index}>
+                  <td>{submission.id}</td>
                   <td>{submission.name}</td>
                   <td>{submission.email}</td>
                   <td><a href={submission.contributionLink} download={submission.contributionName}>{submission.contributionName}</a></td>
@@ -44,14 +63,13 @@ const MarketCoord = () => {
             </tbody>
           </Table>
           <div class="clearfix">
-            <div class="hint-text">Showing <b>5</b> out of <b>15</b> Submissions</div>
-            <ul class="pagination">
-              <li class="page-item disabled"><a href="#">Previous</a></li>
-              <li class="page-item active"><a href="#" class="page-link">1</a></li>
-              <li class="page-item"><a href="#" class="page-link">2</a></li>
-              <li class="page-item"><a href="#" class="page-link">3</a></li>
-              <li class="page-item"><a href="#" class="page-link">Next</a></li>
-            </ul>
+          <Pagination className="pagination-contri-mm">
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <Pagination.Item key={index} active={index + 1 === currentPage} onClick={() => handlePageChange(index + 1)}>
+                  {index + 1}
+                </Pagination.Item>
+              ))}
+            </Pagination>
           </div>
         </div>
       </div>

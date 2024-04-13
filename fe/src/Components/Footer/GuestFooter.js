@@ -4,29 +4,23 @@ import fb from '../Assets/facebook.png'
 import twitter from '../Assets/twitter.png'
 import ins from '../Assets/instagram.png'
 
-const StudentFooter= () => {
+const GuestFooter= () => {
     return (
         <div className='footer-student'>
             <div className='sb_footer-student section_padding'>
                 <div className="sb_footer-student-links">
                     <div className="sb_footer-student-links-div">
                         <h4>For Blog</h4>
-                        <a href="/viewall">
-                            <p>News</p>
-                        </a>
-                    </div>
-                    <div className="sb_footer-student-links-div">
-                        <h4>For Submission</h4>
-                        <a href="/student_submit">
-                            <p>Submission</p>
+                        <a href="/viewallG">
+                            <p>View Blog</p>
                         </a>
                     </div>
                     <div className="sb_footer-student-links-div">
                         <h4>About</h4>
-                        <a href="/about">
+                        <a href="/aboutGuest">
                             <p>About Us</p>
                         </a>
-                        <a href="/term">
+                        <a href="/termGuest">
                             <p>Term</p>
                         </a>
                     </div>
@@ -55,4 +49,4 @@ const StudentFooter= () => {
     )
 }
 
-export default StudentFooter;
+export default GuestFooter;
