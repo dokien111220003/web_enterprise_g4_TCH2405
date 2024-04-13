@@ -94,6 +94,15 @@
     width: 1000px;
 }
 
+.file-upload-container {
+    width: 1000px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .next-content-container {
     display: flex;
     flex-direction: row;
@@ -229,4 +238,9 @@ body.active-modalcon {
     color: #f1f1f1;
     font-weight: bold;
     width: 150px;
+}
+
+.custom-toast .Toastify__toast-body svg path {
+    width: 35px;
+    height: 100px;
 }

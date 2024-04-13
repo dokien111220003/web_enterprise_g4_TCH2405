@@ -6,6 +6,7 @@ import usericon from '../Assets/user-icon.png';
 import facultyicon from '../Assets/faculty.png';
 import arrowdown from '../Assets/arrow.png';
 import logouticon from '../Assets/signout.png';
+import course from '../Assets/course.png';
 
 const SideBarAdmin = () => {
 
@@ -33,7 +34,7 @@ const SideBarAdmin = () => {
                             <img src={user_img} alt="" className="user_img"></img>
                         </div>
                         <div className="admin-details">
-                            <p className="admin-title">The Unforgotten</p>
+                            <p className="admin-title">Administrator</p>
                             <p className="admin-name">Mr. Yone</p>
                         </div>
                     </div>
@@ -96,6 +97,12 @@ const SideBarAdmin = () => {
                                             </a>
                                         </li>
                                     </ul>
+                                </li>
+                                <li>
+                                    <a href="/course">
+                                        <img src={course} alt="" className="admin-nav-icon"></img>
+                                        <span className="admin-nav-text">Course</span>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
