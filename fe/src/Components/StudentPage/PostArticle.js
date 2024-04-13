@@ -7,6 +7,7 @@ import { AiFillPicture } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import * as message from '../Message/Message'
 import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 function PostArticle() {
   const [file, setFile] = useState(null);
@@ -18,8 +19,10 @@ function PostArticle() {
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [image, setImage] = useState(null);
   const [imageName, setImageName] = useState("No selected image");
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
 
-  
+
+
   const handleFileChange = ({ target }) => {
     const file = target.files[0];
     if (file) {
@@ -34,11 +37,11 @@ function PostArticle() {
     }
   };
 
-  const handleUpload = () => {
-    message.success()
-    
+  const handleImageDelete = () => {
+    setImage(null);
+    setImageName("No selected image");
   };
-  
+
 
   const toggleModal = () => {
     setModal(!modal);
@@ -53,7 +56,24 @@ function PostArticle() {
   const handleCheckboxChange = () => {
     setIsAgree(!isAgree);
     setIsButtonDisabled(!isAgree);
+    setIsCheckboxChecked(!isCheckboxChecked)
   };
+
+  const handleUpload = () => {
+    if (!isCheckboxChecked) {
+      toast.error('Please agree to the terms and conditions before uploading.', {
+        toastStyle: { fontSize: '100px' }
+      });
+      return;
+    }
+
+    // Nếu checkbox được chọn, hiển thị toast success
+    toast.success('Upload successful!', {
+      toastStyle: { fontSize: '20px' }
+    });
+    setModal(false);
+  };
+
 
   return (
     <div className="post-main-container">
@@ -114,6 +134,18 @@ function PostArticle() {
         <section className="post-art-header">
           <h3>Select Your Post's Pictures</h3>
         </section>
+
+        <section className="delete-row">
+          <div className="delete-selected-file">
+            <MdDelete
+              onClick={() => {
+                setImage(null);
+                setImageName("No selected image");
+              }}
+              size={30}
+            />
+          </div>
+        </section>
       </div>
 
       <div className="form-post-container">
@@ -124,32 +156,29 @@ function PostArticle() {
           onChange={handleImageChange}
           className="post-image-input"
         />
+
         <div onClick={() => document.querySelector(".post-image-input").click()} className="file-upload-container">
-  {image ? (
-    <div className="image-preview">
-      <AiFillPicture color="#1475cf" size={60} />
-      <span>{imageName}</span>
-      <img 
-        src={URL.createObjectURL(image)} 
-        alt="Preview" 
-        style={{
-          width: "100%",        
-          maxHeight: "300px",   
-          objectFit: "contain",
-          marginTop: "10px",
-          border: "1px solid #ccc", 
-          padding: "10px",     
-          boxSizing: "border-box" 
-        }} 
-      />
-    </div>
-  ) : (
-    <>
-      <AiFillPicture color="#1475cf" size={60} />
-      <p>Browse Files to Upload Images</p>
-    </>
-  )}
-</div>
+          {image ? (
+            <div className="image-preview">
+              <img
+                src={URL.createObjectURL(image)}
+                alt="Preview"
+                style={{
+                  width: "100%",
+                  maxHeight: "190px",
+                  objectFit: "contain",
+                  border: "1px solid #ccc",
+                  boxSizing: "border-box"
+                }}
+              />
+            </div>
+          ) : (
+            <>
+              <AiFillPicture color="#1475cf" size={60} />
+              <p>Browse Files to Upload Images</p>
+            </>
+          )}
+        </div>
       </div>
 
       <div class="post-upload-container">
@@ -241,7 +270,7 @@ function PostArticle() {
               <div className="checkbox-terms">
                 <input
                   type="checkbox"
-                  checked={!isAgree}
+                  checked={isAgree}
                   onChange={handleCheckboxChange}
                 />{" "}
                 I have read and agree with the terms and conditions.
@@ -262,7 +291,10 @@ function PostArticle() {
           </div>
         </div>
       )}
+      <ToastContainer toastClassName="custom-toast" style={{ width: "500px", height: "250px", fontSize: "18px", textAlign: "center" }} />
+
     </div>
+
   );
 }
 

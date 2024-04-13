@@ -2,10 +2,7 @@ import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import search_icon from '../Assets/search.png';
 import logo from '../Assets/logo.png';
-import profileIcon from '../Assets/user.png';
-import Footer from '../Footer/StudentFooter';
-import SideBarStudent from '../SideBar/SideBarAD';
-import arrowdown from '../Assets/arrow.png';
+import MMFooter from '../Footer/MMFooter';
 import logouticon from '../Assets/signout.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -63,7 +60,7 @@ const NavBarMM = ({ children }) => {
                     {children}
                 </div>
             </div>
-            <Footer />
+            <MMFooter/>
         </>
     );
 }

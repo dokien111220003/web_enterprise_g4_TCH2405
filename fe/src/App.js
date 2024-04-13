@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 // Library
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Navbar
-
+import NavBarGuest from './Components/NavBar/NavBarGuest'
 import NavBarStudent from './Components/NavBarStudent/NavBarStudent';
 import NavBar from "./Components/NavBar/NavBar";
 import NavBarMC from "./Components/NavBar/NavBarMC";
@@ -49,8 +49,7 @@ import ViewContri from './Components/MarketingManager/ViewContri'
 import ViewDetails from './Components/MarketingManager/ViewDetails'
 import axios from 'axios'
 import { useQueries, useQuery } from '@tanstack/react-query';
-//Guest
-import NavBarGuest from './Components/NavBar/NavBarGuest'
+
 
 import { useDispatch, useSelector } from 'react-redux'
 import { isJsonString } from './utilis';
@@ -101,7 +100,6 @@ function App () {
         <Routes>
           {/* Cho trang cua Admin*/}
           <Route path='/adminpage1' element={<><SideBarAdmin /><MainPageAdmin /></>} />
-          <Route path='/adminpage' element={<><NavBar /><MainPageAdmin /><FooterAdmin/></>} />
           <Route path='/facultyadmin' element={<><NavBar /><FacultyAdmin /><FooterAdmin/></>} />
           <Route path='/add_faculty' element={<><NavBar /><AddNewFaculty /><FooterAdmin/></>} />
           <Route path='/edit_faculty/:id' element={<><NavBar /><EditFalcuty /><FooterAdmin/></>} />
@@ -112,15 +110,15 @@ function App () {
           <Route path='/add_course' element={<><NavBar /><AddCourse /><FooterAdmin/></>} />
           <Route path='/edit_course/:id' element={<><NavBar /><EditCourse /><FooterAdmin/></>} />
           {/* Cho trang cua Phần Chung*/}
-          <Route path='/login' element={<><Login /><FooterAdmin/></>} />
-          <Route path='/register' element={<><Register /><FooterAdmin/></>} />
+          <Route path='/login' element={<NavBarGuest><Login/></NavBarGuest>} />
+          <Route path='/register' element={<NavBarGuest><Register/></NavBarGuest>} />
           <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
           <Route path='/sidebar' element={<SideBarAdmin />} />
-          <Route path='/personal' element={<NavBarStudent><Profile/></NavBarStudent>} />
-          <Route path='/change_password' element={<NavBarStudent><ChangePassword/></NavBarStudent>} />
+          <Route path='/personal' element={<NavBarStudent><Profile/></NavBarStudent>} />  
+          <Route path='/change_password' element={<NavBarGuest><ChangePassword/></NavBarGuest>} />
           {/* Cho trang cua Marketing Manager */}
           <Route path='/marketing_manager_main' element={<NavBarMM><StudentPage /></NavBarMM>} />
-          {/* <Route path='/marketing_manager' element={<NavBarMM><MM /></NavBarMM>} /> */}
+          <Route path='/viewallMM' element={<NavBarMM><ViewAll/></NavBarMM>} />
           <Route path='/marketing_manager_main/contribution' element={<NavBarMM><ViewContri /></NavBarMM>}/>
           <Route path='/marketing_manager_main/contribution/details/:id' element={<NavBarMM><ViewDetails/></NavBarMM>} />
           <Route path='/aboutMM' element={<NavBarMM><About /></NavBarMM>} />
@@ -134,6 +132,7 @@ function App () {
           <Route path='/viewall' element={<NavBarStudent><ViewAll/></NavBarStudent>} />
           {/* Cho trang Marketing Coordinator sử dụng NavBar riêng */}
           <Route path='/mc_page' element={<NavBarMC><StudentPage/></NavBarMC>} />
+          <Route path='/viewallMC' element={<NavBarMC><ViewAll/></NavBarMC>} />
           <Route path='/mc_page1' element={<NavBarMC><MC/></NavBarMC>} />
           <Route path='/mc_page2' element={<NavBarMC><MC2/></NavBarMC>} />
           <Route path='/mc_feedback/:id' element={<NavBarMC><Feedback/></NavBarMC>} />
@@ -141,7 +140,10 @@ function App () {
           <Route path='/aboutMC' element={<NavBarMC><About /></NavBarMC>} />
           <Route path='/termMC' element={<NavBarMC><Term /></NavBarMC>} />
           {/* Cho trang Guest sử dụng NavBar riêng */}
-          <Route path='/guest' element={<NavBarGuest><StudentPage /></NavBarGuest>} />
+          <Route path='/' element={<NavBarGuest><StudentPage /></NavBarGuest>} />
+          <Route path='/viewallG' element={<NavBarGuest><ViewAll/></NavBarGuest>} />
+          <Route path='/aboutGuest' element={<NavBarGuest><About /></NavBarGuest>} />
+          <Route path='/termGuest' element={<NavBarGuest><Term /></NavBarGuest>} />
         </Routes>
       </Router>
     );

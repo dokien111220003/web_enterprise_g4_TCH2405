@@ -71,7 +71,7 @@ const MainPageAdmin = () => {
           <div className="left-containter-admin">
             <div className="boxx-analyze">
               <div className='boxx-content'>
-                <p>Total Submission</p>
+                <p>Total Contribution</p>
                 <b>154</b>
               </div>
             </div>
