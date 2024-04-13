@@ -84,7 +84,7 @@ function App () {
     // Do something before request is sent
     const currentTime = new Date()
     const { decoded } = handleDecoded()
-    if (decoded?.exp < currentTime.getTime() / 1000) {      
+    if (decoded?.exp < currentTime.getTime() / 1000) {  //kiểm tra xem thời gian hết hạn của token có nhỏ hơn thời gian hiện tại hay không  
         const data = await UserService.refreshToken()
         config.headers['token'] = `Bearer ${data?.access_token}`     
     }

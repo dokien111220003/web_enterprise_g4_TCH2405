@@ -9,6 +9,7 @@ import { updateUser } from '../../redux/slides/userSlide'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import jwt_decode from "jwt-decode";
+import Loading from '../../Components/LoadingComponent/Loading'
 import * as message from '../Message/Message'
 import { Navigate } from 'react-router-dom';
 
@@ -30,15 +31,36 @@ const Login = () => {
 
   const { data, isLoading, isSuccess } = mutation
 
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //   navigate('/student_page')
+  //     localStorage.setItem('access_token', JSON.stringify(data?.access_token))
+  //     if (data?.access_token) {
+  //       const decoded = jwt_decode(data?.access_token)
+  //       console.log('decode', decoded)
+  //       if (decoded?.id) {
+  //         handleGetDetailsUser(decoded?.id, data?.access_token )
+  //       }
+  //     }
+  //   }
+  //   else {
+  //     navigate('/login')
+  //   }
+  // }, [isSuccess])
+
   useEffect(() => {
     if (isSuccess) {
-    navigate('/student_page')
+      if(location?.state) {
+        navigate(location?.state)
+      }else {
+        navigate('/student_page')
+      }
       localStorage.setItem('access_token', JSON.stringify(data?.access_token))
+      localStorage.setItem('refresh_token', JSON.stringify(data?.refresh_token))
       if (data?.access_token) {
         const decoded = jwt_decode(data?.access_token)
-        console.log('decode', decoded)
         if (decoded?.id) {
-          handleGetDetailsUser(decoded?.id, data?.access_token )
+          handleGetDetailsUser(decoded?.id, data?.access_token)
         }
       }
     }
@@ -98,9 +120,13 @@ const handleGetDetailsUser = async (id, token) => {
             <span>Show Password</span>
             </label>
         </div>
-        <div className="submit-container">
+        {data?.status === 'ERR' && <span style={{ color: 'red' }}>{data?.message}</span>}
+        
+          <div className="submit-container">
             <button onClick={handleSignIn} className="submit">SIGN IN</button>
         </div>
+        
+        
         <div className="register-link">
             <p>Don't have an account? <a href="register">Register here!</a></p>
         </div>
