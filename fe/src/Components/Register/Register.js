@@ -51,41 +51,43 @@ const Register = () => {
   }
 
   return (
-    <div className='register-container'>
+    <div className="register-page-container">
+      <div className='register-container'>
         <div className="header">
-            <div className="text">Register</div>
+          <div className="text">Register</div>
         </div>
         <div className="inputs">
-            <div className="input-field">
-                <img src={mail_icon} alt="" className="icon" />
-                <InputForm style={{ marginBottom: '10px' }} placeholder="abc@gmail.com" value={email} onChange={handleOnchangeEmail} />
-            </div>
-            <div className="input-field">
-                <img src={password_icon} alt="" className="icon" />
-                <InputForm placeholder="password" style={{ marginBottom: '10px' }}
-                type={showPassword ? "text" : "password"}
-                value={password} onChange={handleOnchangePassword} />
-            </div>
-            <div className="input-field">
-                <img src={password_icon} alt="" className="icon" />
-                <InputForm placeholder="comfirm password"
-                type={showPassword ? "text" : "password"}
-                value={confirmPassword} onChange={handleOnchangeConfirmPassword}
+          <div className="input-field">
+            <img src={mail_icon} alt="" className="icon" />
+            <InputForm style={{ marginBottom: '0px' }} placeholder="abc@gmail.com" value={email} onChange={handleOnchangeEmail} />
+          </div>
+          <div className="input-field">
+            <img src={password_icon} alt="" className="icon" />
+            <InputForm placeholder="Password" style={{ marginBottom: '0px' }}
+              type={showPassword ? "text" : "password"}
+              value={password} onChange={handleOnchangePassword} />
+          </div>
+          <div className="input-field">
+            <img src={password_icon} alt="" className="icon" />
+            <InputForm placeholder="Comfirm Password"
+              type={showPassword ? "text" : "password"}
+              value={confirmPassword} onChange={handleOnchangeConfirmPassword}
             />
-            </div>
-            {data?.status === 'ERR' && <span style={{ color: 'red' }}>{data?.message}</span>}
+          </div>
+          {data?.status === 'ERR' && <span style={{ color: 'red' }}>{data?.message}</span>}
         </div>
         <div className="show-password">
-            <label><input type="checkbox" onChange={handleShowPasswordToggle}/>
+          <label><input type="checkbox" onChange={handleShowPasswordToggle} />
             <span>Show Password</span>
-            </label>
+          </label>
         </div>
         <div className="submit-container">
-            <button onClick={handleSignUp} className="submit">REGISTER</button>
+          <button onClick={handleSignUp} className="submit">REGISTER</button>
         </div>
         <div className="login-link">
-            <p>Already have an account? <a href="login">Login here!</a></p>
+          <p>Already have an account? <a href="login">Login here!</a></p>
         </div>
+      </div>
     </div>
   )
 }

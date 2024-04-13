@@ -4,6 +4,9 @@ import { MdDelete } from "react-icons/md";
 import { FaFileUpload } from "react-icons/fa";
 import { AiFillFileImage } from "react-icons/ai";
 import { AiFillPicture } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import * as message from '../Message/Message'
+import { toast, ToastContainer } from 'react-toastify';
 
 function PostArticle() {
   const [file, setFile] = useState(null);
@@ -11,6 +14,31 @@ function PostArticle() {
   const [modal, setModal] = useState(false);
   const [isAgree, setIsAgree] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const navigate = useNavigate();
+  const [uploadSuccess, setUploadSuccess] = useState(false);
+  const [image, setImage] = useState(null);
+  const [imageName, setImageName] = useState("No selected image");
+
+  
+  const handleFileChange = ({ target }) => {
+    const file = target.files[0];
+    if (file) {
+      setFile(file);
+    }
+  };
+
+  const handleImageChange = ({ target }) => {
+    const image = target.files[0];
+    if (image) {
+      setImage(image);
+    }
+  };
+
+  const handleUpload = () => {
+    message.success()
+    
+  };
+  
 
   const toggleModal = () => {
     setModal(!modal);
@@ -89,13 +117,39 @@ function PostArticle() {
       </div>
 
       <div className="form-post-container">
-        <input type="files" hidden></input>
-        {
-          <>
-            <AiFillPicture color="#1475cf" size={60} />
-            <p>Browse Files to Upload Images</p>
-          </>
-        }
+        <input
+          type="file"
+          accept="image/*"
+          hidden
+          onChange={handleImageChange}
+          className="post-image-input"
+        />
+        <div onClick={() => document.querySelector(".post-image-input").click()} className="file-upload-container">
+  {image ? (
+    <div className="image-preview">
+      <AiFillPicture color="#1475cf" size={60} />
+      <span>{imageName}</span>
+      <img 
+        src={URL.createObjectURL(image)} 
+        alt="Preview" 
+        style={{
+          width: "100%",        
+          maxHeight: "300px",   
+          objectFit: "contain",
+          marginTop: "10px",
+          border: "1px solid #ccc", 
+          padding: "10px",     
+          boxSizing: "border-box" 
+        }} 
+      />
+    </div>
+  ) : (
+    <>
+      <AiFillPicture color="#1475cf" size={60} />
+      <p>Browse Files to Upload Images</p>
+    </>
+  )}
+</div>
       </div>
 
       <div class="post-upload-container">
@@ -200,8 +254,7 @@ function PostArticle() {
               </button>
               <button
                 className="btn-upload"
-                onClick={toggleModal}
-                disabled={isButtonDisabled}
+                onClick={handleUpload}
               >
                 Upload
               </button>

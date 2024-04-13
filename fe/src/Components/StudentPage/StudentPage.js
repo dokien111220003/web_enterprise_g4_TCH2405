@@ -8,6 +8,7 @@ import slider3 from '../Assets/slider3.jpg';
 import img1 from '../Assets/slider1.jpg';
 import img2 from '../Assets/slider2.jpg';
 import img3 from '../Assets/slider3.jpg';
+import arrow from '../Assets/arrow-right.png'
 
 const StudentPage = () => {
 
@@ -26,13 +27,13 @@ const StudentPage = () => {
           </div>
           <div className="slider-context">
             <h1>Where students can freely share their voices.</h1>
-            <li><NavLink exact to='/' activeClassName="active">More about us</NavLink></li>
+            <li><NavLink exact to='/about' activeClassName="active">More about us</NavLink></li>
           </div>
         </div>
         <div className="left-content">
           <div className="left-content-header">
-            <h1>Business Faculty</h1>
-            <li><NavLink exact to='/' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
+            <h1>IT Faculty</h1>
+            <li><NavLink exact to='/viewall' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
           </div>
           <div className="left-content-context">
             <div className="context-box-faculty">
@@ -75,7 +76,7 @@ const StudentPage = () => {
         <div className="left-content">
           <div className="left-content-header">
             <h1>Business Faculty</h1>
-            <li><NavLink exact to='/' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
+            <li><NavLink exact to='/viewall' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
           </div>
           <div className="left-content-context">
             <div className="context-box-faculty">
@@ -106,7 +107,7 @@ const StudentPage = () => {
                   <img src={img3}></img>
                 </div>
                 <div className="box-content-title-faculty">
-                  <h1>Analyzing the Effects of Urbanization on Wildlife Habitats</h1>
+                  <h1>Analyzing the Effects of Urbanization on Wildlife</h1>
                 </div>
                 <div className="content-author-faculty">
                   <h3>By Paul Atreides</h3>
@@ -117,8 +118,8 @@ const StudentPage = () => {
         </div>
         <div className="left-content">
           <div className="left-content-header">
-            <h1>Business Faculty</h1>
-            <li><NavLink exact to='/' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
+            <h1>Marketing Faculty</h1>
+            <li><NavLink exact to='/viewall' activeClassName="active" className="nav-link-text">View more here</NavLink></li>
           </div>
           <div className="left-content-context">
             <div className="context-box-faculty">
@@ -149,7 +150,7 @@ const StudentPage = () => {
                   <img src={img3}></img>
                 </div>
                 <div className="box-content-title-faculty">
-                  <h1>Analyzing the Effects of Urbanization on Wildlife Habitats</h1>
+                  <h1>Analyzing the Effects of Urbanization on Wildlife</h1>
                 </div>
                 <div className="content-author-faculty">
                   <h3>By Paul Atreides</h3>
@@ -158,7 +159,19 @@ const StudentPage = () => {
             </div>
           </div>
         </div>
+        <div className="viewmore">
+          <div className="li-viewmore">
+            <li><NavLink exact to='/viewall' activeClassName="active">View More Faculty</NavLink></li>
+            <div className="icon-viewmore">
+              <img src={arrow} alt="arrow" />
+            </div>
+          </div>
+        </div>
       </div>
+
+
+
+
       <div className="studentpage-right-container">
         <div className="studentpage-right-container-header">
           <h1>Latest Public</h1>

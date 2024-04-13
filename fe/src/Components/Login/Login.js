@@ -31,51 +31,31 @@ const Login = () => {
 
   const { data, isLoading, isSuccess } = mutation
 
-  // useEffect(() => {
-  //   if (isSuccess) {
-  //   navigate('/student_page')
-  //     localStorage.setItem('access_token', JSON.stringify(data?.access_token))
-  //     if (data?.access_token) {
-  //       const decoded = jwt_decode(data?.access_token)
-  //       console.log('decode', decoded)
-  //       if (decoded?.id) {
-  //         handleGetDetailsUser(decoded?.id, data?.access_token )
-  //       }
-  //     }
-  //   }
-  //   else {
-  //     navigate('/login')
-  //   }
-  // }, [isSuccess])
 
   useEffect(() => {
     if (isSuccess) {
       if(location?.state) {
-        navigate(location?.state)
-      }else {
-        navigate('/student_page')
+        navigate(location?.state);
+      } else {
+        navigate('/student_page');
       }
-      localStorage.setItem('access_token', JSON.stringify(data?.access_token))
-      localStorage.setItem('refresh_token', JSON.stringify(data?.refresh_token))
+      localStorage.setItem('access_token', JSON.stringify(data?.access_token));
+      localStorage.setItem('refresh_token', JSON.stringify(data?.refresh_token));
       if (data?.access_token) {
-        const decoded = jwt_decode(data?.access_token)
+        const decoded = jwt_decode(data?.access_token);
         if (decoded?.id) {
-          handleGetDetailsUser(decoded?.id, data?.access_token)
+          handleGetDetailsUser(decoded?.id, data?.access_token);
         }
       }
     }
-  }, [isSuccess])
+  }, [isSuccess, navigate, location?.state]);
 
-const handleGetDetailsUser = async (id, token) => {
+  const handleGetDetailsUser = async (id, token) => {
+    const storage = localStorage.getItem('refresh_token')
+    const refreshToken = JSON.parse(storage)
     const res = await UserService.getDetailsUser(id, token)
-    dispatch(updateUser({...res?.data, access_token: token}))
-    // const storage = localStorage.getItem('refresh_token')
-    // const refreshToken = JSON.parse(storage)
-    // const res = await UserService.getDetailsUser(id, token)
-    // dispatch(updateUser({ ...res?.data, access_token: token,refreshToken }))
+    dispatch(updateUser({ ...res?.data, access_token: token,refreshToken }))
   }
-
-  console.log('mutation', mutation)
 
   const handleOnchangeEmail = (value) => {
     setEmail(value)
@@ -92,33 +72,32 @@ const handleGetDetailsUser = async (id, token) => {
     })
   }
 
-  
-
   return (
-    <div className='login-container'>
+    <div className="login-page-container">
+      <div className='login-container'>
         <div className="header">
-            <div className="text-sign-in">Sign In</div>
+          <div className="text-sign-in">Sign In</div>
         </div>
         <div className="inputs">
-            <div className="input-field">
-                <img src={mail_icon} alt="" className="icon" />
-                <InputForm style={{ marginBottom: '10px' }} placeholder="abc@gmail.com"
-                value={email} onChange={handleOnchangeEmail} />
-            </div>
-            <div className="input-field">
-                <img src={password_icon} alt="" className="icon" />
-                <InputForm
-                placeholder="password"
-                value={password}
-                type={showPassword ? "text" : "password"}
-                onChange={handleOnchangePassword}
+          <div className="input-field">
+            <img src={mail_icon} alt="" className="icon" />
+            <InputForm style={{ marginBottom: '0px' }} placeholder="abc@gmail.com"
+              value={email} onChange={handleOnchangeEmail} />
+          </div>
+          <div className="input-field">
+            <img src={password_icon} alt="" className="icon" />
+            <InputForm
+              placeholder="password"
+              value={password}
+              type={showPassword ? "text" : "password"}
+              onChange={handleOnchangePassword}
             />
-            </div>
+          </div>
         </div>
         <div className="show-password">
-            <label><input type="checkbox" onChange={handleShowPasswordToggle}/>
+          <label><input type="checkbox" onChange={handleShowPasswordToggle} />
             <span>Show Password</span>
-            </label>
+          </label>
         </div>
         {data?.status === 'ERR' && <span style={{ color: 'red' }}>{data?.message}</span>}
         
@@ -128,8 +107,9 @@ const handleGetDetailsUser = async (id, token) => {
         
         
         <div className="register-link">
-            <p>Don't have an account? <a href="register">Register here!</a></p>
+          <p>Don't have an account? <a href="register">Register here!</a></p>
         </div>
+      </div>
     </div>
   )
 }
