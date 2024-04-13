@@ -9,12 +9,23 @@ import arrowdown from '../Assets/arrow.png';
 import logouticon from '../Assets/signout.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import * as UserService from '../../services/UserService';
+import { resetUser } from '../../redux/slides/userSlide'
+
 const NavBarMM = ({ children }) => {
     const navigate = useNavigate()
     const user = useSelector((state) => state.user)
     const [loading, setLoading] = useState(false)
     const dispatch = useDispatch()
     console.log('user', user)
+
+    const handleLogout = async () => {
+        setLoading(true)
+        await UserService.logoutUser()
+        dispatch(resetUser())
+        setLoading(false)
+      }
+
     return (
         <>
             <nav className="navbar-student">
@@ -41,7 +52,7 @@ const NavBarMM = ({ children }) => {
                                 <input type="search" placeholder="Search" />
                             </div>
                         </div>
-                        <li><NavLink exact to='/' activeClassName="active" className="link-hover">Logout</NavLink>
+                        <li><NavLink exact to='/login' onClick={handleLogout} activeClassName="active" className="link-hover">Logout</NavLink>
                             <img src={logouticon} alt="" className="admin-nav"></img>
                         </li>
                     </ul>
