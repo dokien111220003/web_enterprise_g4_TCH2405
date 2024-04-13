@@ -3,9 +3,34 @@ import './ViewDetails.css';
 import Table from 'react-bootstrap/Table';
 import Pagination from 'react-bootstrap/Pagination';
 import search_icon from '../Assets/search.png';
+import JSZip from 'jszip';
+import { saveAs } from 'file-saver';
 
 const ViewDetails = () => {
   const [currentPage, setCurrentPage] = useState(1);
+
+  const handleDownloadZip = async () => {
+    const zip = new JSZip();
+
+    // URLs pointing to the public directory
+    const imageUrl = process.env.PUBLIC_URL + '/images/sampleImage.png'; // Adjust the path as needed
+    const docUrl = process.env.PUBLIC_URL + '/docs/sampleDocument.docx'; // Adjust the path as needed
+
+    // Fetch image and add to zip
+    const imageBlob = await fetch(imageUrl).then(response => response.blob());
+    zip.file("sampleImage.png", imageBlob);
+
+    // Fetch document and add to zip
+    const docBlob = await fetch(docUrl).then(response => response.blob());
+    zip.file("sampleDocument.docx", docBlob);
+
+    // Generate the zip file
+    zip.generateAsync({type:"blob"})
+       .then(function(content) {
+           // Use FileSaver to save the file
+           saveAs(content, "example.zip");
+       });
+  };
 
   const contributions = [
     { id: 1, name: "John Smith", year: "2017-2021", images: "/demo", download: "/demo" },
@@ -66,9 +91,9 @@ const ViewDetails = () => {
                 <td>{contribution.name}</td>
                 <td>{contribution.year}</td>
                 <td><a href={contribution.images}>View All</a></td>
-                <td><a href={contribution.download}>Download</a></td>
+                <td><a href="/download-articles" target="_blank">Download</a></td>
               </tr>
-            ))}
+            ))}z
           </tbody>
         </Table>
         <div >
