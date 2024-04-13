@@ -45,10 +45,31 @@ const Login = () => {
         const decoded = jwt_decode(data?.access_token);
         if (decoded?.id) {
           handleGetDetailsUser(decoded?.id, data?.access_token);
+          navigateBasedOnRole(decoded?.role);
         }
       }
     }
   }, [isSuccess, navigate, location?.state]);
+
+  const navigateBasedOnRole = (role) => {
+    switch(role) {
+      case 'student':
+        navigate('/student_page');
+        break;
+      case 'marketing manager':
+        navigate('/marketing_manager_main');
+        break;
+      case 'admin':
+        navigate('/adminpage1');
+        break;
+      case 'marketing coordinator':
+        navigate('/mc_page');
+        break;
+      case 'guest':
+        navigate('/guest');
+        break;
+    }
+  };
 
   const handleGetDetailsUser = async (id, token) => {
     const storage = localStorage.getItem('refresh_token')
@@ -56,6 +77,8 @@ const Login = () => {
     const res = await UserService.getDetailsUser(id, token)
     dispatch(updateUser({ ...res?.data, access_token: token,refreshToken }))
   }
+
+  
 
   const handleOnchangeEmail = (value) => {
     setEmail(value)
