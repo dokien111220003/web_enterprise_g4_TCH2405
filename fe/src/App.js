@@ -29,7 +29,6 @@ import Profile from './Components/Profile/Account';
 import Slider from './Components/Slider/Slider';
 import FooterAdmin from './Components/Footer/AdminFooter';
 import SideBarAdmin from './Components/SideBar/SideBarAdmin';
-import SideBarAD from './Components/SideBar/SideBarAD';
 import Term from './Components/StudentPage/Term'
 // Student
 import StudentPage from './Components/StudentPage/StudentPage';
@@ -42,11 +41,14 @@ import MC from './Components/MarketingCoordinator/MarketCoord'
 import MC2 from './Components/MarketingCoordinator/MarketCoord2'
 import Feedback from './Components/MarketingCoordinator/McFeedback'
 import Review from './Components/MarketingCoordinator/McReview'
+import MCPage from './Components/MarketingCoordinator/MCPage'
 // MM
-import MM from './Components/MarketingManager/MainPage'
-import MMNav from './Components/MarketingManager/MMMNavBar'
+import MMPage from './Components/MarketingManager/MMPage';
 import ViewContri from './Components/MarketingManager/ViewContri'
 import ViewDetails from './Components/MarketingManager/ViewDetails'
+//Guest
+import GuestPage from './Components/Guest/GuestPage';
+
 import axios from 'axios'
 import { useQueries, useQuery } from '@tanstack/react-query';
 
@@ -100,8 +102,8 @@ function App () {
     return (
       <Router>
         <Routes>
-          {/* Cho trang cua Admin*/}
-          <Route path='/adminpage1' element={<><SideBarAdmin /><MainPageAdmin /></>} />
+{/* Cho trang cua Admin*/}
+<Route path='/adminpage1' element={<><SideBarAdmin /><MainPageAdmin /></>} />
           <Route path='/facultyadmin' element={<><NavBar /><FacultyAdmin /><FooterAdmin/></>} />
           <Route path='/add_faculty' element={<><NavBar /><AddNewFaculty /><FooterAdmin/></>} />
           <Route path='/edit_faculty/:id' element={<><NavBar /><EditFalcuty /><FooterAdmin/></>} />
@@ -119,7 +121,7 @@ function App () {
           <Route path='/personal' element={<NavBarStudent><Profile/></NavBarStudent>} />  
           <Route path='/change_password' element={<NavBarGuest><ChangePassword/></NavBarGuest>} />
           {/* Cho trang cua Marketing Manager */}
-          <Route path='/marketing_manager_main' element={<NavBarMM><StudentPage /></NavBarMM>} />
+          <Route path='/marketing_manager_main' element={<NavBarMM><MMPage/></NavBarMM>} />
           <Route path='/viewallMM' element={<NavBarMM><ViewAll/></NavBarMM>} />
           <Route path='/marketing_manager_main/contribution' element={<NavBarMM><ViewContri /></NavBarMM>}/>
           <Route path='/marketing_manager_main/contribution/details/:id' element={<NavBarMM><ViewDetails/></NavBarMM>} />
@@ -133,7 +135,7 @@ function App () {
           <Route path='/post' element={<NavBarStudent><Post/></NavBarStudent>} />
           <Route path='/viewall' element={<NavBarStudent><ViewAll/></NavBarStudent>} />
           {/* Cho trang Marketing Coordinator sử dụng NavBar riêng */}
-          <Route path='/mc_page' element={<NavBarMC><StudentPage/></NavBarMC>} />
+          <Route path='/mc_page' element={<NavBarMC><MCPage/></NavBarMC>} />
           <Route path='/viewallMC' element={<NavBarMC><ViewAll/></NavBarMC>} />
           <Route path='/mc_page1' element={<NavBarMC><MC/></NavBarMC>} />
           <Route path='/mc_page2' element={<NavBarMC><MC2/></NavBarMC>} />
@@ -142,7 +144,7 @@ function App () {
           <Route path='/aboutMC' element={<NavBarMC><About /></NavBarMC>} />
           <Route path='/termMC' element={<NavBarMC><Term /></NavBarMC>} />
           {/* Cho trang Guest sử dụng NavBar riêng */}
-          <Route path='/' element={<NavBarGuest><StudentPage /></NavBarGuest>} />
+          <Route path='/' element={<NavBarGuest><GuestPage/></NavBarGuest>} />
           <Route path='/viewallG' element={<NavBarGuest><ViewAll/></NavBarGuest>} />
           <Route path='/aboutGuest' element={<NavBarGuest><About /></NavBarGuest>} />
           <Route path='/termGuest' element={<NavBarGuest><Term /></NavBarGuest>} />
