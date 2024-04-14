@@ -2,10 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import search_icon from '../Assets/search.png';
 import logo from '../Assets/logo.png';
-import profileIcon from '../Assets/user.png';
-import Footer from '../Footer/StudentFooter';
-import SideBarStudent from '../SideBar/SideBarAD';
-import arrowdown from '../Assets/arrow.png';
+import FooterMC from '../Footer/MCFooter';
 import './NavBarMC.css';
 import logouticon from '../Assets/signout.png';
 const NavBarMC = ({ children }) => {
@@ -47,7 +44,7 @@ const NavBarMC = ({ children }) => {
                     {children}
                 </div>
             </div>
-            <Footer />
+            <FooterMC/>
         </>
     );
 }

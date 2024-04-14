@@ -4,29 +4,32 @@ import fb from '../Assets/facebook.png'
 import twitter from '../Assets/twitter.png'
 import ins from '../Assets/instagram.png'
 
-const StudentFooter= () => {
+const MCFooter= () => {
     return (
         <div className='footer-student'>
             <div className='sb_footer-student section_padding'>
                 <div className="sb_footer-student-links">
                     <div className="sb_footer-student-links-div">
                         <h4>For Blog</h4>
-                        <a href="/viewall">
+                        <a href="/viewallMC">
                             <p>News</p>
                         </a>
                     </div>
                     <div className="sb_footer-student-links-div">
-                        <h4>For Submission</h4>
-                        <a href="/student_submit">
-                            <p>Submission</p>
+                        <h4>For Contribution</h4>
+                        <a href="/mc_page1">
+                            <p>First Hand Contribution </p>
+                        </a>
+                        <a href="/mc_page2">
+                            <p>Final Hand Contribution </p>
                         </a>
                     </div>
                     <div className="sb_footer-student-links-div">
                         <h4>About</h4>
-                        <a href="/about">
+                        <a href="/aboutMC">
                             <p>About Us</p>
                         </a>
-                        <a href="/term">
+                        <a href="/termMC">
                             <p>Term</p>
                         </a>
                     </div>
@@ -55,4 +58,4 @@ const StudentFooter= () => {
     )
 }
 
-export default StudentFooter;
+export default MCFooter;
