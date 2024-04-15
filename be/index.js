@@ -5,6 +5,9 @@ const routes = require('./routes')
 const cors = require('cors');
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
+const fs = require('fs');
+const archiver = require('archiver');
+const path = require('path');
 
 dotenv.config()
 

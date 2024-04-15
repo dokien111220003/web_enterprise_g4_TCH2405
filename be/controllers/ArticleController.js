@@ -27,7 +27,7 @@ const updateArticle = async (req, res) => {
                 status: 'ERR',
                 message: 'The articleId is required'
             });
-        }
+        }          
         const response = await ArticleService.updateArticle(articleId, data)
         return res.status(200),json(response)
     }catch(e){
