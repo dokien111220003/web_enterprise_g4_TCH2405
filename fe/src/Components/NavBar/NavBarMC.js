@@ -10,7 +10,7 @@ const NavBarMC = ({ children }) => {
         <>
             <nav className="navbar-student">
                 <div className="header-student">
-                    <h3><NavLink exact to="/student_page" className="logo"><img src={logo} alt="Logo" /></NavLink></h3>
+                    <h3><NavLink exact to="/mc_page" className="logo"><img src={logo} alt="Logo" /></NavLink></h3>
                 </div>
                 <div className="line-nav-student">
                 </div>

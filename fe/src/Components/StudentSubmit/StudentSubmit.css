@@ -45,3 +45,17 @@
 .submit-article:hover {
   background-color: #004494;
 }
+.toggle-feedback {
+  margin-left: 5px;
+  cursor: pointer;
+  color: #0056b3;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.feedback-content {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}

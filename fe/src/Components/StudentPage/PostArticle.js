@@ -292,9 +292,9 @@ function PostArticle() {
         </div>
       )}
       <ToastContainer toastClassName="custom-toast" style={{ width: "500px", height: "250px", fontSize: "18px", textAlign: "center" }} />
-
+      
     </div>
-
+  
   );
 }
 
