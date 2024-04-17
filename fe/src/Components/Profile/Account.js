@@ -21,15 +21,15 @@ const Account = () => {
 
     const handleUpload = () => {
         message.success()
-        
-      };
+
+    };
 
     const handleImageChange = ({ target }) => {
         const image = target.files[0];
         if (image) {
-          setImage(image);
+            setImage(image);
         }
-      };
+    };
     return (
         <div className="acc-container">
             <div className='acc-information-container'>
@@ -69,30 +69,29 @@ const Account = () => {
                 <div className="acc-image-header">
                     <div className="acc-text">Your Photo</div>
                 </div>
-                <div className="acc-image">
-                {image ? (
-    <div className="image-preview">
-      <img 
-        src={URL.createObjectURL(image)} 
-        alt="Preview" 
-        style={{
-          width: "100%",        
-          maxHeight: "300px",   
-          objectFit: "contain",
-          marginTop: "10px",
-          border: "1px solid #ccc", 
-          padding: "10px",     
-          boxSizing: "border-box" 
-        }} 
-      />
-    </div>
-  ) : (
-    <>
-      <AiFillPicture color="#1475cf" size={60} />
-      <p>Browse Files to Upload Images</p>
-    </>
-  )}
-                    <input type="file" onChange={handleImageChange} accept="image/*"/>
+                <div className="acc-image-hehe">
+                    {image ? (
+                        <div className="image-preview">
+                            <img
+                                src={URL.createObjectURL(image)}
+                                alt="Preview"
+                                style={{
+                                    width: "100%",
+                                    maxHeight: "300px",
+                                    objectFit: "contain",
+                                    marginTop: "10px",
+                                    border: "1px solid #ccc",
+                                    boxSizing: "border-box"
+                                }}
+                            />
+                        </div>
+                    ) : (
+                        <>
+                            <AiFillPicture color="#1475cf" size={60} />
+                            <p>Browse Files to Upload Images</p>
+                        </>
+                    )}
+                    <input type="file" onChange={handleImageChange} accept="image/*" className="profile-input"/>
                 </div>
                 <div className="account-submit-container">
                     <button className="account-img-submit" onClick={handleUpload}>UPDATE</button>

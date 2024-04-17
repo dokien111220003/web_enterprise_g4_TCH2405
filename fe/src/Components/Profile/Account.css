@@ -29,14 +29,30 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-bottom: 80px;
+    height: 70px;
 }
 
-.acc-image img {
-    margin-top: -60px;
+.acc-image-hehe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     width: 100%;
-    height: 100%;
+    height: 400px;
+}
+
+.acc-image-hehe img {
+    width: 27px;
+    height: 270px;
     object-fit: cover;
+}
+
+.profile-input {
+    width: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .account-img-submit {
@@ -171,4 +187,8 @@ select {
     accent-color: #3F72AF;
     padding: 10px;
     transform: scale(1.5);
+}
+
+.image-preview {
+    
 }
