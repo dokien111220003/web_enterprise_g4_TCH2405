@@ -98,12 +98,6 @@ const SideBarAdmin = () => {
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="/course">
-                                        <img src={course} alt="" className="admin-nav-icon"></img>
-                                        <span className="admin-nav-text">Course</span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>

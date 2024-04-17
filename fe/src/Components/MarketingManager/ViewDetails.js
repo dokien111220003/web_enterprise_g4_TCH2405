@@ -33,14 +33,14 @@ const ViewDetails = () => {
   };
 
   const contributions = [
-    { id: 1, name: "John Smith", year: "2017-2021", images: "/demo", download: "/demo" },
-    { id: 2, name: "Emma Stone", year: "2017-2021", images: "/demo", download: "/demo" },
-    { id: 3, name: "Stev Vie", year: "2017-2021", images: "/demo", download: "/demo" },
-    { id: 4, name: "John Smith", year: "2017-2021", images: "/demo", download: "/demo" },
-    { id: 5, name: "Emma Stone", year: "2017-2021", images: "/demo", download: "/demo" },
-    { id: 6, name: "Stev Vie", year: "2017-2021", images: "/demo", download: "/demo" },
-    { id: 7, name: "John Smith", year: "2017-2021", images: "/demo", download: "/demo" },
-    { id: 8, name: "Emma Stone", year: "2017-2021", images: "/demo", download: "/demo" },
+    { id: 1, name: "John Smith", images: "/demo", download: "/demo" },
+    { id: 2, name: "Emma Stone", images: "/demo", download: "/demo" },
+    { id: 3, name: "Stev Vie", images: "/demo", download: "/demo" },
+    { id: 4, name: "John Smith", images: "/demo", download: "/demo" },
+    { id: 5, name: "Emma Stone", images: "/demo", download: "/demo" },
+    { id: 6, name: "Stev Vie", images: "/demo", download: "/demo" },
+    { id: 7, name: "John Smith", images: "/demo", download: "/demo" },
+    { id: 8, name: "Emma Stone", images: "/demo", download: "/demo" },
   ];
 
   const itemsPerPage = 5;
@@ -79,7 +79,6 @@ const ViewDetails = () => {
             <tr>
               <th>#</th>
               <th>Name</th>
-              <th>Course</th>
               <th>Contribution Images</th>
               <th>Document</th>
             </tr>
@@ -89,11 +88,10 @@ const ViewDetails = () => {
               <tr key={index}>
                 <td>{contribution.id}</td>
                 <td>{contribution.name}</td>
-                <td>{contribution.year}</td>
                 <td><a href={contribution.images}>View All</a></td>
                 <td><a href="/download-articles" target="_blank">Download</a></td>
               </tr>
-            ))}z
+            ))}
           </tbody>
         </Table>
         <div >
