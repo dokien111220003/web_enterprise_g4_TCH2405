@@ -1,13 +1,15 @@
-.AD-contri-filter-fal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 270px;
+.AD-contri-filter-fal-add {
+    width: 480px;
     background: #DBE2EF;
-    margin-left: 270px;
+    color: #4f4f4f;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
 }
+
 .inputs {
     display: flex;
-    justify-content: space-between; /* Cách đều các items */
-    gap: 20px; /* Khoảng cách giữa các items */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }

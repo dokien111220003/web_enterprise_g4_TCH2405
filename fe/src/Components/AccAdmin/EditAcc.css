@@ -101,3 +101,12 @@ input[type="text"]{
     box-shadow: 0 0 0 4px #fff,
     0 0 0 6px #1b5dd8;
 }
+
+.AD-contri-filter-fal-edit {
+    width: 480px;
+    background: #DBE2EF;
+    color: #4f4f4f;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}

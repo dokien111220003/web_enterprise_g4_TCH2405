@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { AiFillPicture } from "react-icons/ai";
 import * as message from '../Message/Message'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Account = () => {
     const [showPassword] = useState(false);
@@ -15,13 +17,14 @@ const Account = () => {
     const [image, setImage] = useState(null);
     const [imageName, setImageName] = useState("No selected image");
     console.log('user', user)
+
     const handleGenderChange = (e) => {
         setGender(e.target.value);
     };
 
     const handleUpload = () => {
         message.success()
-
+        toast.success('Profile updated successfully!');
     };
 
     const handleImageChange = ({ target }) => {
@@ -91,12 +94,13 @@ const Account = () => {
                             <p>Browse Files to Upload Images</p>
                         </>
                     )}
-                    <input type="file" onChange={handleImageChange} accept="image/*" className="profile-input"/>
+                    <input type="file" onChange={handleImageChange} accept="image/*" className="profile-input" />
                 </div>
                 <div className="account-submit-container">
                     <button className="account-img-submit" onClick={handleUpload}>UPDATE</button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }
