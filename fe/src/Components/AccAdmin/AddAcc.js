@@ -28,15 +28,15 @@ const AddNewUser = () => {
             <div className="input">
                 <input type="text" placeholder="Address" required/>
             </div>
-            <select className="AD-contri-filter-fal">
+            <select className="AD-contri-filter-fal-add">
                     <option value="">Role</option>
                     <option value="Open">Guest</option>
                     <option value="Mathematics">Student</option>
                     <option value="MachineLearning">MC</option>
                     <option value="MachineLearning">MM</option>
             </select>
-            <select className="AD-contri-filter-fal">
-                    <option value="">Course</option>
+            <select className="AD-contri-filter-fal-add">
+                    <option value="">Faculty</option>
                     <option value="None">None</option>
                     <option value="Computer Science">Computer Science</option>
                     <option value="Mathematics">Mathematics</option>

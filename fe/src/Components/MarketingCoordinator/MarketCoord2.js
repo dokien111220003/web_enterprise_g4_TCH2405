@@ -36,7 +36,7 @@ const MarketCoord2 = () => {
           <div className="table-title">
             <div className="row">
               <div className="col-sm-6">
-                <h2>Manage First Hand Submission</h2>
+                <h2>Manage Final Hand Submission</h2>
               </div>
             </div>
           </div>

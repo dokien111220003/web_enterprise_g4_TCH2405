@@ -16,8 +16,7 @@ const NavBar = () => {
                     <li><NavLink exact to='/adminpage1' activeClassName="active">Dashboard</NavLink></li>
                     <li><NavLink exact to='/facultyadmin' activeClassName="active">Faculty</NavLink></li>
                     <li><NavLink exact to='/accadmin' activeClassName="active">Account</NavLink></li>
-                    <li><NavLink exact to='/course' activeClassName="active">Course</NavLink></li>
-                    <li><NavLink exact to='/login' activeClassName="active">Login</NavLink></li>
+                    <li><NavLink exact to='/login' activeClassName="active">Logout</NavLink></li>
                 </ul>
             </div>
         </nav>
