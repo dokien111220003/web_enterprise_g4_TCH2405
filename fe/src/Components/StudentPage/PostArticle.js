@@ -77,6 +77,14 @@ function PostArticle() {
 
   return (
     <div className="post-main-container">
+
+      <div class="post-title-container">
+        <section className="post-art-header-title">
+          <h3>Enter Contribution Name</h3>
+        </section>
+        <input type="text" placeholder="Type here..." className="title-post" />
+      </div>
+
       <div class="post-delete-container">
         <section className="post-art-header">
           <h3>Select Your Document</h3>
@@ -292,9 +300,9 @@ function PostArticle() {
         </div>
       )}
       <ToastContainer toastClassName="custom-toast" style={{ width: "500px", height: "250px", fontSize: "18px", textAlign: "center" }} />
-      
+
     </div>
-  
+
   );
 }
 
