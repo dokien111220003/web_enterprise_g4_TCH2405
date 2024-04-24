@@ -70,9 +70,12 @@ function App () {
   }, [])
 
   const handleGetDetailsUser = async (id, token) => {
+    let storageRefreshToken = localStorage.getItem('refresh_token')
+    const refreshToken = JSON.parse(storageRefreshToken)
     const res = await UserService.getDetailsUser(id, token)
-    dispatch(updateUser({...res?.data, access_token: token}))
+    dispatch(updateUser({ ...res?.data, access_token: token, refreshToken: refreshToken}))
   }
+
 
   const handleDecoded = () => {
     let storageData = localStorage.getItem('access_token')
@@ -103,10 +106,11 @@ function App () {
       <Router>
         <Routes>
 {/* Cho trang cua Admin*/}
-<Route path='/adminpage1' element={<><SideBarAdmin /><MainPageAdmin /></>} />
+          <Route path='/adminpage1' element={<><SideBarAdmin /><MainPageAdmin /></>} />
           <Route path='/facultyadmin' element={<><NavBar /><FacultyAdmin /><FooterAdmin/></>} />
           <Route path='/add_faculty' element={<><NavBar /><AddNewFaculty /><FooterAdmin/></>} />
           <Route path='/edit_faculty/:id' element={<><NavBar /><EditFalcuty /><FooterAdmin/></>} />
+          {/* <Route path='/accadmin' element={<><AccMain /></>} /> */}
           <Route path='/accadmin' element={<><NavBar /><AccMain /><FooterAdmin/></>} />
           <Route path='/add_user' element={<><NavBar /><AddAcc /><FooterAdmin/></>} />
           <Route path='/edit_user/:id' element={<><NavBar /><EditAcc /><FooterAdmin/></>} />

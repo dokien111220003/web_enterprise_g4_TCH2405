@@ -9,7 +9,7 @@ import { updateUser } from '../../redux/slides/userSlide'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import jwt_decode from "jwt-decode";
-import Loading from '../../Components/LoadingComponent/Loading'
+import Loading from '../LoadingComponent/Loading'
 import * as message from '../Message/Message'
 import { Navigate } from 'react-router-dom';
 

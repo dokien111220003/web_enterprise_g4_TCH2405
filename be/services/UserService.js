@@ -118,13 +118,13 @@ const updateUser = (id, data) => {
 
             // Update user's faculty
             checkUser.faculty = facultyId;
-            await checkUser.save();
 
+            const updatedUser = await User.findByIdAndUpdate(id, data, { new: true })
             resolve({
                 status: 'OK',
-                message: 'User faculty updated successfully',
-                data: checkUser
-            });
+                message: 'SUCCESS',
+                data: updatedUser
+            })
         } catch (error) {
             reject(error);
         }
