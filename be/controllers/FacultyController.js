@@ -23,7 +23,7 @@ const updateFaculty = async (req, res) => {
         const facultyId = req.params.id
         const data = req.body
         if (!facultyId) {
-            return res.status(200).json({
+            return res.status(400).json({
                 status: 'ERR',
                 message: 'The facultyId is required'
             })
@@ -73,9 +73,58 @@ const deleteMany = async (req, res) => {
     }
 }
 
+const getAllFaculty = async (req, res) => {
+    try {
+        const response = await FacultyService.getAllFaculty()
+        return res.status(200).json(response)
+    } catch (e) {
+        return res.status(404).json({
+            message: e
+        })
+    }
+}
+
+
+// const getDetailsFaculty = async (req, res) => {
+//     try {
+//         const facultyId = req.params.id
+//         if (!facultyIdId) {
+//             return res.status(200).json({
+//                 status: 'ERR',
+//                 message: 'The facultyId is required'
+//             })
+//         }
+//         const response = await FacultyService.getDetailsFaculty(facultyId)
+//         return res.status(200).json(response)
+//     } catch (e) {
+//         return res.status(404).json({
+//             message: e
+//         })
+//     }
+// }
+
+const getDetailsFaculty = async (req, res) => {
+    try {
+        const facultyId = req.params.id
+        if (!facultyId) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The facultyId is required'
+            })
+        }
+        const response = await FacultyService.getDetailsFaculty(facultyId)
+        return res.status(200).json(response)
+    } catch (e) {
+        return res.status(500).json({
+            message: e.message || 'Internal server error'
+        })
+    }
+}
 module.exports = {
     createFaculty,
     updateFaculty,
+    getAllFaculty,
+    getDetailsFaculty,
     deleteFaculty,
     deleteMany,
 }

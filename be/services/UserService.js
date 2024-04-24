@@ -97,28 +97,6 @@ const updateUser = (id, data) => {
                 return;
             }
 
-            // Check if faculty id is provided in the data
-            const facultyId = data.faculty;
-            if (!facultyId) {
-                resolve({
-                    status: 'ERR',
-                    message: 'Faculty id is required'
-                });
-                return;
-            }
-
-            const checkFaculty = await Faculty.findById(facultyId);
-            if (!checkFaculty) {
-                resolve({
-                    status: 'ERR',
-                    message: 'Faculty not found'
-                });
-                return;
-            }
-
-            // Update user's faculty
-            checkUser.faculty = facultyId;
-
             const updatedUser = await User.findByIdAndUpdate(id, data, { new: true })
             resolve({
                 status: 'OK',

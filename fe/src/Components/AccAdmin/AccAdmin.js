@@ -18,6 +18,8 @@ import TableComponent from '../TableComponent/TableComponent'
 import DrawerComponent from '../DrawerComponent/DrawerComponent'
 import Loading from '../LoadingComponent/Loading'
 import ModalComponent from '../ModalComponent/ModalComponent'
+import * as FacultyService from '../../services/FacultyService';
+import { Select } from 'antd';
 import { Menu } from 'antd'
 
 const AccAdmin = () => {
@@ -27,12 +29,14 @@ const AccAdmin = () => {
   const [isModalOpenDelete, setIsModalOpenDelete] = useState(false)
   const user = useSelector((state) => state?.user)
   const searchInput = useRef(null);
-
+  const [faculties, setFaculties] = useState([]);
 
   const getAllUsers = async () => {
     const res = await UserService.getAllUser(user?.access_token)
     return res
   }
+
+  const { Option } = Select;
 
   const [stateUserDetails, setStateUserDetails] = useState({
     name: '',
@@ -317,6 +321,19 @@ const AccAdmin = () => {
   }, [isSuccessDelectedMany])
 
   useEffect(() => {
+    const fetchFaculties = async () => {
+      try {
+        const response = await FacultyService.getAllFaculty(); 
+        setFaculties(response.data);
+      } catch (error) {
+
+      }
+    };
+  
+    fetchFaculties();
+  }, []);
+
+  useEffect(() => {
     if (isSuccessUpdated && dataUpdated?.status === 'OK') {
       message.success()
       handleCloseDrawer()
@@ -409,6 +426,38 @@ const AccAdmin = () => {
             >
               <InputComponent value={stateUserDetails['email']} onChange={handleOnchangeDetails} name="email" />
             </Form.Item>
+            <Form.Item
+              label="Faculty"
+              name="faculty"
+              rules={[{ required: true, message: 'Please select a faculty!' }]}
+            >
+              <Select
+                placeholder="Select a faculty"
+                onChange={value => handleOnchangeDetails({ target: { name: 'faculty', value: value } })}
+                value={stateUserDetails.faculty}
+              >
+                {faculties.map(fac => (
+                  <Option key={fac._id} value={fac._id}>{fac.name}</Option>
+                ))}
+              </Select>
+            </Form.Item>
+            <Form.Item
+            label="Role"
+            name="role"
+            rules={[{ required: true, message: 'Please select a role!' }]}
+          >
+            <Select
+              placeholder="Select a role"
+              onChange={value => handleOnchangeDetails({ target: { name: 'role', value: value } })}
+              value={stateUserDetails.role}
+            >
+              <Option value="guest">Guest</Option>
+              <Option value="student">Student</Option>
+              <Option value="marketing manager">Marketing Manager</Option>
+              <Option value="marketing coordinator">Marketing Coordinator</Option>
+              {/* Thêm thêm các vai trò ở đây nếu cần */}
+            </Select>
+          </Form.Item>
             <Form.Item
               label="Phone"
               name="phone"
