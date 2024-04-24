@@ -16,7 +16,6 @@ const Account = () => {
     const dispatch = useDispatch()
     const [image, setImage] = useState(null);
     const [imageName, setImageName] = useState("No selected image");
-    console.log('user', user)
 
     const handleGenderChange = (e) => {
         setGender(e.target.value);
@@ -46,26 +45,16 @@ const Account = () => {
                     </div>
                     <div className="input-acc">
                         <label>Phone:</label>
-                        <input type="number" value={user.phone} readOnly />
+                        <input type="text" value={user.phone} readOnly />
                     </div>
                     <div className="input-acc-faculty">
                         <label>Faculty:</label>
-                        <input type="text" value={user.faculty} readOnly />
+                        <input type="text" value={user.faculty.name} readOnly />
                     </div>
                     <div className="input-acc">
                         <label>Address:</label>
                         <input type="text" value={user.address} readOnly />
                     </div>
-                    <div className="checkbox-gender">
-                        <label><input type="checkbox" value="male" checked={gender === 'male'} onChange={handleGenderChange} />Male</label>
-                        <label><input type="checkbox" value="female" checked={gender === 'female'} onChange={handleGenderChange} />Female</label>
-                        <div className="change-pass">
-                            <a href="change_password">Change Password</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="account-submit-container">
-                    <button className="account-submit">UPDATE</button>
                 </div>
             </div>
             <div className="acc-image-container">

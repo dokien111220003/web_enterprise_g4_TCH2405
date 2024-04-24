@@ -447,9 +447,9 @@ import { Select } from 'antd';
           </Form>
         </Loading>
       </DrawerComponent>
-      <ModalComponent title="Delete user" open={isModalOpenDelete} onCancel={handleCancelDelete} onOk={handleDeleteFaculty}>
+      <ModalComponent title="Delete faculty" open={isModalOpenDelete} onCancel={handleCancelDelete} onOk={handleDeleteFaculty}>
         <Loading isLoading={isLoadingDeleted}>
-          <div>Do you want to delete this user?</div>
+          <div>Do you want to delete this faculty?</div>
         </Loading>
       </ModalComponent>
       </div>
