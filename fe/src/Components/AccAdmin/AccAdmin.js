@@ -383,7 +383,7 @@ const AccAdmin = () => {
           };
         }} />
     </div>
-    <DrawerComponent title='Chi tiết người dùng' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="90%">
+    <DrawerComponent title='User information' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="90%">
         <Loading isLoading={isLoadingUpdate || isLoadingUpdated}>
 
           <Form
@@ -432,9 +432,9 @@ const AccAdmin = () => {
           </Form>
         </Loading>
       </DrawerComponent>
-      <ModalComponent title="Xóa người dùng" open={isModalOpenDelete} onCancel={handleCancelDelete} onOk={handleDeleteUser}>
+      <ModalComponent title="Delete user" open={isModalOpenDelete} onCancel={handleCancelDelete} onOk={handleDeleteUser}>
         <Loading isLoading={isLoadingDeleted}>
-          <div>Bạn có chắc xóa tài khoản này không?</div>
+          <div>Do you want to delete this user?</div>
         </Loading>
       </ModalComponent>
       </div>
