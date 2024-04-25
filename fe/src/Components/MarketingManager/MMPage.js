@@ -8,6 +8,8 @@ import img1 from '../Assets/slider1.jpg';
 import img2 from '../Assets/slider2.jpg';
 import img3 from '../Assets/slider3.jpg';
 import arrow from '../Assets/arrow-right.png'
+import MMFooter from '../Footer/MMFooter';
+import NavBarMM from '../NavBar/NavBarMM';
 
 const MMPage = () => {
 
@@ -18,6 +20,8 @@ const MMPage = () => {
   ];
 
   return (
+    <>
+    <NavBarMM/>
     <div className="studentpage-container">
       <div className="studentpage-left-container">
         <div className="slider-student-container">
@@ -233,6 +237,8 @@ const MMPage = () => {
         </div>
       </div>
     </div>
+    <MMFooter/>
+    </>
   );
 };
 

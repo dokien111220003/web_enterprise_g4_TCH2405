@@ -122,10 +122,10 @@ function App () {
           <Route path='/register' element={<NavBarGuest><Register/></NavBarGuest>} />
           <Route path='/slider' element={<><NavBar /><Slider /><FooterAdmin/></>} />
           <Route path='/sidebar' element={<SideBarAdmin />} />
-          <Route path='/personal' element={<NavBarStudent><Profile/></NavBarStudent>} />  
+          <Route path='/personal' element={<Profile/>} />  
           <Route path='/change_password' element={<NavBarGuest><ChangePassword/></NavBarGuest>} />
           {/* Cho trang cua Marketing Manager */}
-          <Route path='/marketing_manager_main' element={<NavBarMM><MMPage/></NavBarMM>} />
+          <Route path='/marketing_manager_main' element={<MMPage/>} />
           <Route path='/viewallMM' element={<NavBarMM><ViewAll/></NavBarMM>} />
           <Route path='/marketing_manager_main/contribution' element={<NavBarMM><ViewContri /></NavBarMM>}/>
           <Route path='/marketing_manager_main/contribution/details/:id' element={<NavBarMM><ViewDetails/></NavBarMM>} />
@@ -139,7 +139,7 @@ function App () {
           <Route path='/post' element={<NavBarStudent><Post/></NavBarStudent>} />
           <Route path='/viewall' element={<NavBarStudent><ViewAll/></NavBarStudent>} />
           {/* Cho trang Marketing Coordinator sử dụng NavBar riêng */}
-          <Route path='/mc_page' element={<NavBarMC><MCPage/></NavBarMC>} />
+          <Route path='/mc_page' element={<MCPage/>}/>
           <Route path='/viewallMC' element={<NavBarMC><ViewAll/></NavBarMC>} />
           <Route path='/mc_page1' element={<NavBarMC><MC/></NavBarMC>} />
           <Route path='/mc_page2' element={<NavBarMC><MC2/></NavBarMC>} />

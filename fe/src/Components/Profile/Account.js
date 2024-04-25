@@ -7,6 +7,16 @@ import * as message from '../Message/Message'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import NavBarMM from '../NavBar/NavBarMM';
+import NavBarStudent from '../NavBarStudent/NavBarStudent';
+import NavBarMC from '../NavBar/NavBarMC';
+import NavBarGuest from '../NavBar/NavBarGuest';
+import MCFooter from '../Footer/MCFooter';
+import MMFooter from '../Footer/MMFooter';
+import StudentFooter from '../Footer/StudentFooter';
+import GuestFooter from '../Footer/GuestFooter';
+
+
 const Account = () => {
     const [showPassword] = useState(false);
     const [gender, setGender] = useState('male');
@@ -16,6 +26,32 @@ const Account = () => {
     const dispatch = useDispatch()
     const [image, setImage] = useState(null);
     const [imageName, setImageName] = useState("No selected image");
+
+    const getNavbar = (role) => {
+        switch (role) {
+            case 'marketing manager':
+                return <NavBarMM />;
+            case 'student':
+                return <NavBarStudent />;
+            case 'marketing coordinator':
+                return <NavBarMC />;
+            case 'guest':
+                return <NavBarGuest />;
+        }
+    };
+
+    const getFooter = (role) => {
+        switch (role) {
+            case 'marketing manager':
+                return <MMFooter/>;
+            case 'student':
+                return <StudentFooter/>;
+                case 'marketing coordinator':
+                    return <MCFooter/>;
+                case 'guest':
+                    return <GuestFooter/>;
+        }
+    };
 
     const handleGenderChange = (e) => {
         setGender(e.target.value);
@@ -32,7 +68,11 @@ const Account = () => {
             setImage(image);
         }
     };
+
+
     return (
+        <>
+        {getNavbar(user.role)}
         <div className="acc-container">
             <div className='acc-information-container'>
                 <div className="acc-header">
@@ -91,6 +131,8 @@ const Account = () => {
             </div>
             <ToastContainer />
         </div>
+        {getFooter(user.role)}
+        </>
     )
 }
 
