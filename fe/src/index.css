@@ -9,10 +9,6 @@
 }
 
 
-html {
-  zoom: 65%;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -33,4 +29,8 @@ body {
 
 html {
   font-size: 62.5%;
+}
+
+html {
+  zoom: 65%;
 }
