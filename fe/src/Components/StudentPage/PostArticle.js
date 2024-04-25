@@ -78,9 +78,6 @@ function PostArticle() {
 
 
   return (
-    <>
-      <NavBarStudent />
-
       <div className="post-main-container">
 
         <div class="post-title-container">
@@ -305,11 +302,7 @@ function PostArticle() {
           </div>
         )}
         <ToastContainer toastClassName="custom-toast" style={{ width: "500px", height: "250px", fontSize: "18px", textAlign: "center" }} />
-
       </div>
-      <StudentFooter />
-    </>
-
   );
 }
 

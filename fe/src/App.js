@@ -136,7 +136,7 @@ function App () {
           <Route path='/term' element={<NavBarStudent><Term /></NavBarStudent>} />
           <Route path='/about' element={<NavBarStudent><About /></NavBarStudent>}/>
           <Route path='/student_submit' element={<Submission/>} />
-          <Route path='/post' element={<Post/>} />
+          <Route path='/post' element={<NavBarStudent><Post/></NavBarStudent>} />
           <Route path='/viewall' element={<NavBarStudent><ViewAll/></NavBarStudent>} />
           {/* Cho trang Marketing Coordinator sử dụng NavBar riêng */}
           <Route path='/mc_page' element={<MCPage/>}/>
