@@ -127,22 +127,22 @@ function App () {
           {/* Cho trang cua Marketing Manager */}
           <Route path='/marketing_manager_main' element={<MMPage/>} />
           <Route path='/viewallMM' element={<NavBarMM><ViewAll/></NavBarMM>} />
-          <Route path='/marketing_manager_main/contribution' element={<NavBarMM><ViewContri /></NavBarMM>}/>
+          <Route path='/marketing_manager_main/contribution' element={<NavBarMM><ViewContri/></NavBarMM>}/>
           <Route path='/marketing_manager_main/contribution/details/:id' element={<NavBarMM><ViewDetails/></NavBarMM>} />
           <Route path='/aboutMM' element={<NavBarMM><About /></NavBarMM>} />
           <Route path='/termMM' element={<NavBarMM><Term /></NavBarMM>} />
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
-          <Route path='/student_page' element={<NavBarStudent><StudentPage /></NavBarStudent>} />
+          <Route path='/student_page' element={<StudentPage />} />
           <Route path='/term' element={<NavBarStudent><Term /></NavBarStudent>} />
-          <Route path='/about' element={<NavBarStudent><About /></NavBarStudent>} />
-          <Route path='/student_submit' element={<NavBarStudent><Submission/></NavBarStudent>} />
-          <Route path='/post' element={<NavBarStudent><Post/></NavBarStudent>} />
+          <Route path='/about' element={<NavBarStudent><About /></NavBarStudent>}/>
+          <Route path='/student_submit' element={<Submission/>} />
+          <Route path='/post' element={<Post/>} />
           <Route path='/viewall' element={<NavBarStudent><ViewAll/></NavBarStudent>} />
           {/* Cho trang Marketing Coordinator sử dụng NavBar riêng */}
           <Route path='/mc_page' element={<MCPage/>}/>
-          <Route path='/viewallMC' element={<NavBarMC><ViewAll/></NavBarMC>} />
-          <Route path='/mc_page1' element={<NavBarMC><MC/></NavBarMC>} />
-          <Route path='/mc_page2' element={<NavBarMC><MC2/></NavBarMC>} />
+          <Route path='/viewallMC' element={<NavBarMC><ViewAll /></NavBarMC>} />
+          <Route path='/mc_page1' element={<MC/>} />
+          <Route path='/mc_page2' element={<MC2/>} />
           <Route path='/mc_feedback/:id' element={<Feedback/>}/>
           <Route path='/aboutMC' element={<NavBarMC><About /></NavBarMC>} />
           <Route path='/termMC' element={<NavBarMC><Term /></NavBarMC>} />

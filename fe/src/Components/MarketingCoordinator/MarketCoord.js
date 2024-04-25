@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './MarketCoord.css';
+import MCFooter from '../Footer/MCFooter';
+import NavBarMC from '../NavBar/NavBarMC';
+
 
 const MarketCoord = () => {
   const submissions = [
@@ -30,6 +33,9 @@ const MarketCoord = () => {
   const handlePageChange = (page) => {
     setCurrentPage(page);}
   return (
+    <>
+    <NavBarMC/>
+
     <Container fluid="xxl">
       <div className="table-responsive">
         <div className="table-wrapper">
@@ -74,6 +80,9 @@ const MarketCoord = () => {
         </div>
       </div>
     </Container>
+    <MCFooter/>
+    </>
+
   );
 };
 

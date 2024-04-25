@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './StudentSubmit.css';
 import { useNavigate } from 'react-router-dom';
-
+import NavBarStudent from '../NavBarStudent/NavBarStudent';
+import StudentFooter from '../Footer/StudentFooter';
 const StudentSubmit = () => {
     const navigate = useNavigate();
-    
+
     const assignmentDetails = {
         faculty: "Computer Science",
         finalDate: {
@@ -16,20 +17,22 @@ const StudentSubmit = () => {
 
     const SubmissionSection = ({ detail, feedback }) => {
         const [showFeedback, setShowFeedback] = useState(false);
-    
+
         return (
-            <div className="as-section">
-                <div className="as-header">
-                    <h2>Assignment Submission - {assignmentDetails.faculty}</h2>
-                </div>
-                <div>
-                    <p>{detail}</p>
-                    <button className='submit-article' type="button" onClick={() => navigate('/post')}>Submit Assignment</button>
-                    <div className="feedback-area">
-                        <span className="toggle-feedback" onClick={() => setShowFeedback(!showFeedback)}>
-                            Feedback Comment:
-                        </span>
-                        {showFeedback && <p className="feedback-content">{feedback}</p>}
+            <div class="center-wrapper">
+                <div className="as-section">
+                    <div className="as-header">
+                        <h2>Assignment Submission - {assignmentDetails.faculty}</h2>
+                    </div>
+                    <div>
+                        <p>{detail}</p>
+                        <button className='submit-article' type="button" onClick={() => navigate('/post')}>Submit Assignment</button>
+                        <div className="feedback-area">
+                            <span className="toggle-feedback" onClick={() => setShowFeedback(!showFeedback)}>
+                                Feedback Comment:
+                            </span>
+                            {showFeedback && <p className="feedback-content">{feedback}</p>}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,10 +40,12 @@ const StudentSubmit = () => {
     };
     return (
         <>
+            <NavBarStudent />
             <SubmissionSection
                 detail={assignmentDetails.finalDate.content}
                 feedback={assignmentDetails.finalDate.feedback}
             />
+            <StudentFooter />
         </>
     );
 }
