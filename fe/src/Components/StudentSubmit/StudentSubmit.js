@@ -41,6 +41,9 @@ const StudentSubmit = () => {
     return (
         <>
             <NavBarStudent />
+            <div className="header-student-submitp">
+                <h1>Student's Submission</h1>
+            </div>
             <SubmissionSection
                 detail={assignmentDetails.finalDate.content}
                 feedback={assignmentDetails.finalDate.feedback}
