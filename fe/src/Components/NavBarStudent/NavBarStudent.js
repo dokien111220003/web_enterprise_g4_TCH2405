@@ -65,7 +65,6 @@ const NavBarStudent = ({ children }) => {
                     {children}
                 </div>
             </div>
-            <Footer />
         </>
     );
 }

@@ -31,7 +31,6 @@ const McFeedback = () => {
           </div>
         )}
         <div className="text-center">
-          <button className="btn btn-primary-mc">Back</button>
           <button type="submit" className="btn btn-primary" required>Send Feedback</button>
         </div>
       </div>
