@@ -143,8 +143,7 @@ function App () {
           <Route path='/viewallMC' element={<NavBarMC><ViewAll/></NavBarMC>} />
           <Route path='/mc_page1' element={<NavBarMC><MC/></NavBarMC>} />
           <Route path='/mc_page2' element={<NavBarMC><MC2/></NavBarMC>} />
-          <Route path='/mc_feedback/:id' element={<NavBarMC><Feedback/></NavBarMC>} />
-          <Route path='/mc_review/:id' element={<NavBarMC><Review/></NavBarMC>} />
+          <Route path='/mc_feedback/:id' element={<Feedback/>}/>
           <Route path='/aboutMC' element={<NavBarMC><About /></NavBarMC>} />
           <Route path='/termMC' element={<NavBarMC><Term /></NavBarMC>} />
           {/* Cho trang Guest sử dụng NavBar riêng */}

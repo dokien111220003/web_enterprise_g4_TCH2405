@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBarMC from '../NavBar/NavBarMC';
+import MCFooter from '../Footer/MCFooter';
 
 const McFeedback = () => {
   const [feedback, setFeedback] = useState('');
@@ -10,6 +12,8 @@ const McFeedback = () => {
   };
 
   return (
+    <>
+    <NavBarMC/>
     <div className="mc-review-container">
       <div className="mc-review-container-2">
         <h2 className="text-center">Comment Feedback</h2>
@@ -35,6 +39,8 @@ const McFeedback = () => {
         </div>
       </div>
     </div>
+    <MCFooter/>
+    </>
   );
 };
 

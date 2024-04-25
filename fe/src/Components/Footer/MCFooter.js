@@ -18,10 +18,7 @@ const MCFooter= () => {
                     <div className="sb_footer-student-links-div">
                         <h4>For Contribution</h4>
                         <a href="/mc_page1">
-                            <p>First Hand Contribution </p>
-                        </a>
-                        <a href="/mc_page2">
-                            <p>Final Hand Contribution </p>
+                            <p>Manage Contribution </p>
                         </a>
                     </div>
                     <div className="sb_footer-student-links-div">
