@@ -36,8 +36,8 @@ const ViewContri = () => {
     };
 
     return (
-
-            <div>
+        <div className="view-contri-wrapper">
+            <div className="content-area">
                 <div className="MM-contri-header">
                     <h1>Contributions</h1>
                 </div>
@@ -55,7 +55,6 @@ const ViewContri = () => {
                         <option value="MachineLearning">Machine Learning</option>
                     </select>
                 </div>
-
                 <div className="MM-contribution-tb">
                     <Table striped bordered hover className="MM-table-content">
                         <thead>
@@ -79,17 +78,19 @@ const ViewContri = () => {
                             ))}
                         </tbody>
                     </Table>
-                    <div >
-                        <Pagination className="pagination-contri-mm">
-                            {Array.from({ length: totalPages }).map((_, index) => (
-                                <Pagination.Item key={index} active={index + 1 === currentPage} onClick={() => handlePageChange(index + 1)}>
-                                    {index + 1}
-                                </Pagination.Item>
-                            ))}
-                        </Pagination>
-                    </div>
                 </div>
             </div>
+            <div className="pagination-area">
+                <Pagination className="pagination-contri-mm">
+                    {Array.from({ length: totalPages }).map((_, index) => (
+                        <Pagination.Item key={index} active={index + 1 === currentPage} onClick={() => handlePageChange(index + 1)}>
+                            {index + 1}
+                        </Pagination.Item>
+                    ))}
+                </Pagination>
+            </div>
+        </div>
+
     );
 }
 

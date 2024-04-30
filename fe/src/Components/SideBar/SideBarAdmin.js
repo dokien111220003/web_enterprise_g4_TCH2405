@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom'; 
 import './SideBarAdmin.css';
 import user_img from '../Assets/user-img.jpg';
 import dashboardicon from '../Assets/home.png';
@@ -43,19 +44,18 @@ const SideBarAdmin = () => {
                             <p className="title">Main</p>
                             <ul>
                                 <li>
-                                    <a href="/adminpage1">
+                                    <NavLink to="/adminpage1">
                                         <img src={dashboardicon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Dashboard</span>
-                                    </a>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <NavLink to="/facultyadmin">
                                         <img src={facultyicon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Faculty</span>
-                                        <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleFacultyMenu} style={{ transform: `rotate(${facultyArrowRotation}deg)` }}></img>
-                                    </a>
-
-                                    <ul className="admin-sub-menu" style={{ display: isFacultyOpen ? 'block' : 'none' }}>
+                                        {/* <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleFacultyMenu} style={{ transform: `rotate(${facultyArrowRotation}deg)` }}></img> */}
+                                    </NavLink>
+                                    {/* <ul className="admin-sub-menu" style={{ display: isFacultyOpen ? 'block' : 'none' }}>
                                         <li>
                                             <a href="/facultyadmin">
                                                 <span className="admin-nav-text">View All</span>
@@ -66,37 +66,26 @@ const SideBarAdmin = () => {
                                                 <span className="admin-nav-text">Add New</span>
                                             </a>
                                         </li>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <NavLink to="/accadmin">
                                         <img src={usericon} alt="" className="admin-nav-icon"></img>
                                         <span className="admin-nav-text">Account</span>
-                                        <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img>
-                                    </a>
-
-                                    <ul className="admin-sub-menu" style={{ display: isAccountOpen ? 'block' : 'none' }}>
-                                        <li>
+                                        {/* <img src={arrowdown} alt="" className="admin-nav-arrow" onClick={toggleAccountMenu} style={{ transform: `rotate(${accountArrowRotation}deg)` }}></img> */}
+                                    </NavLink>
+                                    {/* <ul className="admin-sub-menu" style={{ display: isAccountOpen ? 'block' : 'none' }}>
+                                    <li>
                                             <a href="/accadmin">
-                                                <span className="admin-nav-text">Student</span>
+                                                <span className="admin-nav-text">View All</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/accadmin">
-                                                <span className="admin-nav-text">Guest</span>
+                                            <a href="/add_faculty">
+                                                <span className="admin-nav-text">Add New</span>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="/accadmin">
-                                                <span className="admin-nav-text">Marketing Coordinator</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/accadmin">
-                                                <span className="admin-nav-text">Marketing Manager</span>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                             </ul>
                         </div>

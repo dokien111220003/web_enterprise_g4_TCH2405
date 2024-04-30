@@ -57,7 +57,8 @@ const ViewDetails = () => {
   };
 
   return (
-      <div>
+    <div className="view-contri-wrapper">
+      <div className="content-area">
         <div className="MM-detail-header">
           <h1>Contributions Detail</h1>
           <h2>Computer Science</h2>
@@ -73,7 +74,6 @@ const ViewDetails = () => {
             <button className="MM-download-btn">Download All</button>
           </div>
         </div>
-
         <div className="MM-detail-tb">
           <Table striped bordered hover className="MM-detail-table-content">
             <thead>
@@ -95,17 +95,18 @@ const ViewDetails = () => {
               ))}
             </tbody>
           </Table>
-          <div >
-            <Pagination className="pagination-detail-mm">
-              {Array.from({ length: totalPages }).map((_, index) => (
-                <Pagination.Item key={index} active={index + 1 === currentPage} onClick={() => handlePageChange(index + 1)}>
-                  {index + 1}
-                </Pagination.Item>
-              ))}
-            </Pagination>
-          </div>
         </div>
       </div>
+      <div className="pagination-area">
+        <Pagination className="pagination-detail-mm">
+          {Array.from({ length: totalPages }).map((_, index) => (
+            <Pagination.Item key={index} active={index + 1 === currentPage} onClick={() => handlePageChange(index + 1)}>
+              {index + 1}
+            </Pagination.Item>
+          ))}
+        </Pagination>
+      </div>
+    </div>
   );
 }
 

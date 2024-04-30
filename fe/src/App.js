@@ -30,6 +30,9 @@ import Slider from './Components/Slider/Slider';
 import FooterAdmin from './Components/Footer/AdminFooter';
 import SideBarAdmin from './Components/SideBar/SideBarAdmin';
 import Term from './Components/StudentPage/Term'
+import StudentFooter from './Components/Footer/StudentFooter';
+import MCFooter from './Components/Footer/MCFooter';
+import MMFooter from './Components/Footer/MMFooter';
 // Student
 import StudentPage from './Components/StudentPage/StudentPage';
 import Submission from './Components/StudentSubmit/StudentSubmit'
@@ -126,26 +129,25 @@ function App () {
           <Route path='/change_password' element={<NavBarGuest><ChangePassword/></NavBarGuest>} />
           {/* Cho trang cua Marketing Manager */}
           <Route path='/marketing_manager_main' element={<MMPage/>} />
-          <Route path='/viewallMM' element={<NavBarMM><ViewAll/></NavBarMM>} />
-          <Route path='/marketing_manager_main/contribution' element={<NavBarMM><ViewContri/></NavBarMM>}/>
-          <Route path='/marketing_manager_main/contribution/details/:id' element={<NavBarMM><ViewDetails/></NavBarMM>} />
-          <Route path='/aboutMM' element={<NavBarMM><About /></NavBarMM>} />
-          <Route path='/termMM' element={<NavBarMM><Term /></NavBarMM>} />
+          <Route path='/viewallMM' element={<><NavBarMM/><ViewAll/><MMFooter/></>} />
+          <Route path='/marketing_manager_main/contribution' element={<><NavBarMM/><ViewContri/><MMFooter/></>}/>
+          <Route path='/marketing_manager_main/contribution/details/:id' element={<><NavBarMM/><ViewDetails/><MMFooter/></>} />
+          <Route path='/aboutMM' element={<><NavBarMM/><ViewAll/><MMFooter/></>} />
+          <Route path='/termMM' element={<><NavBarMM/><ViewAll/><MMFooter/></>} />
           {/* Cho trang StudentPage sử dụng NavBar riêng */}
           <Route path='/student_page' element={<StudentPage />} />
-          <Route path='/term' element={<NavBarStudent><Term /></NavBarStudent>} />
-          <Route path='/about' element={<NavBarStudent><About /></NavBarStudent>}/>
+          <Route path='/term' element={<><NavBarStudent/><Term /><StudentFooter/></>} />
+          <Route path='/about' element={<><NavBarStudent/><About /><StudentFooter/></>}/>
           <Route path='/student_submit' element={<Submission/>} />
           <Route path='/post' element={<NavBarStudent><Post/></NavBarStudent>} />
-          <Route path='/viewall' element={<NavBarStudent><ViewAll/></NavBarStudent>} />
+          <Route path='/viewall' element={<><NavBarStudent/><ViewAll/><StudentFooter/></>} />
           {/* Cho trang Marketing Coordinator sử dụng NavBar riêng */}
           <Route path='/mc_page' element={<MCPage/>}/>
-          <Route path='/viewallMC' element={<NavBarMC><ViewAll /></NavBarMC>} />
+          <Route path='/viewallMC' element={<><NavBarMC/><ViewAll/><MCFooter/></>} />
           <Route path='/mc_page1' element={<MC/>} />
-          <Route path='/mc_page2' element={<MC2/>} />
           <Route path='/mc_feedback/:id' element={<Feedback/>}/>
-          <Route path='/aboutMC' element={<NavBarMC><About /></NavBarMC>} />
-          <Route path='/termMC' element={<NavBarMC><Term /></NavBarMC>} />
+          <Route path='/aboutMC' element={<><NavBarMC/><About /><MCFooter/></>} />
+          <Route path='/termMC' element={<><NavBarMC/><Term /><MCFooter/></>} />
           {/* Cho trang Guest sử dụng NavBar riêng */}
           <Route path='/' element={<NavBarGuest><GuestPage/></NavBarGuest>} />
           <Route path='/viewallG' element={<NavBarGuest><ViewAll/></NavBarGuest>} />

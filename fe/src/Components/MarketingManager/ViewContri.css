@@ -118,3 +118,18 @@
     height: 15px;
     margin: 0 20px;
 }
+.view-contri-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.content-area {
+    flex: 1;
+}
+.pagination-area {
+    display: flex;
+    justify-content: center;
+}
