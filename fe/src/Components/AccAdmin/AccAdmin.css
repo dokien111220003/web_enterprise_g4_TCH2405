@@ -92,3 +92,7 @@
     margin: 0 2px; 
     font-size: 0.875rem; 
   } */
+
+.ant-table-cell {
+  font-size: 20px;
+}

@@ -63,7 +63,7 @@
   border-radius: 4px;
 }
 
-.header-student-submitp {
+.header-student-submit {
   margin-top: 40px;
   width: 100%;
   display: flex;
@@ -71,6 +71,6 @@
   justify-content: center;
 }
 
-.header-student-submitp h1{
+.header-student-submit h1{
   font-size: 50px;
 }

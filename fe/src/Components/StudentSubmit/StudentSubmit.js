@@ -41,7 +41,7 @@ const StudentSubmit = () => {
     return (
         <>
             <NavBarStudent />
-            <div className="header-student-submitp">
+            <div className="header-student-submit">
                 <h1>Student's Submission</h1>
             </div>
             <SubmissionSection

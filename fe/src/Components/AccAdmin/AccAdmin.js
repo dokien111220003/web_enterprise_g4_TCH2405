@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Space } from 'antd'
 import { useNavigate } from 'react-router-dom';
-// import './AccAdmin.css';
+import './AccAdmin.css';
 import { WrapperHeader, WrapperUploadFile } from './style'
 import search_icon from '../Assets/search.png';
 import { useSelector } from 'react-redux'
@@ -66,7 +66,7 @@ const AccAdmin = () => {
     (data) => {
       const { token, ...ids
       } = data
-      const res = UserService.deleteManyUser( 
+      const res = UserService.deleteManyUser(
         ids,
         token)
       return res
@@ -228,7 +228,7 @@ const AccAdmin = () => {
       title: 'Name',
       dataIndex: 'name',
       sorter: (a, b) => a.name.length - b.name.length,
-      ...getColumnSearchProps('name')
+      ...getColumnSearchProps('name'),
     },
     {
       title: 'Email',
@@ -284,7 +284,7 @@ const AccAdmin = () => {
   ];
 
   const dataTable = users?.data?.length && users?.data?.map((user) => {
-    return { ...user, key: user._id}
+    return { ...user, key: user._id }
   })
 
   useEffect(() => {
@@ -300,7 +300,7 @@ const AccAdmin = () => {
     setIsModalOpenDelete(false)
   }
 
-    const handleCloseDrawer = () => {
+  const handleCloseDrawer = () => {
     setIsOpenDrawer(false);
     setStateUserDetails({
       name: '',
@@ -323,13 +323,13 @@ const AccAdmin = () => {
   useEffect(() => {
     const fetchFaculties = async () => {
       try {
-        const response = await FacultyService.getAllFaculty(); 
+        const response = await FacultyService.getAllFaculty();
         setFaculties(response.data);
       } catch (error) {
 
       }
     };
-  
+
     fetchFaculties();
   }, []);
 
@@ -366,7 +366,7 @@ const AccAdmin = () => {
       ...stateUserDetails,
       avatar: file.preview
     })
-  }  
+  }
 
   const onUpdateUser = () => {
     mutationUpdate.mutate({ id: rowSelected, token: user?.access_token, ...stateUserDetails }, {
@@ -387,20 +387,20 @@ const AccAdmin = () => {
   //   navigate(`/edit_user/${id}`);
   // };
   return (
-    <div className="account-admin">
-        <div className="page-content-header">
-          <h1>Account Management Page</h1>
-        </div>
-        <div style={{ marginTop: '20px' }}>
-        <TableComponent handleDelteMany={handleDelteManyUsers} columns={columns} isLoading={isLoadingUsers} data={dataTable} onRow={(record, rowIndex) => {
+    <div className="account-admin" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+      <div className="table-container" style={{ width: '80%', marginTop: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '40px', fontWeight: '700'}}>
+        <p>Account Management Page</p>
+      </div>
+      <div style={{ marginTop: '20px', width: '70%'}}>
+        <TableComponent className="custom-table-acc" handleDelteMany={handleDelteManyUsers} columns={columns} isLoading={isLoadingUsers} data={dataTable} onRow={(record, rowIndex) => {
           return {
             onClick: event => {
               setRowSelected(record._id)
             }
           };
         }} />
-    </div>
-    <DrawerComponent title='User information' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="90%">
+      </div>
+      <DrawerComponent title='User information' isOpen={isOpenDrawer} onClose={() => setIsOpenDrawer(false)} width="90%">
         <Loading isLoading={isLoadingUpdate || isLoadingUpdated}>
 
           <Form
@@ -442,22 +442,22 @@ const AccAdmin = () => {
               </Select>
             </Form.Item>
             <Form.Item
-            label="Role"
-            name="role"
-            rules={[{ required: true, message: 'Please select a role!' }]}
-          >
-            <Select
-              placeholder="Select a role"
-              onChange={value => handleOnchangeDetails({ target: { name: 'role', value: value } })}
-              value={stateUserDetails.role}
+              label="Role"
+              name="role"
+              rules={[{ required: true, message: 'Please select a role!' }]}
             >
-              <Option value="guest">Guest</Option>
-              <Option value="student">Student</Option>
-              <Option value="marketing manager">Marketing Manager</Option>
-              <Option value="marketing coordinator">Marketing Coordinator</Option>
-              {/* Thêm thêm các vai trò ở đây nếu cần */}
-            </Select>
-          </Form.Item>
+              <Select
+                placeholder="Select a role"
+                onChange={value => handleOnchangeDetails({ target: { name: 'role', value: value } })}
+                value={stateUserDetails.role}
+              >
+                <Option value="guest">Guest</Option>
+                <Option value="student">Student</Option>
+                <Option value="marketing manager">Marketing Manager</Option>
+                <Option value="marketing coordinator">Marketing Coordinator</Option>
+                {/* Thêm thêm các vai trò ở đây nếu cần */}
+              </Select>
+            </Form.Item>
             <Form.Item
               label="Phone"
               name="phone"
@@ -486,7 +486,7 @@ const AccAdmin = () => {
           <div>Do you want to delete this user?</div>
         </Loading>
       </ModalComponent>
-      </div>
+    </div>
   );
 }
 
