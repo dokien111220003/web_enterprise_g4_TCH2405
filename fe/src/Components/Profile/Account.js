@@ -126,7 +126,7 @@ const Account = () => {
                     <input type="file" onChange={handleImageChange} accept="image/*" className="profile-input" />
                 </div>
                 <div className="account-submit-container">
-                    <button className="account-img-submit" onClick={handleUpload}>UPDATE</button>
+                    <button className="btn btn-primary" onClick={handleUpload}>UPDATE</button>
                 </div>
             </div>
             <ToastContainer />
