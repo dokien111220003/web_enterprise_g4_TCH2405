@@ -4,26 +4,35 @@ import fb from '../Assets/facebook.png'
 import twitter from '../Assets/twitter.png'
 import ins from '../Assets/instagram.png'
 
-const Footer= () => {
+const Footer = () => {
     return (
         <div className='footer'>
             <div className='sb_footer section_padding'>
                 <div className="sb_footer-links">
                     <div className="sb_footer-links-div">
-                        <h4>For Faculty</h4> 
-                        <a href="/facultyadmin">
-                            <p>Display All</p>
+                        <h4>For Dashboard</h4>
+                        <a href="/adminpage1">
+                            <p>Dashboard Management</p>
                         </a>
-                        <a href="/add_faculty">
+                        {/* <a href="/add_faculty">
                             <p>Add new</p>
+                        </a> */}
+                    </div>
+                    <div className="sb_footer-links-div">
+                        <h4>For Faculty</h4>
+                        <a href="/facultyadmin">
+                            <p>Faculty Management</p>
                         </a>
+                        {/* <a href="/add_faculty">
+                            <p>Add new</p>
+                        </a> */}
                     </div>
                     <div className="sb_footer-links-div">
                         <h4>For Account</h4>
-                        <a href="/hoho">
-                            <p>Marketing Manager</p>
+                        <a href="/accadmin">
+                            <p>Account Management</p>
                         </a>
-                        <a href="/hoho">
+                        {/* <a href="/hoho">
                             <p>Marketing Coordinator</p>
                         </a>
                         <a href="/hoho">
@@ -31,9 +40,9 @@ const Footer= () => {
                         </a>
                         <a href="/hoho">
                             <p>Guest</p>
-                        </a>
+                        </a> */}
                     </div>
-                    <div className="sb_footer-links-div">
+                    {/* <div className="sb_footer-links-div">
                         <h4>For Blog</h4>
                         <a href="/topicadmin">
                             <p>Display All</p>
@@ -41,7 +50,7 @@ const Footer= () => {
                         <a href="/add_topic">
                             <p>Add new</p>
                         </a>
-                    </div>
+                    </div> */}
                     <div className="sb_footer-links-div">
                         <h4>Social Media</h4>
                         <div className="socialMedia">
@@ -51,7 +60,7 @@ const Footer= () => {
                         </div>
                     </div>
                 </div>
-                
+
                 <hr></hr>
 
                 <div className="sb_footer-below">
